@@ -29,7 +29,7 @@ git checkout命令加上-b参数表示创建并切换，相当于以下两条命
 $ git branch dev
 $ git checkout dev
 
-更有好的创建并切换到当前分支
+更友好的创建并切换到当前分支
 git switch -c dev //创建并切换到dev，相当于以下两句
 git branch dev
 git switch dev
