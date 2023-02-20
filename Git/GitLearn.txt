@@ -1,0 +1,69 @@
+git log --pretty=oneline 查看提交历史
+git reflog 查看命令历史
+git reset --hard 1094a 回退到当前版本号指定的版本
+git reset --hard head^
+git diff head --readme.txt
+git commit -m "commit statement"
+git checkout -- readme.txt //把readme.txt文件在工作区总的修改全部撤销
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+如果已经添加到了暂存区，还没commit
+则用
+git reset head readme.txt
+则提交回到工作区，修改依然存在，再次执行 git checkout -- readme.txt回到和分支中相同的状态
+
+ssh-keygen -t rsa -C "983441815@qq.com" //创建SSH KEY
+
+
+git remote add origin git@github.com:bingeweiwu/Gitlearn.git //把本地仓库与远程仓库关联
+git push -u origin master //推送本地仓库到远程仓库
+git remote -v //查看远程库信息
+git remote rm origin //解除本地仓库与远程仓库的绑定
+
+
+git clone git@github.com:bingeweiwu/GitLearn.git //克隆一个本地仓库
+
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
+$ git branch dev
+$ git checkout dev
+
+更有好的创建并切换到当前分支
+git switch -c dev //创建并切换到dev，相当于以下两句
+git branch dev
+git switch dev
+
+
+git branch //查看当前分支
+
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>或者git switch <name>
+
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+git checkout master // 切换分支
+git merge dev //合并dev到当前分支
+
+git branch -d dev //删除dev分支
+
+
+冲突：
+$ git log --graph --pretty=oneline --abbrev-commit //查看分支合并情况
+
+
+
+
+
+
+
+
+
