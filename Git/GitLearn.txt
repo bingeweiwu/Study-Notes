@@ -60,18 +60,6 @@ git branch -d dev //删除dev分支
 $ git log --graph --pretty=oneline --abbrev-commit //查看分支合并情况
 
 
-2023 02 20
-
-test fast forward mode
-
-
-
-Git is a free software, in branch issue-101
-
-this line show that there is a task haven't done in dev branch.
-this line show that there is no task haven't done.
-
-
 
 
 
