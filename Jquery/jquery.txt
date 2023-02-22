@@ -1,0 +1,6 @@
+$("p") select <p>
+
+
+$("#test") select #id
+
+$(".test") select .class
