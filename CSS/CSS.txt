@@ -1,0 +1,125 @@
+The CSS id Selector
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+The CSS class Selector
+.center {
+  text-align: center;
+  color: red;
+}
+
+You can also specify that only specific HTML elements should be affected by a class.
+p.center {
+  text-align: center;
+  color: red;
+}
+
+<h1 class="center">This heading will not be affected</h1>
+<p class="center">This paragraph will be red and center-aligned.</p>
+
+HTML elements can also refer to more than one class.
+<p class="center large">This paragraph refers to two classes.</p>
+<style>
+p.center {
+  text-align: center;
+  color: red;
+}
+
+p.large {
+  font-size: 300%;
+}
+</style>
+</head>
+<body>
+
+<h1 class="center">This heading will not be affected</h1>
+<p class="center">This paragraph will be red and center-aligned.</p>
+<p class="center large">This paragraph will be red, center-aligned, and in a large font-size.</p>
+
+
+
+The CSS Universal Selector
+The CSS rule below will affect every HTML element on the page: 
+* {
+  text-align: center;
+  color: blue;
+}
+
+The CSS Grouping Selector
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+}
+
+h1, h2, p {
+  text-align: center;
+  color: red;
+}
+
+
+So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+
+color:
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<h1 style="color:Tomato;">Hello World</h1>
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+<h1 style="background-color:rgb(255, 99, 71);">...</h1>
+
+CSS Backgrounds:
+CSS Backgrounds
+body {
+  background-color: lightblue;
+}
+
+a valid color name - like "red"
+a HEX value - like "#ff0000"
+an RGB value - like "rgb(255,0,0)"
+
+div {
+  background-color: green;
+}
+
+div.first {
+  opacity: 0.1;
+}
+
+CSS Background Image
+p {
+  background-image: url("paper.gif");
+}
+
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+
+Specify that the background image should be fixed:
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+Specify that the background image should scroll with the rest of the page:
+
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+}
