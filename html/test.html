@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    sdafasd
+    <b>加粗</b>
+    <hr>
+    <strong>加粗</strong>
+    <img src="./images/phone.png" alt="a" width="100" height="100">
+    <br>
+    <audio src="" controls autoplay loop></audio>
+    <br>
+    <video src="" controls autoplay muted></video>
+    <br>
+    <a href="https://www.baidu.com" target="_blank">click to website</a>
+    <p>abcdefg<a href="#">hijklmn</a></p>
+    <br>
+
+
+    <ul><!--   ul 只能包含b标签,li标签可以包含任何内容 ，无序-->
+        <li> apple </li>
+        <li> pear </li>
+        <li> orange </li>
+        <li> peach </li>
+
+    </ul>
+    <ol> <!--有序列表，只能放li，li可以放其他标签-->
+        <li> apple </li>
+        <li> pear </li>
+        <li> orange </li>
+        <li> peach </li>
+    </ol>
+    <dl> <!--dl内只能放dt/dd标签，dt/dd内可以放其他的-->
+        <dt>dt主题标签</dt>
+        <dd>dd内容标签</dd>
+        <dd>dd 2</dd>
+    </dl>
+
+    <table border="1">
+        <!--在表格中表示整体大标题-->
+        <caption><b>caption表头表体</b></caption>
+        <!-- th 表头单元格，用于替换td标签-->
+        <tr>
+            <th>姓名</th>
+            <td>成绩</td>
+            <td>评语</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+
+    <table border="1">
+        <caption><b>caption表头表体</b></caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <td>成绩</td>
+                <td>评语</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!--合并标签-->
+    <table border="1">
+        <!--在表格中表示整体大标题-->
+        <caption><b>caption表头表体</b></caption>
+        <!-- th 表头单元格，用于替换td标签-->
+        <tr>
+            <th>姓名</th>
+            <td>成绩</td>
+            <td>评语</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td rowspan="2">2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+           
+            <td>6</td>
+        </tr>
+    </table>
+文本框<input type="text" placeholder="id/id">
+<br>
+密码框<input type="password">
+<br>
+单选：<input type="radio" name="" id="">
+<br>
+多选：<input type="checkbox">
+<br>
+上传文件：<input type="file">
+<br>
+单选：<input type="radio" name="sex" id="nan"><label for="nan">男</label>
+<label><input type="radio" name="sex" > 女</label>
+<br>
+<input type="checkbox" checked>
+<br>
+上传文件：<input type="file" multiple>
+
+
+<form action="" >
+    用户名：<input type="text">
+    <br>
+    密码：<input type="password">
+    <br>
+    <input type="submit">
+    <input type="reset">
+    <input type="button" value="按钮">
+</form>
+
+
+<button>我是按钮</button>
+<button type="submit">提交按钮</button>
+<button type="reset">重置按钮</button>
+<button type="button">普通按钮，没有任何功能</button>
+<br>
+<select>
+    <option>北京</option>
+    <option>上海</option>
+    <option>广州</option>
+    <option selected>深圳</option>
+</select>
+</body>
+<br>
+<textarea>
+</textarea>
+<div>这是div标签</div>
+<div>这是div标签</div>
+<span>这是span标签</span>
+<span>这是span标签</span>
+<br>
+<header>网页头部</header>
+<nav>网页导航</nav>
+<footer>网页底部</footer>
+<aside>侧边栏</aside>
+<section>网页区块</section>
+<article>文章</article>
+
+<table border="1" width="500" height="300">
+    <caption><h3>优秀学生信息表格</h3></caption>
+    <tr>
+        <th>年纪</th>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>班级</th>
+    </tr>
+    <tr>
+        <td rowspan="2">高三</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+    </tr>
+    <tr>
+        <!-- <td>1</td> -->
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>评语</td>
+        <td colspan="3">你们很优秀</td>
+    </tr>
+</table>
+<h1>青春不常在，抓紧谈恋爱</h1>
+<hr>
+
+<form action="">
+    昵称：<input type="text" placeholder="请输入昵称">
+    <br>
+    <br>
+    性别：
+    <label><input type="radio" name="sex">男</label>
+    <label><input type="radio" name="sex">女</label>
+    <br>
+    <br>
+    所在城市：
+    <select>
+        <option value="北京">北京</option>
+        <option value="上海" selected>上海 </option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+    </select>
+    <br><br>
+    喜欢的类型：
+    <label><input type="checkbox">可爱</label>
+    <label><input type="checkbox" name="w">性感</label>
+    <label><input type="checkbox">御姐</label>    
+    <br>
+    个人介绍：  <br>
+    <textarea name="" id="" cols="60" rows="10">
+    </textarea>
+    <h3>我承诺</h3>
+    <ul>
+        <li>刚18</li>
+        <li>严肃</li>
+        <li>认真</li>
+    </ul>
+    <input type="submit" value="免费注册">
+    <button type="reset">重置</button>
+</form>
+
+</html>
