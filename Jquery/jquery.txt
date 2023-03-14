@@ -4,3 +4,17 @@ $("p") select <p>
 $("#test") select #id
 
 $(".test") select .class
+
+$("*") select all elements
+$(this) selets the current HTML element
+
+$("p.intro") selects all <p> elements with class="intro"
+$("p:first") Selects the first <p> element
+$("ul li:first") selects the first <li> element of the first <ul>
+$("ul li:first-child") selects the first <li> element of every <ul>
+$("[href]") selects all elements with an href attribute
+$("a[target='_blank']") selects all <a> elements with a target attribute value to "_blank"
+$("a[target!='_blank']") selects all <a> elements with a target attribute value NOT equal to "_blank"
+$(":button") selects all <button> elements and <input> elements of type= "button"
+$("tr:even") select all even <tr> element
+$("tr:odd")  select all odd <tr> elements
