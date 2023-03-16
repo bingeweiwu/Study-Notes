@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: pink; 
+            /* padding-top: 30px; */
+            /* 解决块内margin不生效问题 */
+          overflow: hidden;  
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin-top: 30px;
+        }
+         span{
+            /* 行内标签的padding/margin-top/bottom不生效 */
+            margin:100px;
+         }
+    </style>
+</head>
+<body>    
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    <div>
+      <span>span</span>  
+      <span>span</span>  
+    </div>
+</body>
+</html>
