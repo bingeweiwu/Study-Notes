@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 内减模式 */
+    box-sizing: border-box;    
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clearfix:before, .clearfix::after{
+    content: '';
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+
+body {
+    background-color:#f3f5f7;
+}
+
+/* 版心 */
+.wrapper { 
+    width: 1600px;   
+    margin: 0 auto;
+}
+
+.header{
+    height: 52px; 
+    background-color: #18b3e2;  
+    margin: 5px;
+    
+}
+h1{
+    padding-left: 10%;
+    float: left;
+    width: 35%;
+}
+.header h1 img {
+    width: auto;
+    width: 34px;
+    height: 40px;
+    padding-top: 10px;
+}
+.header h1 a {
+    float: left;
+    padding-left: 10px;
+    line-height: 52px;
+    font-size: 26px;
+    color: white;
+}
+/* 导航 */
+.nav{
+    float: left;
+    height: 52px;    
+    margin-left: 70px;
+}
+
+.nav li{
+    float:left;
+    margin-right: 26px;
+}
+.nav li a{
+    display: inline-block;
+    height: 52px;
+    line-height: 52px;    
+    padding: 0 9px;
+    font-size: 18px;
+    color:#050505;
+}
+.nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+
+/* 搜索 */
+.search{
+    float:left;
+    /* position: absolute;
+    margin:2px 0 4px -0px ; */
+    margin:2px 0 4px 59px ;
+    padding:5px 0;
+    width: 712px;
+    height: 45px;
+    
+}
+
+.search input{
+    width: 500px;
+    height: 38px;
+    float:left;
+    /* border: 0; */
+    padding-left: 20px;
+}
+/* 控制placeholder的样式   */
+.search input::placeholder{
+    font-size: 14px;
+    color:#bfbfbf
+}
+.search button{
+    float: left;
+    Width: 100px;
+    height: 39px;
+    background-color: #5cd669f6;
+    color:white;
+    font-size: 20px;
+    /* background-image: url(../images/btn.png); */
+}
+
+.search button:hover{
+    background-color: #5cd66884;
+}
+
+.user{
+    display: inline-block;
+    padding-right: 10%;
+    float: right;
+    margin-right: 35px;
+    height: 52px;
+    line-height: 52px;
+}
+
+.user img{
+    /* 调节图片垂直对齐方式 */
+    vertical-align: middle;
+    padding-bottom: 3px;
+}
+
+.user span{
+    color:white;
+    font-size: 25px;
+}
+
+.list-category{
+    height: 420px;
+    margin:0 5px;
+    background-color:#f8f8f8;
+}
+.list-category .wrapper {
+        height: 420px;        
+        margin-top: 6px;
+        background-color: rgb(178, 201, 178);
+}
+
+.content{
+    height: 420px;
+    background-color: #7fbfe2;
+}
