@@ -168,6 +168,8 @@ h1{
 
 .list-category .ConditionFilter{
     margin: 5px 12px;
+    height: 40px;
+    line-height: 40px;
 }
 
 /* .list-category .OS-Type span{
