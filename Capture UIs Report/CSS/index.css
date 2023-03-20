@@ -25,7 +25,7 @@ body {
 
 /* 版心 */
 .wrapper { 
-    width: 1600px;   
+    width: 80%;   
     margin: 0 auto;
 }
 
@@ -40,8 +40,7 @@ h1{
     float: left;
     width: 35%;
 }
-.header h1 img {
-    width: auto;
+.header h1 img {    
     width: 34px;
     height: 40px;
     padding-top: 10px;
