@@ -126,7 +126,8 @@ h1{
 .user img{
     /* 调节图片垂直对齐方式 */
     vertical-align: middle;
-    padding-bottom: 3px;
+    padding-right: 4px;
+    padding-bottom: 4px;
 }
 
 .user span{
@@ -135,17 +136,64 @@ h1{
 }
 
 .list-category{
-    height: 420px;
+    height: auto;
     margin:0 5px;
     background-color:#f8f8f8;
 }
 .list-category .wrapper {
-        height: 420px;        
+        height: auto;        
         margin-top: 6px;
-        background-color: rgb(178, 201, 178);
+        /* background-color: rgb(178, 201, 178); */
 }
 
-.content{
-    height: 420px;
-    background-color: #7fbfe2;
+.list-category .category-item{
+    height: 45px;
+    margin: 1px auto;
+    /* background-color: pink; */
+    line-height: 45px;
 }
+
+.list-category span{
+    /* background-color: pink; */
+    float: left;    
+    margin: 0 1px;
+    padding: 0 14px;
+    text-align: center;
+}
+
+ .list-category .Build-Language span{
+    float: left;    
+    padding: 0 14px;
+}
+
+.list-category .ConditionFilter{
+    margin: 5px 12px;
+}
+
+/* .list-category .OS-Type span{
+    float: left;    
+    margin: 0 1px;
+    padding: 0 14px;
+    text-align: center;
+}
+
+.list-category .Rule span{
+    float: left;   
+    margin: 0 1px;
+    padding:0  14px;
+    text-align: center;
+}
+
+.list-category .Result-Type span{
+    float: left;
+    margin: 0 1px;
+    padding: 0 14px;
+    text-align: center;
+}
+
+.list-category .Reviewed-Status span{
+    float: left;
+    margin: 0 1px;
+    padding: 0 14px;
+    text-align: center;
+} */
