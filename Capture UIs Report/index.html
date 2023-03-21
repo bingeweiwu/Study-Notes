@@ -34,10 +34,12 @@
             <span>Mogen Zhang</span>
         </div>
     </div>
+
+    <!-- 条件区 -->
     <div class="list-category">
         <div class="wrapper">
-            <div class="category-item Build-Language"><span>All Build
-                    Language&nbsp;</span>
+            <div class="category-item Build-Language"><span class="one"> Build
+                    Language</span>
                 <span>CHS</span>
                 <span>CHT</span>
                 <span>CSY</span>
@@ -62,7 +64,7 @@
                 <span>TRK</span>
             </div>
             <div class="category-item OS-Type">
-                <span>All OS Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="one"> OS Type</span>
                 <span>Win10</span>
                 <span>Win10 Server</span>
                 <span>Win2012R2Server</span>
@@ -70,9 +72,9 @@
                 <span>Win2k8R2</span>
                 <span>Win7</span>
                 <span>Win8.1</span>
-            </div>            
+            </div>
             <div class="category-item Rule">
-                <span>All Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="one"> Rule</span>
                 <span>Access Key non Duplicate Rule</span>
                 <span>Control Truncation Rule</span>
                 <span>Overlap Rule</span>
@@ -80,44 +82,96 @@
                 <span>Text Truncation Rule</span>
                 <span>Spelling Rule</span>
                 <span>Unlocalization Rule</span>
-            </div>            
+            </div>
             <div class="category-item Result-Type">
-                <span>All Result Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="one"> Result Type</span>
                 <span>Fail</span>
                 <span>Info</span>
                 <span>Pass</span>
                 <span>Warning</span>
             </div>
             <div class="category-item Reviewed-Status">
-                <span>All Reviewed Status&nbsp;</span>
+                <span class="one"> Reviewed Status</span>
                 <span>Reviewed</span>
                 <span>UnReviewed</span>
             </div>
-            <hr style="width:98%">            
-        <div id="ConditionFilter" class="ConditionFilter">
-            Time limit is
-            <select name="selectDays" id="selectDays" class="selectDays">
-                <option value="7">7 days</option>
-                <option value="14">14 days</option>
-                <option value="30">1 month</option>
-                <option value="60">2 months</option>
-                <option value="90">3 months</option>
-                <option value="120" selected="selected">4 months</option>
-                <option value="180">6 months</option>
-                <option value="365">1 year</option>
-                <option value="-1">No limit</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="showLatest"  value="Show Latest Build" name="showLatest" checked="checked" />Show Latest Result
-        </div>
+            <hr style="width:98%">
+            <div id="ConditionFilter" class="ConditionFilter">
+                Time limit is
+                <select name="selectDays" id="selectDays" class="selectDays">
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                    <option value="30">1 month</option>
+                    <option value="60">2 months</option>
+                    <option value="90">3 months</option>
+                    <option value="120" selected="selected">4 months</option>
+                    <option value="180">6 months</option>
+                    <option value="365">1 year</option>
+                    <option value="-1">No limit</option>
+                </select>
+                <input type="checkbox" id="showLatest" value="Show Latest Build" name="showLatest"
+                    checked="checked" />Show Latest Result
+            </div>
         </div>
     </div>
+
+    <!-- 内容区 -->
     <div class="content wrapper">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="ResultsTableContainer" class="ResultsTableContainer">
+            <table id="ResultsTable" class="ResultsTable">
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col style="min-width: auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <col width="auto;" />
+                <thead>
+                    <tr>
+                        <th>Row ID
+                        </th>
+                        <th>Build No.
+                        </th>
+                        <th>Build Language
+                        </th>
+                        <th>Rule Name
+                        </th>
+                        <th>Result
+                        </th>
+                        <th>Page Title
+                        </th>
+                        <th>User Name
+                        </th>
+                        <th>OS Type
+                        </th>
+                        <th>Build Same OS
+                        </th>
+                        <th>Date Uploaded (UTC)
+                        </th>
+                        <th>Date Checked (UTC)
+                        </th>
+                        <th>Reviewed
+                            <br />
+                            <input type="checkbox" id="ckbReviewBugs" onclick="selectAllToReview(this)" />
+                        </th>
+                        <th>Comments
+                        </th>
+                        <th>Select All<br />
+                            <input type="checkbox" id="ckbFileMultiBugs" onclick="selectAllToFileBug(this)" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="ResultsBody">
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 

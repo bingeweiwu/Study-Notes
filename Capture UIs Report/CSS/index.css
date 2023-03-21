@@ -160,15 +160,31 @@ h1{
     text-align: center;
 }
 
- .list-category .Build-Language span{
-    float: left;    
-    padding: 0 14px;
+.list-category .one{
+    width: 140px;
+    height: 45px;
+    text-align: left;
+}
+
+.content{
+    margin-top: 10px;
 }
 
 .list-category .ConditionFilter{
     margin: 5px 12px;
     height: 40px;
     line-height: 40px;
+}
+.content .ResultsTableContainer tr{
+   
+    background-color: #f8f8f8;
+}
+.content .ResultsTableContainer tr th{
+    width: 200px;
+    height: 45px;    
+    line-height: 30px;
+    padding: auto 10px;
+    color:black;
 }
 
 /* .list-category .OS-Type span{
