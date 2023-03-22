@@ -29,7 +29,7 @@ body {
 
 /* 版心 */
 .wrapper {
-    width: 80%;
+    width: 1544px;
     margin: 0 auto;
 }
 
@@ -42,6 +42,7 @@ body {
 }
 
 .header .logo {
+    cursor: pointer;
     position: absolute;
     left: 10%;
 }
@@ -50,14 +51,18 @@ body {
     width: 34px;
     height: 40px;
     padding-top: 10px;
+    line-height: 40px;
 }
 
-.header h1 a {
-    float: left;
-    padding-left: 10px;
-    line-height: 52px;
+.header h1 span{ 
+    position: absolute;
+    top: 10%;
+    width: 232px;
+    padding-left: 10px;    
+    line-height: 40px;
     font-size: 26px;
     color: white;
+    
 }
 
 /* 导航 */
@@ -100,6 +105,7 @@ body {
     width: 400px;
     height: 42px;
     border: 0;
+    vertical-align: middle;
 }
 
 /* 控制placeholder的样式   */
@@ -167,9 +173,9 @@ body {
 
 .list-category span {
     /* background-color: pink; */
-    float: left;
+    /* float: left; */
     margin: 0 1px;
-    padding: 0 14px;
+    padding: 0 13px;
     text-align: center;
 }
 
