@@ -44,7 +44,7 @@ body {
 .header .logo {
     cursor: pointer;
     position: absolute;
-    left: 10%;
+    left: 9%;
 }
 
 .header h1 img {
@@ -132,7 +132,7 @@ body {
 
 .user {
     position: absolute;
-    left: 80%;
+    left: 81%;
     display: inline-block;
     height: 52px;
     line-height: 52px;
@@ -175,7 +175,7 @@ body {
     /* background-color: pink; */
     /* float: left; */
     margin: 0 1px;
-    padding: 0 13px;
+    padding: 0 28px 0 0;
     text-align: center;
 }
 
@@ -191,13 +191,15 @@ body {
 }
 
 .list-category .ConditionFilter {
-    margin: 5px 12px;
+    margin: 5px 0px;
     height: 40px;
     line-height: 40px;
 }
 
-.content .ResultsTableContainer tr {
-
+/* .content .ResultsTableContainer {
+    width: 1500px;
+} */
+.content .ResultsTableContainer tr {    
     background-color: #f8f8f8;
 }
 
