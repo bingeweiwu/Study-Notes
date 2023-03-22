@@ -2,49 +2,56 @@
     margin: 0;
     padding: 0;
     /* 内减模式 */
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
-li{
+li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.clearfix:before, .clearfix::after{
+
+.clearfix:before,
+.clearfix::after {
     content: '';
     display: table;
 }
-.clearfix::after{
+
+.clearfix::after {
     clear: both;
 }
 
 body {
-    background-color:#f3f5f7;
+    background-color: #f3f5f7;
 }
 
 /* 版心 */
-.wrapper { 
-    width: 80%;   
+.wrapper {
+    width: 80%;
     margin: 0 auto;
 }
 
-.header{
-    height: 52px; 
-    background-color: #18b3e2;  
+.header {
+    position: relative;
+    height: 52px;
+    background-color: #18b3e2;
     margin: 5px;
-    
+
 }
-h1{
-    padding-left: 10%;
-    float: left;
-    width: 35%;
+
+.header .logo {
+    position: absolute;
+    left: 10%;
 }
-.header h1 img {    
+
+.header h1 img {
     width: 34px;
     height: 40px;
     padding-top: 10px;
 }
+
 .header h1 a {
     float: left;
     padding-left: 10px;
@@ -52,168 +59,158 @@ h1{
     font-size: 26px;
     color: white;
 }
+
 /* 导航 */
-.nav{
+.nav {
     float: left;
-    height: 52px;    
+    height: 52px;
     margin-left: 70px;
 }
 
-.nav li{
-    float:left;
+.nav li {
+    float: left;
     margin-right: 26px;
 }
-.nav li a{
+
+.nav li a {
     display: inline-block;
     height: 52px;
-    line-height: 52px;    
+    line-height: 52px;
     padding: 0 9px;
     font-size: 18px;
-    color:#050505;
+    color: #050505;
 }
-.nav li a:hover{
+
+.nav li a:hover {
     border-bottom: 2px solid #00a4ff;
 }
 
 /* 搜索 */
-.search{
-    float:left;
-    /* position: absolute;
-    margin:2px 0 4px -0px ; */
-    margin:2px 0 4px 59px ;
-    padding:5px 0;
-    width: 712px;
-    height: 45px;    
+.search {
+    position: absolute;
+    right: 50%;
+    width: 550px;
+    height: 45px;
+    transform: translate(58%, -1%);
+    padding: 5px 0;
+    vertical-align: middle;
 }
 
-.search input{
-    width: 500px;
-    height: 38px;
-    float:left;
-    /* border: 0; */
-    padding-left: 20px;
+.search input {
+    width: 400px;
+    height: 42px;
+    border: 0;
 }
+
 /* 控制placeholder的样式   */
-.search input::placeholder{
+.search input::placeholder {
     font-size: 14px;
-    color:#bfbfbf
+    color: #bfbfbf
 }
-.search button{
-    float: left;
+
+.search button {
+    /* float: left; */
     Width: 100px;
-    height: 39px;
+    height: 42px;
     background-color: #5cd669f6;
-    color:white;
+    color: white;
     font-size: 20px;
+    vertical-align: middle;
+    border: 0;
     /* background-image: url(../images/btn.png); */
 }
 
-.search button:hover{
+.search button:hover {
     background-color: #5cd66884;
 }
 
-.user{
+.user {
+    position: absolute;
+    left: 80%;
     display: inline-block;
-    padding-right: 10%;
-    float: right;
-    margin-right: 35px;
     height: 52px;
     line-height: 52px;
 }
 
-.user img{
+.user img {
     /* 调节图片垂直对齐方式 */
     vertical-align: middle;
     padding-right: 4px;
     padding-bottom: 4px;
 }
 
-.user span{
-    color:white;
+.user span {
+    color: white;
     font-size: 25px;
 }
 
-.list-category{
+.list-category {
+    position: relative; 
     height: auto;
-    margin:0 5px;
-    background-color:#f8f8f8;
-    box-shadow: 0px 2px 3px 0px
-    rgba(118,118,118,0.2);
-}
-.list-category .wrapper {
-        height: auto;        
-        margin-top: 6px;
-        /* background-color: rgb(178, 201, 178); */
+    margin: 0 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
 }
 
-.list-category .category-item{
+.list-category .wrapper {
+    height: auto;
+    margin-top: 6px;
+    /* background-color: rgb(178, 201, 178); */
+}
+
+.list-category .category-item {
     height: 45px;
     margin: 1px auto;
     /* background-color: pink; */
     line-height: 45px;
 }
 
-.list-category span{
+.list-category span {
     /* background-color: pink; */
-    float: left;    
+    float: left;
     margin: 0 1px;
     padding: 0 14px;
     text-align: center;
 }
 
-.list-category .one{
+.list-category .one {
     width: 140px;
     height: 45px;
     text-align: left;
 }
 
-.content{
+.content {
     margin-top: 10px;
-    box-shadow: 1px 1px 4px 2px 
-    rgba(118,118,118,0.2);
+    box-shadow: 1px 1px 4px 2px rgba(118, 118, 118, 0.2);
 }
 
-.list-category .ConditionFilter{
+.list-category .ConditionFilter {
     margin: 5px 12px;
     height: 40px;
     line-height: 40px;
 }
-.content .ResultsTableContainer tr{
-   
+
+.content .ResultsTableContainer tr {
+
     background-color: #f8f8f8;
 }
-.content .ResultsTableContainer tr th{
+
+.content .ResultsTableContainer tr th {
     width: 200px;
-    height: 45px;    
+    height: 45px;
     line-height: 30px;
     padding: auto 10px;
-    color:black;
+    color: black;
 }
 
-/* .list-category .OS-Type span{
-    float: left;    
-    margin: 0 1px;
-    padding: 0 14px;
-    text-align: center;
+.content .ResultsTableContainer .ResultsTable .lineheader {
+    background-color: rgba(191, 228, 211, .1);
 }
 
-.list-category .Rule span{
-    float: left;   
-    margin: 0 1px;
-    padding:0  14px;
-    text-align: center;
+.content .ResultsTableContainer .ResultsTable .textMessage {
+    white-space: pre-line;
+    width: 100%;
+    margin: 5px 0 10px 28px;
+    font-size: 18px;
+    font-weight: 400;
 }
-
-.list-category .Result-Type span{
-    float: left;
-    margin: 0 1px;
-    padding: 0 14px;
-    text-align: center;
-}
-
-.list-category .Reviewed-Status span{
-    float: left;
-    margin: 0 1px;
-    padding: 0 14px;
-    text-align: center;
-} */
