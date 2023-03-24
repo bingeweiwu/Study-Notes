@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/jQuery.mini.js"></script>
+    <style>
+        /* div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        } */
+    </style>
+</head>
+<body>
+    <div>我是div</div>
+    <div class="nav">我是nav div</div>
+    <p>我是p</p>
+    <ol>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+        <li>我是ol 的</li>
+    </ol>
+    <ul>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+        <li>我是ul 的</li>
+    </ul>
+    <div class="nav">
+        <p>我是p</p>
+    </div>
+    <script>
+        // $(function(){
+        //     console.log($(".nav"));
+        //     console.log($("ul li"));
+        // })
+        // $("div").css("background","pink");
+        // $("ul li:first").css("color","red");
+        // $("ol li:odd").css("color","red");
+        // $("ul li:even").css("color","red");
+        // $("ul li:eq(3)").css("color","skyblue");
+        $(function(){
+            // console.log($(".son").parent());
+            // $(".nav").children("p").css("color","red");
+            $(".nav").find("p").css("color","red");
+        });
+    </script>
+</body>
+</html>
