@@ -160,6 +160,7 @@ body {
     margin: 0 5px;
     background-color: #f8f8f8;
     box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+    cursor: pointer;
 }
 
 .list-category .wrapper {
@@ -183,10 +184,16 @@ body {
     text-align: center;
 }
 
-.list-category .one {
+.list-category .All {
     width: 140px;
     height: 45px;
     text-align: left;
+}
+
+.category-item  .Tag.selected{
+    color:#18b3e2;
+    /* background-color: rgba(191, 228, 211, .1); */
+    
 }
 
 .content {

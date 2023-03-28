@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .multiselect {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .multiselect .option {
+            display: inline-block;
+            padding: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .multiselect .option.selected {
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // 当span标签被单击时
+            $(".multiselect .option").click(function () {
+                // 切换选中状态
+                $(this).toggleClass("selected");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="multiselect">
+        <span class="option">Option 1</span>
+        <span class="option">Option 2</span>
+        <span class="option">Option 3</span>
+        <span class="option">Option 4</span>
+    </div>
+</body>
+
+</html>
