@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="53df3ad7f212417b8741d9b8302af4e5" Name="Diagram1">
+        <EntityTypeShape EntityType="SulpHurModel.AssemblyInfo" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.AssemblyLink" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.bug_surface" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.BugLink" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.bug" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.BuildInfo" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.BuildType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.BuildVersionMap" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.Client" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.DeletedContent" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.DeletedContentsTemp" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_abnormalButNoImpact" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_exceptionPageTitle" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_nonEnglishButtonName" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_normalPunctuation" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_pageExceptionType" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_properNoun" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck_regexString" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.Language" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Assemblies" Width="1.5" PointX="13" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_AssociationAssembly" Width="1.5" PointX="15.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Cache" Width="1.5" PointX="16" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_CacheLanguage" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Details" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Employers" Width="1.5" PointX="10.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Features" Width="1.5" PointX="10.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_FilteredStrs" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_MainReport" Width="1.5" PointX="18.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_Status" Width="1.5" PointX="15.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_StringBuilds" Width="1.5" PointX="12.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LCX_StringDetails" Width="1.5" PointX="15" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.LogException" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.NonEnglishWordsButEnglishLetter" Width="1.5" PointX="4.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.OverlapRuleFilter" Width="1.5" PointX="10.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.ProviderDiffResult" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.Result" Width="1.5" PointX="11.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.Rule" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.RuleStatu" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.SpellFilter" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.SpellIgnore" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.surface" Width="1.5" PointX="10.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.sysdiagram" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.TestTable" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.TextTruncationRuleFilter" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.UIContent" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.UITrace" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.User" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.VSOServer" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.WordsSharedWithEnglish" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.ControlTruncationRuleChildAndParentFilter" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.DeletedAssemblyLink" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellCheck" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.FilterSpellingCheck" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.NonEnglishButtonName" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.OverlapRuleChildAndParentFilter" Width="1.5" PointX="21.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.ResultsBack" Width="1.5" PointX="6.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.temp_bug_surface" Width="1.5" PointX="21.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.temp_bugs" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SulpHurModel.VerticalSortPageNameList" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <AssociationConnector Association="SulpHurModel.FK_AssemblyLink_AssemblyInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_AssemblyLink_UIContents" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_bug_surface_bugs" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_bug_surface_surfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_BugLink_UIContents" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LogException_BuildInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_UIContents_BuildInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LogException_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_UIContents_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_Assemblies_LCX_Employers" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_Assemblies_LCX_Features" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_AssociationAssembly_LCX_Assemblies" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_AssociationAssembly_LCX_Assemblies1" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_MainReport_LCX_Assemblies" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_MainReport_LCX_Cache" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_LCX_StringDetails_LCX_StringBuilds" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_Results_Rules" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_Results_UIContents" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_RuleStatus_Rules" ManuallyRouted="false" />
+        <AssociationConnector Association="SulpHurModel.FK_RuleStatus_UIContents" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
