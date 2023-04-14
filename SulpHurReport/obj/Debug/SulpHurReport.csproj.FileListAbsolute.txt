@@ -69,3 +69,5 @@ F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurReport\obj\Debug\SulpHur
 F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurReport\obj\Debug\SulpHurReport.csproj.CopyComplete
 F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurReport\obj\Debug\SulpHurReport.dll
 F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurReport\obj\Debug\SulpHurReport.pdb
+D:\study-notes\SulpHurReport\obj\Debug\SulpHurReport.dll
+D:\study-notes\SulpHurReport\obj\Debug\SulpHurReport.pdb
