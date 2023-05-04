@@ -61,11 +61,11 @@ namespace SulpHurReport
                             // Set user profile image source to relative path of user image
                             if (string.IsNullOrEmpty(userImageLink))
                             {
-                               // UserProfileImage.ImageUrl = "~/Images/user.png";
+                                UserProfileImage.ImageUrl = "~/Images/user.png";
                             }
                             else
                             {
-                                //SUserProfileImage.ImageUrl = "~/"+userImageLink;
+                                UserProfileImage.ImageUrl = "UserImages/" + alias + ".png";
                             }
                         }
                     }

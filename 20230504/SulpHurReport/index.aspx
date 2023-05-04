@@ -31,9 +31,9 @@
         <!-- 用户 -->
         <div class="user">
             <%--<img src=".\Images\v-mogenzhang.png" alt="User Profile"/>--%>
-            <img src="UserImages/v-mogenzhang.png" alt="User Profile"/>
+            <%--<img src="UserImages/v-mogenzhang.png" alt="User Profile"/>--%>
             <%--<img src="imgs/default.png" alt="User Profile"/>--%>
-            <%--<asp:Image ID="UserProfileImage" runat="server" />--%>
+            <asp:Image ID="UserProfileImage" runat="server" />
             <asp:Label ID="UserName" runat="server" CssClass="username"></asp:Label>
             <asp:Label ID="lnkCurrentUserAlias" runat="server" style="display:none"></asp:Label>
         </div>
@@ -156,7 +156,7 @@
             <div class="Prompt-Message" id="Prompt-Message">
                 The Results will be automatically presented later.
             </div>
-            <div id="GridMenu" class="PopupMenu" style="border: solid 1px #c3c3c3;">
+            <div id="GridMenu" class="PopupMenu" style="border: solid 1px #c3c3c3;display:none;">
                 <ul>
                     <li id="MenuCopyResultID">Copy ResultID</li>
                     <li id="MenuCopyPageTitle">Copy page title</li>

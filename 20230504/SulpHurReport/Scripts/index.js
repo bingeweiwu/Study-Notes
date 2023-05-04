@@ -90,7 +90,7 @@ var languageOptions;
 var languageValues;
 
 function goToHomePage() {
-    window.location.href = "http://localhost:53832/index.aspx";
+    window.location.href = "http://azuresulphur1/CaptureUIsReport/";
 }
 
 
