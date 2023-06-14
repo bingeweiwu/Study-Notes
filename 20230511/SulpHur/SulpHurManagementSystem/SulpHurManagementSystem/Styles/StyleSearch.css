@@ -1,0 +1,680 @@
+﻿/**************************** Common ****************************/
+.reviewchk {
+}
+
+.Loading-Image {
+    width: 20px;
+    height: 20px;
+}
+
+body {
+    font-size: 10pt;
+    font-family: Verdana, Arial, sans-serif;
+    margin: 0;
+}
+
+.Prompt-Message {
+    text-align: center;
+    border: 1px solid #EA7509;
+    width: 200px;
+    margin-left: 500px;
+    float: left;
+    clear: both;
+    color: #4888F0;
+    padding: 10px;
+}
+
+/*v-danpgu Filebug*/
+.img-Loading {
+    border: 1px solid #ddd;
+    width: 64px;
+    height: 64px;
+    left: 700px;
+    clear: both;
+    position: absolute;
+    top: 400px;
+    background: url("../Images/loading.gif") no-repeat;
+    z-index: 9999;
+}
+
+/**************************** Content Menu ****************************/
+#Screenshot {
+    width: 100%;
+    height: 100%;
+}
+
+#Row_DetailInfo {
+    display: none;
+}
+
+    #Row_DetailInfo div {
+        color: blue;
+    }
+
+    #Row_DetailInfo #LogMessage {
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+
+/**************************** Page Header ****************************/
+#PageHeader {
+    font-family: "Open Sans", "sans-serif";
+    margin-bottom: 5px;
+    background-color: rgb(240, 240, 240);
+    color: blue;
+    height: 30px;
+    border: 0;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-left: 40px;
+    vertical-align: central;
+}
+
+    #PageHeader a {
+        text-decoration: none;
+    }
+
+.divTitle > .divNavigator {
+    width: 50%;
+    display: inline-block;
+}
+
+.divTitle > .divUserInfo {
+    width: 50%;
+    display: inline;
+}
+
+/* Page Body */
+#PageBody {
+    padding: 10px 0px 10px 0px;
+    width: 1200px;
+    margin: 0 auto;
+    clear: both;
+}
+
+/**************************** Search Conditions ****************************/
+.ConvinenceTag {
+    background-color: White;
+    border: 1 solid #4888f0;
+    color: Red;
+    float: left;
+    padding: 3px;
+    margin: 1px 0px 1px 10px;
+}
+
+.HaveSelected {
+    margin: 2px 15px 5px 0px;
+    clear: both;
+    border: 1px solid gray;
+    background-color: rgb(255, 251, 204);
+    padding: 5px;
+    display: none;
+    float: left;
+}
+
+    .HaveSelected b {
+        display: block;
+        float: left;
+        margin: 1px 0px 1px 0px;
+    }
+
+.CustomSelect {
+    width: 200px;
+}
+
+#SearchCondition {
+    width: inherit;
+    height: auto;
+}
+
+.LargeListTd {
+    width: 838px;
+    max-height: 150px;
+    overflow: auto;
+    float: left;
+    clear: both;
+}
+
+.ShowMoreContainer div {
+    float: left;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.td-topAlign {
+    vertical-align: top;
+}
+
+.ShowMoreContainer {
+    color: #808080;
+    cursor: pointer;
+    font-family: tahoma,arial;
+    font-size: 13px;
+    display: block;
+    float: left;
+    margin-top: 0px;
+}
+
+    .ShowMoreContainer img {
+        width: 13px;
+        height: 13px;
+        float: left;
+    }
+
+    .ShowMoreContainer span {
+        display: block;
+        float: left;
+    }
+
+#SearchBody {
+    position: relative;
+    margin-top: 10px;
+    clear: both;
+    border-top: 4px solid #4888F0;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#SearchTitle {
+    height: 34px;
+    border: 1px solid grey;
+}
+
+    #SearchTitle a {
+        float: right;
+        display: block;
+        margin: 6px 10px auto auto;
+    }
+
+    #SearchTitle p {
+        display: block;
+        float: left;
+        margin-top: 6px;
+    }
+
+    #SearchTitle span {
+        height: 34px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+.Expand-Collpase-Icon {
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid grey;
+}
+
+#ConditionTable {
+    border: 0;
+    width: 1190px;
+}
+
+    #ConditionTable td {
+        padding: 2px;
+    }
+    /* Set First Column 200px */
+    #ConditionTable tr td:first-child {
+        text-align: right;
+        width: 200px;
+    }
+
+        #ConditionTable tr td:first-child + td {
+            width: 840px;
+        }
+            /* Set Third Column 150px */
+            #ConditionTable tr td:first-child + td + td {
+                width: 150px;
+            }
+
+        #ConditionTable tr td:first-child + td {
+            color: #0063dc;
+        }
+
+.SelectedTag {
+    color: Red;
+}
+
+.Tag {
+    cursor: pointer;
+    margin-right: 10px;
+    display: block;
+    float: left;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.Tag:hover {
+    text-decoration: underline;
+}
+
+.Modern-Button {
+    text-align: center;
+    width: 100px;
+    height: 28px;
+    background: #4888F0;
+    border: 0;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+    .Modern-Button:hover {
+        background: #FF9900;
+        cursor: pointer;
+    }
+
+#ButtonContainer {
+    padding: 5px 0 5px 5px;
+    background-color: #F2F2F2;
+}
+
+#btnExportUIDiffReport {
+    width: auto
+}
+/**************************** Condition Filter ****************************/
+#ConditionFilter {
+    position: relative;
+    margin-top: 10px;
+    clear: both;
+    border-top: 2px solid #4888F0;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    background-color: rgb(255, 251, 204);
+    padding: 5px;
+    height: 25px;
+}
+
+/**************************** Results ****************************/
+.icon-btn {
+    background-position: 0px -400px;
+    width: 58px;
+    border: 1px solid #5d9cdf;
+    background: #e6f2fe;
+    padding: 2px 2px;
+}
+
+#PageNavigation {
+    float: left;
+    display: none;
+    width: 1000px;
+    margin: 10,0,20,0;
+    padding: 6px 0px;
+    height: 20px;
+    color: #999;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+    #PageNavigation div {
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        margin: 0px 2px;
+        padding: 2px 4px;
+    }
+
+.PageTag {
+    cursor: pointer;
+    display: inline;
+    line-height: 20px;
+    margin: 0px 1px;
+    border: 1px solid #5d9cdf;
+    padding: 2px 2px;
+    background: #e6f2fe;
+}
+
+.SelectedPageIndex {
+    background: #a9d2ff;
+    padding: 2px 6px;
+    font-weight: bold;
+    margin: 0px 2px;
+}
+
+#Results {
+    font: 12px Helvetica, arial, sans-serif;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+    #Results table {
+        table-layout: fixed;
+        width: 1195px;
+    }
+
+#GroupDetails {
+    table-layout: fixed;
+    width: 1180px;
+    display: none;
+}
+
+#ResultsTableContainer {
+    border: 1px solid grey;
+    margin: 0 auto;
+    clear: both;
+    width: 1195px;
+    float: left;
+}
+
+.tdCss {
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 2px;
+}
+
+#Results table thead {
+    background: #dddddd;
+    color: #000000;
+    height: 30px;
+}
+
+#Results table tr {
+    height: 25px;
+}
+
+.even {
+    background: #e5f1f4;
+    color: #000000;
+}
+
+.odd {
+    background-color: #f8fbfc;
+    color: #000000;
+}
+
+.Selected-Tr {
+    background-color: #bce774;
+    color: #333333;
+}
+
+.TrOver {
+    background-color: #ecfbd4;
+    color: #000000;
+}
+
+.Tr-Click {
+    background-color: #bce774;
+    color: #333333;
+}
+/**************************** Menu ****************************/
+#ZoomInImageBlock {
+    overflow: hidden;
+}
+
+    #ZoomInImageBlock > [name=Title] {
+        width: 100%;
+        text-align: left;
+        font-size: medium;
+        font-weight: bolder;
+        color: Black;
+    }
+
+    #ZoomInImageBlock > [name=LogMessage] {
+        width: auto;
+        text-align: left;
+        color: Blue;
+    }
+
+    #ZoomInImageBlock > img {
+        text-align: center;
+        cursor: url(Images/ZoomOut.ico), pointer;
+    }
+
+    #ZoomInImageBlock > div {
+        margin: 10px 0 10px 0;
+    }
+
+#ReproStepsDialog {
+    overflow: hidden;
+}
+
+    #ReproStepsDialog input[type=text], textarea {
+        border: 0px;
+        background-color: transparent;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+        #ReproStepsDialog input:hover, textarea:hover {
+            background-color: #f4f4f4;
+        }
+
+        #ReproStepsDialog input:focus, textarea:focus {
+            background-color: White;
+        }
+
+.image-block {
+    width: 300px;
+    height: 300px;
+    background: White;
+    border: 1px solid gray;
+    display: none;
+}
+
+    .image-block:hover {
+        background-color: #D1E9FB;
+    }
+
+    .image-block > [name=Title] {
+        width: auto;
+        text-align: left;
+        font-weight: bolder;
+        color: Black;
+        padding: 0 5px 0 5px;
+    }
+
+    .image-block > [name=LogMessage] {
+        width: 100%;
+        text-align: left;
+        color: Blue;
+    }
+
+    .image-block > img {
+        cursor: url(Images/ZoomIn.ico), pointer;
+    }
+
+.alginment-row {
+    width: 100%;
+}
+
+    .alginment-row > * {
+        float: left;
+    }
+
+    .alginment-row > br {
+        float: none;
+        clear: both;
+    }
+
+#PopupContainer {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    background: #b6b7bc;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+    #PopupContainer > .TitleBar {
+        background: #3a4f63;
+        color: White;
+    }
+
+        #PopupContainer > .TitleBar > #Title {
+            font-weight: bolder;
+            font-size: medium;
+            text-align: left;
+            line-height: 200%;
+            float: left;
+        }
+
+        #PopupContainer > .TitleBar br {
+            clear: both;
+        }
+
+        #PopupContainer > .TitleBar img {
+            border: 1px solid #3a4f63;
+        }
+
+            #PopupContainer > .TitleBar img:hover {
+                border: 1px solid #4E667D;
+            }
+
+    #PopupContainer #Body {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        #PopupContainer #Body #Content {
+            width: 1208px;
+            height: 100%;
+            background-color: White;
+            border: 1px solid gray;
+            margin: 0 auto;
+            word-wrap: break-word;
+            word-break: keep-all;
+        }
+
+#CompareWithConditionTable {
+    border: 0;
+    width: 800px;
+}
+
+    #CompareWithConditionTable td {
+        padding: 2px;
+    }
+    /* Set First Column 200px */
+    #CompareWithConditionTable tr td:first-child {
+        text-align: right;
+        width: 100px;
+    }
+        /* Set Third Column 150px */
+        #CompareWithConditionTable tr td:first-child + td + td {
+            width: 100px;
+        }
+
+        #CompareWithConditionTable tr td:first-child + td {
+            color: #0063dc;
+        }
+
+.PopupWindow {
+    padding: 0 10px 0 10px;
+    background-color: White;
+    border: 1px solid gray;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    display: none;
+    width: 300px;
+}
+
+    .PopupWindow > div {
+        width: 100%;
+        margin: 20px 0px 20px 0px;
+    }
+
+    .PopupWindow > .ButtonPanel {
+        text-align: center;
+        width: 100%;
+    }
+
+    .PopupWindow * {
+        font-size: 12px;
+    }
+
+#ScreenLocker {
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    background: #000000;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+
+.SubMenu {
+    background-image: url(Images/submenu_arrow.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.PopupMenu {
+    width: auto;
+    height: auto;
+    border: 1px solid gray;
+    display: none;
+    position: absolute;
+    background-color: White;
+    padding: 5px 0px 5px 0px;
+}
+
+    .PopupMenu:hover {
+        cursor: default;
+    }
+
+    .PopupMenu ul {
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .PopupMenu ul li {
+            width: auto;
+            height: auto;
+            margin: 0px;
+            list-style: none;
+            padding: 2px 10px 2px 10px;
+            color: Black;
+            font-size: 13px;
+        }
+
+    .PopupMenu li:hover {
+        cursor: default;
+        background-color: Navy;
+        color: White;
+    }
+
+    .PopupMenu ul .MenuItemSeparator {
+        height: 0;
+        border: 0px;
+        border-top: 1px solid gray;
+    }
+
+#RelatedBugsSubMenu {
+    width: 600px;
+    line-height: 150%;
+}
+
+    #RelatedBugsSubMenu ul li {
+        word-break: keep-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+/*v-danpgu*/
+/**************************** Expand All Button Disabled Style ****************************/
+.DisabledExpandButton:hover {
+    background-color: gray;
+    cursor: default;
+}
+/**************************** Search User Name Disabled Style ****************************/
+.DisableUserName:hover {
+    background-color: gray;
+    cursor: default;
+}

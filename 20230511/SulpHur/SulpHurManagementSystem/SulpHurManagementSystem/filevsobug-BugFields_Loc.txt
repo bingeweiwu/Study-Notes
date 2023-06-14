@@ -1,0 +1,14 @@
+title,$title$
+feedback type,$issuetype$
+sub feedback type,"Code, Layout, Format"
+assigned to,$assignedto$
+created by,$assignedto$
+area path,CEINTL\SW\Enterprise Mobility (ECM)\ConfigMgr (SCCM)
+iteration path,CEINTL\BACKLOG
+loc priority,2
+language,$language$
+found in build,$foundinbuild$
+how found item,Automated test case
+repro steps,$reprosteps$
+description,$description$
+tags,$tags$

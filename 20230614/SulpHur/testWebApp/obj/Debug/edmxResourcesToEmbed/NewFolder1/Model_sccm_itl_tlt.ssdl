@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCCM_ITL_TLTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SH_People">
+    <Key>
+      <PropertyRef Name="Alias" />
+    </Key>
+    <Property Name="Alias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Office" Type="nvarchar" MaxLength="256" />
+    <Property Name="Telephone" Type="varchar" MaxLength="256" />
+    <Property Name="OrgPath" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="ImageLink" Type="varchar" MaxLength="256" />
+    <Property Name="AliasDomain" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="256" />
+    <Property Name="ID" Type="uniqueidentifier" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserPrincipalName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TeamsUserID" Type="varchar" MaxLength="255" />
+    <Property Name="TeamsConversationID" Type="varchar" MaxLength="255" />
+    <Property Name="Avatars" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="SCCM_ITL_TLTModelStoreContainer">
+    <EntitySet Name="SH_People" EntityType="Self.SH_People" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

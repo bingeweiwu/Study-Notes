@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FilterSpellCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regexString" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="properNoun" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nonEnglishButtonName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="pageExceptionType" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="exceptionPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="excludeTextDetectPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="normalPunctuation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="reserve2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ZMogenDebugSulpHurEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FilterSpellChecks" EntityType="Self.FilterSpellCheck" />
+    <EntitySet Name="Results" EntityType="SulpHurModel.Result" />
+    <EntitySet Name="Rules" EntityType="SulpHurModel.Rule" />
+    <EntitySet Name="UIContents" EntityType="SulpHurModel.UIContent" />
+    <AssociationSet Name="FK_Results_Rules" Association="SulpHurModel.FK_Results_Rules">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="SulpHurModel.FK_Results_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
+    <EntitySet Name="RuleStatus" EntityType="SulpHurModel.RuleStatu" />
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="SulpHurModel.FK_RuleStatus_Rules">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="RuleStatu" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="SulpHurModel.FK_RuleStatus_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="RuleStatu" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="SulpHurModel.FilterSpellCheck_exceptionPageTitle" />
+    <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle" />
+    <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="SulpHurModel.FilterSpellCheck_nonEnglishButtonName" />
+    <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="SulpHurModel.FilterSpellCheck_normalPunctuation" />
+    <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="SulpHurModel.FilterSpellCheck_pageExceptionType" />
+    <EntitySet Name="FilterSpellCheck_properNoun" EntityType="SulpHurModel.FilterSpellCheck_properNoun" />
+    <EntitySet Name="FilterSpellCheck_regexString" EntityType="SulpHurModel.FilterSpellCheck_regexString" />
+    <EntitySet Name="BuildInfoes" EntityType="SulpHurModel.BuildInfo" />
+    <AssociationSet Name="FK_UIContents_BuildInfo" Association="SulpHurModel.FK_UIContents_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfoes" />
+      <End Role="UIContent" EntitySet="UIContents" />
+    </AssociationSet>
+    <EntitySet Name="WordsSharedWithEnglishes" EntityType="SulpHurModel.WordsSharedWithEnglish" />
+  </EntityContainer>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="RelatedControls" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RuleID" Type="Int32" Nullable="false" />
+    <Property Name="ResultType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ResultImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ResultLog" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReviewFlag" Type="Int32" />
+    <Property Name="ReviewLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Rule" Relationship="SulpHurModel.FK_Results_Rules" FromRole="Result" ToRole="Rule" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_Results_UIContents" FromRole="Result" ToRole="UIContent" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="RuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RulePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RuleDesc" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AssemblyInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsObsoluted" Type="Boolean" />
+    <NavigationProperty Name="Results" Relationship="SulpHurModel.FK_Results_Rules" FromRole="Rule" ToRole="Result" />
+    <NavigationProperty Name="RuleStatus" Relationship="SulpHurModel.FK_RuleStatus_Rules" FromRole="Rule" ToRole="RuleStatu" />
+  </EntityType>
+  <EntityType Name="UIContent">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUID" Type="Guid" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="BuildID" Type="Int32" Nullable="false" />
+    <Property Name="UIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIContent1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIScreenShot" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsWebUI" Type="Boolean" Nullable="false" />
+    <Property Name="DateUploaded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TraceID" Type="Int32" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchedFrom" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="WindowHierarchy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Results" Relationship="SulpHurModel.FK_Results_UIContents" FromRole="UIContent" ToRole="Result" />
+    <NavigationProperty Name="RuleStatus" Relationship="SulpHurModel.FK_RuleStatus_UIContents" FromRole="UIContent" ToRole="RuleStatu" />
+    <NavigationProperty Name="BuildInfo" Relationship="SulpHurModel.FK_UIContents_BuildInfo" FromRole="UIContent" ToRole="BuildInfo" />
+  </EntityType>
+  <Association Name="FK_Results_Rules">
+    <End Type="SulpHurModel.Rule" Role="Rule" Multiplicity="1" />
+    <End Type="SulpHurModel.Result" Role="Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.Result" Role="Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RuleStatu">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="RuleID" Type="Int32" Nullable="false" />
+    <Property Name="RuleStatus" Type="Boolean" />
+    <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Rule" Relationship="SulpHurModel.FK_RuleStatus_Rules" FromRole="RuleStatu" ToRole="Rule" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_RuleStatus_UIContents" FromRole="RuleStatu" ToRole="UIContent" />
+  </EntityType>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Type="SulpHurModel.Rule" Role="Rule" Multiplicity="1" />
+    <End Type="SulpHurModel.RuleStatu" Role="RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatu">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.RuleStatu" Role="RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatu">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="exceptionPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="excludeTextDetectPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="nonEnglishButtonName" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_normalPunctuation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="normalPunctuation" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_pageExceptionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="pageExceptionType" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_properNoun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="properNoun" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_regexString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="regexString" Type="String" Nullable="false" MaxLength="2047" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BuildInfo">
+    <Key>
+      <PropertyRef Name="BuildID" />
+    </Key>
+    <Property Name="BuildID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuildNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UIContents" Relationship="SulpHurModel.FK_UIContents_BuildInfo" FromRole="BuildInfo" ToRole="UIContent" />
+  </EntityType>
+  <Association Name="FK_UIContents_BuildInfo">
+    <End Type="SulpHurModel.BuildInfo" Role="BuildInfo" Multiplicity="1" />
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="UIContent">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WordsSharedWithEnglish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Word" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ENU" Type="Boolean" Nullable="false" />
+    <Property Name="CHS" Type="Boolean" Nullable="false" />
+    <Property Name="DEU" Type="Boolean" Nullable="false" />
+    <Property Name="FRA" Type="Boolean" Nullable="false" />
+    <Property Name="JPN" Type="Boolean" Nullable="false" />
+    <Property Name="RUS" Type="Boolean" Nullable="false" />
+    <Property Name="CHT" Type="Boolean" Nullable="false" />
+    <Property Name="CSY" Type="Boolean" Nullable="false" />
+    <Property Name="ESN" Type="Boolean" Nullable="false" />
+    <Property Name="HUN" Type="Boolean" Nullable="false" />
+    <Property Name="ITA" Type="Boolean" Nullable="false" />
+    <Property Name="KOR" Type="Boolean" Nullable="false" />
+    <Property Name="NLD" Type="Boolean" Nullable="false" />
+    <Property Name="PLK" Type="Boolean" Nullable="false" />
+    <Property Name="PTB" Type="Boolean" Nullable="false" />
+    <Property Name="PTG" Type="Boolean" Nullable="false" />
+    <Property Name="SVE" Type="Boolean" Nullable="false" />
+    <Property Name="TRK" Type="Boolean" Nullable="false" />
+    <Property Name="DAN" Type="Boolean" Nullable="false" />
+    <Property Name="ELL" Type="Boolean" Nullable="false" />
+    <Property Name="FIN" Type="Boolean" Nullable="false" />
+    <Property Name="NOR" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

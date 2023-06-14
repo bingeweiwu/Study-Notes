@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RelatedControls" Type="xml" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="ResultType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ResultImage" Type="image" />
+    <Property Name="ResultLog" Type="ntext" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ReviewFlag" Type="int" />
+    <Property Name="ReviewLog" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Rules">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="RuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RulePath" Type="varchar" MaxLength="50" />
+    <Property Name="RuleDesc" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="AssemblyInfo" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="IsObsoluted" Type="bit" />
+  </EntityType>
+  <EntityType Name="RuleStatus">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="RuleStatus" Type="bit" />
+    <Property Name="IsChecked" Type="bit" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UIContents">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="UIContent" Type="xml" Nullable="false" />
+    <Property Name="UIScreenShot" Type="image" Nullable="false" />
+    <Property Name="IsWebUI" Type="bit" Nullable="false" />
+    <Property Name="DateUploaded" Type="datetime" Nullable="false" />
+    <Property Name="TraceID" Type="int" />
+    <Property Name="Reserve1" Type="int" />
+    <Property Name="Reserve2" Type="nvarchar(max)" />
+    <Property Name="Reserve3" Type="nvarchar(max)" />
+    <Property Name="Reserve4" Type="nvarchar(max)" />
+    <Property Name="Reserve5" Type="nvarchar(max)" />
+    <Property Name="LaunchedFrom" Type="nvarchar" MaxLength="1000" />
+    <Property Name="WindowHierarchy" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Results_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SulpHurModelStoreContainer">
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RuleStatus" EntityType="Self.RuleStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UIContents" EntityType="Self.UIContents" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Results_Rules" Association="Self.FK_Results_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="Self.FK_Results_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="Self.FK_RuleStatus_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="Self.FK_RuleStatus_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

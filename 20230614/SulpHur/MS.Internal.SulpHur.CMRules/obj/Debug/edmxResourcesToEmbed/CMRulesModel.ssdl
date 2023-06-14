@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.ControlTruncationRuleChildAndParentFilters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ControlTruncationRuleChildAndParentFilters">
+    <Key>
+      <PropertyRef Name="ControlTruncationRuleFilterID" />
+      <PropertyRef Name="RootAutomationID" />
+      <PropertyRef Name="ChildControlAutomationID" />
+      <PropertyRef Name="ChildControlType" />
+      <PropertyRef Name="ParentControlAutomationID" />
+      <PropertyRef Name="ParentControlType" />
+    </Key>
+    <Property Name="ControlTruncationRuleFilterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RootAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildControlType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentControlType" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.FilterSpellCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FilterSpellCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regexString" Type="varchar" MaxLength="1024" />
+    <Property Name="properNoun" Type="varchar" MaxLength="255" />
+    <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="255" />
+    <Property Name="pageExceptionType" Type="varchar" MaxLength="512" />
+    <Property Name="exceptionPageTitle" Type="varchar" MaxLength="255" />
+    <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="255" />
+    <Property Name="normalPunctuation" Type="nvarchar" MaxLength="255" />
+    <Property Name="reserve2" Type="varchar" MaxLength="255" />
+    <Property Name="reserve3" Type="varchar" MaxLength="255" />
+    <Property Name="reserve4" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_abnormalButNoImpact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="abnormalButNoImpact" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="exceptionPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_normalPunctuation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="normalPunctuation" Type="nvarchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_pageExceptionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pageExceptionType" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_properNoun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="properNoun" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_regexString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regexString" Type="varchar" MaxLength="2047" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.NonEnglishButtonName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ButtonName" Type="varchar" MaxLength="32" />
+    <Property Name="Reserve" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="NonEnglishWordsButEnglishLetters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NonEnglishWord" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.OverlapRuleChildAndParentFilters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OverlapRuleChildAndParentFilters">
+    <Key>
+      <PropertyRef Name="OverlapRuleFilterID" />
+      <PropertyRef Name="RootAutomationID" />
+      <PropertyRef Name="ChildControlAutomationID" />
+      <PropertyRef Name="ChildControlType" />
+      <PropertyRef Name="ParentControlAutomationID" />
+      <PropertyRef Name="ParentControlType" />
+    </Key>
+    <Property Name="OverlapRuleFilterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RootAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildControlType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentControlType" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OverlapRuleFilters">
+    <Key>
+      <PropertyRef Name="OverlapRuleFilterID" />
+    </Key>
+    <Property Name="OverlapRuleFilterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RootAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstControlType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SecondControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecondControlType" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TextTruncationRuleFilters">
+    <Key>
+      <PropertyRef Name="TextTruncationRuleFilterID" />
+    </Key>
+    <Property Name="TextTruncationRuleFilterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RootAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ControlAutomationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ControlType" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.VerticalSortPageNameList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VerticalSortPageNameList">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WordsSharedWithEnglish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Word" Type="varchar" MaxLength="64" />
+    <Property Name="ENU" Type="bit" Nullable="false" />
+    <Property Name="CHS" Type="bit" Nullable="false" />
+    <Property Name="DEU" Type="bit" Nullable="false" />
+    <Property Name="FRA" Type="bit" Nullable="false" />
+    <Property Name="JPN" Type="bit" Nullable="false" />
+    <Property Name="RUS" Type="bit" Nullable="false" />
+    <Property Name="CHT" Type="bit" Nullable="false" />
+    <Property Name="CSY" Type="bit" Nullable="false" />
+    <Property Name="ESN" Type="bit" Nullable="false" />
+    <Property Name="HUN" Type="bit" Nullable="false" />
+    <Property Name="ITA" Type="bit" Nullable="false" />
+    <Property Name="KOR" Type="bit" Nullable="false" />
+    <Property Name="NLD" Type="bit" Nullable="false" />
+    <Property Name="PLK" Type="bit" Nullable="false" />
+    <Property Name="PTB" Type="bit" Nullable="false" />
+    <Property Name="PTG" Type="bit" Nullable="false" />
+    <Property Name="SVE" Type="bit" Nullable="false" />
+    <Property Name="TRK" Type="bit" Nullable="false" />
+    <Property Name="DAN" Type="bit" Nullable="false" />
+    <Property Name="ELL" Type="bit" Nullable="false" />
+    <Property Name="FIN" Type="bit" Nullable="false" />
+    <Property Name="NOR" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SulpHurModelStoreContainer">
+    <EntitySet Name="FilterSpellCheck_abnormalButNoImpact" EntityType="Self.FilterSpellCheck_abnormalButNoImpact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="Self.FilterSpellCheck_exceptionPageTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="Self.FilterSpellCheck_excludeTextDetectPageTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="Self.FilterSpellCheck_nonEnglishButtonName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="Self.FilterSpellCheck_normalPunctuation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="Self.FilterSpellCheck_pageExceptionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_properNoun" EntityType="Self.FilterSpellCheck_properNoun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_regexString" EntityType="Self.FilterSpellCheck_regexString" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NonEnglishWordsButEnglishLetters" EntityType="Self.NonEnglishWordsButEnglishLetters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OverlapRuleFilters" EntityType="Self.OverlapRuleFilters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextTruncationRuleFilters" EntityType="Self.TextTruncationRuleFilters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WordsSharedWithEnglish" EntityType="Self.WordsSharedWithEnglish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ControlTruncationRuleChildAndParentFilters" EntityType="Self.ControlTruncationRuleChildAndParentFilters" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ControlTruncationRuleChildAndParentFilters].[ControlTruncationRuleFilterID] AS [ControlTruncationRuleFilterID], 
+    [ControlTruncationRuleChildAndParentFilters].[RootAutomationID] AS [RootAutomationID], 
+    [ControlTruncationRuleChildAndParentFilters].[ChildControlAutomationID] AS [ChildControlAutomationID], 
+    [ControlTruncationRuleChildAndParentFilters].[ChildControlType] AS [ChildControlType], 
+    [ControlTruncationRuleChildAndParentFilters].[ParentControlAutomationID] AS [ParentControlAutomationID], 
+    [ControlTruncationRuleChildAndParentFilters].[ParentControlType] AS [ParentControlType]
+    FROM [dbo].[ControlTruncationRuleChildAndParentFilters] AS [ControlTruncationRuleChildAndParentFilters]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FilterSpellCheck" EntityType="Self.FilterSpellCheck" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FilterSpellCheck].[id] AS [id], 
+    [FilterSpellCheck].[regexString] AS [regexString], 
+    [FilterSpellCheck].[properNoun] AS [properNoun], 
+    [FilterSpellCheck].[nonEnglishButtonName] AS [nonEnglishButtonName], 
+    [FilterSpellCheck].[pageExceptionType] AS [pageExceptionType], 
+    [FilterSpellCheck].[exceptionPageTitle] AS [exceptionPageTitle], 
+    [FilterSpellCheck].[excludeTextDetectPageTitle] AS [excludeTextDetectPageTitle], 
+    [FilterSpellCheck].[normalPunctuation] AS [normalPunctuation], 
+    [FilterSpellCheck].[reserve2] AS [reserve2], 
+    [FilterSpellCheck].[reserve3] AS [reserve3], 
+    [FilterSpellCheck].[reserve4] AS [reserve4]
+    FROM [dbo].[FilterSpellCheck] AS [FilterSpellCheck]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NonEnglishButtonName" EntityType="Self.NonEnglishButtonName" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NonEnglishButtonName].[id] AS [id], 
+    [NonEnglishButtonName].[ButtonName] AS [ButtonName], 
+    [NonEnglishButtonName].[Reserve] AS [Reserve]
+    FROM [dbo].[NonEnglishButtonName] AS [NonEnglishButtonName]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OverlapRuleChildAndParentFilters" EntityType="Self.OverlapRuleChildAndParentFilters" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OverlapRuleChildAndParentFilters].[OverlapRuleFilterID] AS [OverlapRuleFilterID], 
+    [OverlapRuleChildAndParentFilters].[RootAutomationID] AS [RootAutomationID], 
+    [OverlapRuleChildAndParentFilters].[ChildControlAutomationID] AS [ChildControlAutomationID], 
+    [OverlapRuleChildAndParentFilters].[ChildControlType] AS [ChildControlType], 
+    [OverlapRuleChildAndParentFilters].[ParentControlAutomationID] AS [ParentControlAutomationID], 
+    [OverlapRuleChildAndParentFilters].[ParentControlType] AS [ParentControlType]
+    FROM [dbo].[OverlapRuleChildAndParentFilters] AS [OverlapRuleChildAndParentFilters]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VerticalSortPageNameList" EntityType="Self.VerticalSortPageNameList" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VerticalSortPageNameList].[name] AS [name], 
+    [VerticalSortPageNameList].[ID] AS [ID]
+    FROM [dbo].[VerticalSortPageNameList] AS [VerticalSortPageNameList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

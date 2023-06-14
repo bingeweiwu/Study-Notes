@@ -1,0 +1,6 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

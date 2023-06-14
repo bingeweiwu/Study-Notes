@@ -1,0 +1,185 @@
+2023-05-18 10:15:22: Start QueryAllDirtyUI...
+[Info][2023-05-22 17.13.56]Load rules from2:
+[Info][2023-05-22 17.13.56]LoadRules1
+[Info][2023-05-22 17.13.56]
+[Info][2023-05-22 17.13.56]LoadRules2
+[Info][2023-05-22 17.13.56]MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.13.56]LoadRules3
+[Info][2023-05-22 17.13.56]Load rules from dll:MS.Internal.SulpHur.CMRules.dll
+[Error][2023-05-22 17.13.56]Load rule exception :Absolute path information is required.
+[Info][2023-05-22 17.15.43]Load rules from2:
+[Info][2023-05-22 17.15.43]LoadRules1
+[Info][2023-05-22 17.15.43]
+[Info][2023-05-22 17.15.43]LoadRules2
+[Info][2023-05-22 17.15.43]MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.15.43]LoadRules3
+[Info][2023-05-22 17.15.43]Load rules from dll:MS.Internal.SulpHur.CMRules.dll
+[Error][2023-05-22 17.15.43]Load rule exception :Absolute path information is required.
+[Info][2023-05-22 17.16.29]Load rules from2:
+[Info][2023-05-22 17.16.30]LoadRules1
+[Info][2023-05-22 17.16.30]
+[Info][2023-05-22 17.16.30]LoadRules2
+[Info][2023-05-22 17.16.30]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.16.30]LoadRules3
+[Info][2023-05-22 17.16.30]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.17.21]Load rules from2:
+[Info][2023-05-22 17.17.21]LoadRules1
+[Info][2023-05-22 17.17.21]
+[Info][2023-05-22 17.17.21]LoadRules2
+[Info][2023-05-22 17.17.21]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.17.21]LoadRules3
+[Info][2023-05-22 17.17.21]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.17.37]Load rules from2:
+[Info][2023-05-22 17.17.38]LoadRules1
+[Info][2023-05-22 17.17.38]
+[Info][2023-05-22 17.17.39]LoadRules2
+[Info][2023-05-22 17.17.39]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.17.39]LoadRules3
+[Info][2023-05-22 17.17.42]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.34.30]Starting public UIContentVerification...
+[Info][2023-05-22 17.34.30]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.34.30]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.34.32]FINALLY
+[Info][2023-05-22 17.34.32]in ExecuteQuery end
+[Info][2023-05-22 17.34.32]v-fjiang
+[Info][2023-05-22 17.34.32]v-xihl
+[Info][2023-05-22 17.34.32]v-tomyang
+[Info][2023-05-22 17.34.32]v-haos
+[Info][2023-05-22 17.34.32]v-xihl
+[Info][2023-05-22 17.34.32]v-xichu
+[Info][2023-05-22 17.34.32]v-juanwu
+[Info][2023-05-22 17.34.32]v-daojunsong
+[Info][2023-05-22 17.34.32]v-danielxu
+[Info][2023-05-22 17.34.32]v-mogenzhang
+[Info][2023-05-22 17.34.32]ExecuteQuery finish...
+[Info][2023-05-22 17.34.32]Load rules from2:
+[Info][2023-05-22 17.34.32]LoadRules1
+[Info][2023-05-22 17.34.32]
+[Info][2023-05-22 17.34.32]LoadRules2
+[Info][2023-05-22 17.34.32]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.34.32]LoadRules3
+[Info][2023-05-22 17.34.32]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.35.51]Starting public UIContentVerification...
+[Info][2023-05-22 17.35.51]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.35.51]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.35.52]FINALLY
+[Info][2023-05-22 17.35.52]in ExecuteQuery end
+[Info][2023-05-22 17.35.52]v-fjiang
+[Info][2023-05-22 17.35.52]v-xihl
+[Info][2023-05-22 17.35.52]v-tomyang
+[Info][2023-05-22 17.35.52]v-haos
+[Info][2023-05-22 17.35.52]v-xihl
+[Info][2023-05-22 17.35.52]v-xichu
+[Info][2023-05-22 17.35.52]v-juanwu
+[Info][2023-05-22 17.35.52]v-daojunsong
+[Info][2023-05-22 17.35.52]v-danielxu
+[Info][2023-05-22 17.35.52]v-mogenzhang
+[Info][2023-05-22 17.35.52]ExecuteQuery finish...
+[Info][2023-05-22 17.35.53]Load rules from2:
+[Info][2023-05-22 17.35.53]LoadRules1
+[Info][2023-05-22 17.35.53]
+[Info][2023-05-22 17.35.53]LoadRules2
+[Info][2023-05-22 17.35.53]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.35.53]LoadRules3
+[Info][2023-05-22 17.35.53]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.40.49]Starting public UIContentVerification...
+[Info][2023-05-22 17.40.49]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.40.49]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.40.50]FINALLY
+[Info][2023-05-22 17.40.50]in ExecuteQuery end
+[Info][2023-05-22 17.40.50]v-fjiang
+[Info][2023-05-22 17.40.50]v-xihl
+[Info][2023-05-22 17.40.50]v-tomyang
+[Info][2023-05-22 17.40.50]v-haos
+[Info][2023-05-22 17.40.50]v-xihl
+[Info][2023-05-22 17.40.50]v-xichu
+[Info][2023-05-22 17.40.50]v-juanwu
+[Info][2023-05-22 17.40.50]v-daojunsong
+[Info][2023-05-22 17.40.50]v-danielxu
+[Info][2023-05-22 17.40.50]v-mogenzhang
+[Info][2023-05-22 17.40.50]ExecuteQuery finish...
+[Info][2023-05-22 17.40.50]Load rules from2:
+[Info][2023-05-22 17.40.50]LoadRules1
+[Info][2023-05-22 17.40.50]
+[Info][2023-05-22 17.40.50]LoadRules2
+[Info][2023-05-22 17.40.50]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.40.50]LoadRules3
+[Info][2023-05-22 17.40.50]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.45.16]Starting public UIContentVerification...
+[Info][2023-05-22 17.45.16]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.45.16]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.45.18]FINALLY
+[Info][2023-05-22 17.45.18]in ExecuteQuery end
+[Info][2023-05-22 17.45.18]v-fjiang
+[Info][2023-05-22 17.45.18]v-xihl
+[Info][2023-05-22 17.45.18]v-tomyang
+[Info][2023-05-22 17.45.18]v-haos
+[Info][2023-05-22 17.45.18]v-xihl
+[Info][2023-05-22 17.45.18]v-xichu
+[Info][2023-05-22 17.45.18]v-juanwu
+[Info][2023-05-22 17.45.18]v-daojunsong
+[Info][2023-05-22 17.45.18]v-danielxu
+[Info][2023-05-22 17.45.18]v-mogenzhang
+[Info][2023-05-22 17.45.18]ExecuteQuery finish...
+[Info][2023-05-22 17.45.18]Load rules from2:
+[Info][2023-05-22 17.45.18]LoadRules1
+[Info][2023-05-22 17.45.18]
+[Info][2023-05-22 17.45.18]LoadRules2
+[Info][2023-05-22 17.45.18]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.45.18]LoadRules3
+[Info][2023-05-22 17.45.18]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.46.40]Starting public UIContentVerification...
+[Info][2023-05-22 17.46.40]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.46.40]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.46.41]FINALLY
+[Info][2023-05-22 17.46.41]in ExecuteQuery end
+[Info][2023-05-22 17.46.41]v-fjiang
+[Info][2023-05-22 17.46.41]v-xihl
+[Info][2023-05-22 17.46.41]v-tomyang
+[Info][2023-05-22 17.46.41]v-haos
+[Info][2023-05-22 17.46.41]v-xihl
+[Info][2023-05-22 17.46.41]v-xichu
+[Info][2023-05-22 17.46.41]v-juanwu
+[Info][2023-05-22 17.46.41]v-daojunsong
+[Info][2023-05-22 17.46.41]v-danielxu
+[Info][2023-05-22 17.46.41]v-mogenzhang
+[Info][2023-05-22 17.46.41]ExecuteQuery finish...
+[Info][2023-05-22 17.46.42]Load rules from2:
+[Info][2023-05-22 17.46.42]LoadRules1
+[Info][2023-05-22 17.46.42]
+[Info][2023-05-22 17.46.42]LoadRules2
+[Info][2023-05-22 17.46.42]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.46.42]LoadRules3
+[Info][2023-05-22 17.46.42]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.50.16]Starting public UIContentVerification...
+[Info][2023-05-22 17.50.16]Data Source=AzureSulpHur1;Initial Catalog=SulpHur;User Id=sulphurdebug;Password=```111qqq
+[Info][2023-05-22 17.50.16]select * from SulPhurReviewer   alias
+select * from SulPhurReviewer   alias
+[Info][2023-05-22 17.50.17]FINALLY
+[Info][2023-05-22 17.50.17]in ExecuteQuery end
+[Info][2023-05-22 17.50.17]v-fjiang
+[Info][2023-05-22 17.50.17]v-xihl
+[Info][2023-05-22 17.50.17]v-tomyang
+[Info][2023-05-22 17.50.17]v-haos
+[Info][2023-05-22 17.50.17]v-xihl
+[Info][2023-05-22 17.50.17]v-xichu
+[Info][2023-05-22 17.50.17]v-juanwu
+[Info][2023-05-22 17.50.17]v-daojunsong
+[Info][2023-05-22 17.50.18]v-danielxu
+[Info][2023-05-22 17.50.18]v-mogenzhang
+[Info][2023-05-22 17.50.18]ExecuteQuery finish...
+[Info][2023-05-22 17.50.18]Load rules from2:
+[Info][2023-05-22 17.50.18]LoadRules1
+[Info][2023-05-22 17.50.18]
+[Info][2023-05-22 17.50.18]LoadRules2
+[Info][2023-05-22 17.50.18]F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+[Info][2023-05-22 17.50.18]LoadRules3
+[Info][2023-05-22 17.50.18]Load rules from dll:F:\SulpHur\SulpHurService\Rules\MS.Internal.SulpHur.CMRules.dll
+start enter foreach loop that check all language page, try to find product name issue
+realName != null && !realName.IsNUllOrEmpty && realName.Length >=40 
+end detect all language page in spelling rule for product name issue

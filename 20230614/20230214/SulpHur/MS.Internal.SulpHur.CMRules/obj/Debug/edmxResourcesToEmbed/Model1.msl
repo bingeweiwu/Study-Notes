@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SulpHurModelStoreContainer" CdmEntityContainer="SulpHurEntities">
+    <EntitySetMapping Name="VerticalSortPageNameLists">
+      <EntityTypeMapping TypeName="SulpHurModel.VerticalSortPageNameList">
+        <MappingFragment StoreEntitySet="VerticalSortPageNameList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

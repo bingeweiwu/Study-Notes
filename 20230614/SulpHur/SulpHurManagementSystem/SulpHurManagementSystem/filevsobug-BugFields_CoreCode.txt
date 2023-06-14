@@ -1,0 +1,15 @@
+title,$title$
+issue type,$issuetype$
+assigned to,$assignedto$
+Customer,$assignedto$
+area,Configmgr\International
+iteration,Configmgr
+priority,2
+security impact,Not a Security Bug
+language,$language$
+found in build,$foundinbuild$
+source,Product Engineering Team
+how found item,Automated test case
+repro steps,$reprosteps$
+description,$description$
+tags,$tags$

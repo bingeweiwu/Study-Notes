@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D2EA4D9-DD81-4B9C-87F4-05C6F10D3E30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MS.Internal.SulpHur.SulpHurClient</RootNamespace>
+    <AssemblyName>MS.Internal.SulpHur.SulpHurClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\SulpHurClient\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MS.Internal.SulpHur.SulpHurClient.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Appium.Net, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Appium.WebDriver.4.1.1\lib\net45\Appium.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="interop.UIAutomationCore">
+      <HintPath>..\ReferencedDlls\interop.UIAutomationCore.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ManagedInjector_x64, Version=1.0.5952.25098, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedDlls\ManagedInjector_x64.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedInjector_x86, Version=1.0.5952.25098, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedDlls\ManagedInjector_x86.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.Foundation">
+      <HintPath>..\ReferencedDlls\Mita.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.Localization">
+      <HintPath>..\ReferencedDlls\Mita.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.Modeling">
+      <HintPath>..\ReferencedDlls\Mita.Modeling.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.ResourceExtractionProvider">
+      <HintPath>..\ReferencedDlls\Mita.ResourceExtractionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AdminUILogMonitor.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CaptureStateManager.cs" />
+    <Compile Include="Common\TimedTasks.cs" />
+    <Compile Include="Common\Tool.cs" />
+    <Compile Include="Common\XmlTools.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="DataCenter.cs" />
+    <Compile Include="GenerateClass\ClassGenerator.cs" />
+    <Compile Include="GenerateClass\CreateClass.cs" />
+    <Compile Include="GenerateClass\SampleCode.cs" />
+    <Compile Include="GenerateClass\SampleCodeDom.cs" />
+    <Compile Include="GenerateClass\Tool.cs" />
+    <Compile Include="GenerateClass\xmlClass.cs" />
+    <Compile Include="HotKeyManager.cs" />
+    <Compile Include="ImageCapturer.cs" />
+    <Compile Include="Monitors\GlobalChangeMonitor.cs" />
+    <Compile Include="Monitors\MoveSizeMonitor.cs" />
+    <Compile Include="Monitors\ForegroundMonitor.cs" />
+    <Compile Include="Monitors\MessageLooper.cs" />
+    <Compile Include="Monitors\MonitorBase.cs" />
+    <Compile Include="Monitors\WinEventWaiter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerContact\ClientCallBackImplements.cs" />
+    <Compile Include="ServerContact\ConnectionWaiter.cs" />
+    <Compile Include="ServerContact\ServerContacter.cs" />
+    <Compile Include="ServerContact\SulpHurWCFService.cs" />
+    <Compile Include="StateForm.xaml.cs">
+      <DependentUpon>StateForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIA3\EventFilter.cs" />
+    <Compile Include="UIA3\ExtensionMethods.cs" />
+    <Compile Include="UIA3\UIA3Automation.cs" />
+    <Compile Include="UIA3\UIA3AutomationEventHandler.cs" />
+    <Compile Include="UIA3\UIA3StructureChangedEventHandler.cs" />
+    <Compile Include="UploadStateForm.xaml.cs">
+      <DependentUpon>UploadStateForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UploadStateManager.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyResolver.cs" />
+    <Compile Include="SettingsView.cs" />
+    <Compile Include="Monitors\ElementChangeMonitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="packages.config" />
+    <None Include="ServerContact\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\icon.png" />
+    <Resource Include="Images\warningicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManagedInjectorWrapper\ManagedInjectorWrapper.csproj">
+      <Project>{7fcc9709-8116-4c3b-9c67-468a8ffcd162}</Project>
+      <Name>ManagedInjectorWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.CMRules\MS.Internal.SulpHur.CMRules.csproj">
+      <Project>{b8e5204f-0b5e-454c-b97e-118e0b75724a}</Project>
+      <Name>MS.Internal.SulpHur.CMRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.UICompliance\MS.Internal.SulpHur.UICompliance.csproj">
+      <Project>{4E3B1E48-595D-4A15-A4FE-FCB10B27AED2}</Project>
+      <Name>MS.Internal.SulpHur.UICompliance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.Utilities\MS.Internal.SulpHur.Utilities.csproj">
+      <Project>{EB628863-56AB-4BC4-9EE5-87E893073742}</Project>
+      <Name>MS.Internal.SulpHur.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="StateForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UploadStateForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error.ico" />
+    <Resource Include="Images\OK.ico" />
+    <Resource Include="Images\Processing.ico" />
+    <Resource Include="Images\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

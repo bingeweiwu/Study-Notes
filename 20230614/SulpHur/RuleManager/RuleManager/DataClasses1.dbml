@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SulpHur" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SulphurServer;Initial Catalog=SulpHur;Persist Security Info=True;User ID=SulpHurDebug" SettingsObjectName="RuleManager.Properties.Settings" SettingsPropertyName="SulpHurConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AssemblyInfo" Member="AssemblyInfos">
+    <Type Name="AssemblyInfo">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="FullTypeName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="AssemblyInfo_AssemblyLink" Member="AssemblyLinks" ThisKey="TypeID" OtherKey="TypeID" Type="AssemblyLink" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UITrace" Member="UITraces">
+    <Type Name="UITrace">
+      <Column Name="TraceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TraceName" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Reserve1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="UITrace_UIContent" Member="UIContents" ThisKey="TraceID" OtherKey="TraceID" Type="UIContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssemblyLink" Member="AssemblyLinks">
+    <Type Name="AssemblyLink">
+      <Column Name="AssemblyLinkID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPageIdentifier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Reserve1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AssemblyInfo_AssemblyLink" Member="AssemblyInfo" ThisKey="TypeID" OtherKey="TypeID" Type="AssemblyInfo" IsForeignKey="true" />
+      <Association Name="UIContent_AssemblyLink" Member="UIContent" ThisKey="ContentID" OtherKey="ContentID" Type="UIContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BugLink" Member="BugLinks">
+    <Type Name="BugLink">
+      <Column Name="BugLinkID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BugID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="UIContent_BugLink" Member="UIContent" ThisKey="ContentID" OtherKey="ContentID" Type="UIContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BuildInfo" Member="BuildInfos">
+    <Type Name="BuildInfo">
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="BuildInfo_UIContent" Member="UIContents" ThisKey="BuildID" OtherKey="BuildID" Type="UIContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BuildTypes" Member="BuildTypes">
+    <Type Name="BuildType">
+      <Column Name="RecordID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="BuildNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mark" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LanuchSteps" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clients" Member="Clients">
+    <Type Name="Client">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MachineName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OSLanguage" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OSType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MacAddress" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Client_UIContent" Member="UIContents" ThisKey="ClientID" OtherKey="ClientID" Type="UIContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProviderDiffResults" Member="ProviderDiffResults">
+    <Type Name="ProviderDiffResult">
+      <Column Name="ResultID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DiffType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WmiClassName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="WmiClassBody" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SourceFileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ContentIDPre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContentIDPost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssemblyName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="HasImage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PageName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ComparedBuild" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="OldClass" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NewClass" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Results" Member="Results">
+    <Type Name="Result">
+      <Column Name="ResultID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RelatedControls" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResultType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ResultImage" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ResultLog" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Rule_Result" Member="Rule" ThisKey="RuleID" OtherKey="RuleID" Type="Rule" IsForeignKey="true" />
+      <Association Name="UIContent_Result" Member="UIContent" ThisKey="ContentID" OtherKey="ContentID" Type="UIContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rules" Member="Rules">
+    <Type Name="Rule">
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RuleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RulePath" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RuleDesc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyInfo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Rule_Result" Member="Results" ThisKey="RuleID" OtherKey="RuleID" Type="Result" />
+      <Association Name="Rule_RuleStatus" Member="RuleStatus" ThisKey="RuleID" OtherKey="RuleID" Type="RuleStatus" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RuleStatus" Member="RuleStatus">
+    <Type Name="RuleStatus">
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RuleStatus" Member="RuleStatus1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateUpdated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Rule_RuleStatus" Member="Rule" ThisKey="RuleID" OtherKey="RuleID" Type="Rule" IsForeignKey="true" />
+      <Association Name="UIContent_RuleStatus" Member="UIContent" ThisKey="ContentID" OtherKey="ContentID" Type="UIContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UIContents" Member="UIContents">
+    <Type Name="UIContent">
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UIName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UIContent" Member="UIContent1" Type="System.Xml.Linq.XElement" DbType="Xml NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UIScreenShot" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsWebUI" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateUploaded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TraceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reserve3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reserve4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reserve5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LaunchedFrom" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="WindowHierarchy" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="UIContent_AssemblyLink" Member="AssemblyLinks" ThisKey="ContentID" OtherKey="ContentID" Type="AssemblyLink" />
+      <Association Name="UIContent_BugLink" Member="BugLinks" ThisKey="ContentID" OtherKey="ContentID" Type="BugLink" />
+      <Association Name="UIContent_Result" Member="Results" ThisKey="ContentID" OtherKey="ContentID" Type="Result" />
+      <Association Name="UIContent_RuleStatus" Member="RuleStatus" ThisKey="ContentID" OtherKey="ContentID" Type="RuleStatus" />
+      <Association Name="BuildInfo_UIContent" Member="BuildInfo" ThisKey="BuildID" OtherKey="BuildID" Type="BuildInfo" IsForeignKey="true" />
+      <Association Name="Client_UIContent" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+      <Association Name="UITrace_UIContent" Member="UITrace" ThisKey="TraceID" OtherKey="TraceID" Type="UITrace" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResultsSummary" Member="ResultsSummaries">
+    <Type Name="ResultsSummary">
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ResultID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResultType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RuleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewTypeBuild" Member="ViewTypeBuilds">
+    <Type Name="ViewTypeBuild">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UIName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewAssemblySummary" Member="ViewAssemblySummaries">
+    <Type Name="ViewAssemblySummary">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="FullTypeName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssemblyLinkID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPageIdentifier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UIName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OSType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewRescan" Member="ViewRescans">
+    <Type Name="ViewRescan">
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UIName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="OSType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="BuildNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OSLanguage" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewENUBitmap" Member="ViewENUBitmaps">
+    <Type Name="ViewENUBitmap">
+      <Column Name="ContentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UIScreenShot" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AssemblyLinkID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssemblyName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="FullTypeName" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="BuildID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

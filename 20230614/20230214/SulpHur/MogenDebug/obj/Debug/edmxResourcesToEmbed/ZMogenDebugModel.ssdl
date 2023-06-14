@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BuildInfo">
+    <Key>
+      <PropertyRef Name="BuildID" />
+    </Key>
+    <Property Name="BuildID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.FilterSpellCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FilterSpellCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regexString" Type="varchar" MaxLength="1024" />
+    <Property Name="properNoun" Type="varchar" MaxLength="255" />
+    <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="255" />
+    <Property Name="pageExceptionType" Type="varchar" MaxLength="512" />
+    <Property Name="exceptionPageTitle" Type="varchar" MaxLength="255" />
+    <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="255" />
+    <Property Name="normalPunctuation" Type="nvarchar" MaxLength="255" />
+    <Property Name="reserve2" Type="varchar" MaxLength="255" />
+    <Property Name="reserve3" Type="varchar" MaxLength="255" />
+    <Property Name="reserve4" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="exceptionPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_normalPunctuation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="normalPunctuation" Type="nvarchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_pageExceptionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pageExceptionType" Type="varchar" MaxLength="511" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_properNoun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="properNoun" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_regexString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regexString" Type="varchar" MaxLength="2047" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RelatedControls" Type="xml" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="ResultType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ResultImage" Type="image" />
+    <Property Name="ResultLog" Type="ntext" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ReviewFlag" Type="int" />
+    <Property Name="ReviewLog" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Rules">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="RuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RulePath" Type="varchar" MaxLength="50" />
+    <Property Name="RuleDesc" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="AssemblyInfo" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="IsObsoluted" Type="bit" />
+  </EntityType>
+  <EntityType Name="RuleStatus">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="RuleStatus" Type="bit" />
+    <Property Name="IsChecked" Type="bit" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UIContents">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="UIContent" Type="xml" Nullable="false" />
+    <Property Name="UIScreenShot" Type="image" Nullable="false" />
+    <Property Name="IsWebUI" Type="bit" Nullable="false" />
+    <Property Name="DateUploaded" Type="datetime" Nullable="false" />
+    <Property Name="TraceID" Type="int" />
+    <Property Name="Reserve1" Type="int" />
+    <Property Name="Reserve2" Type="nvarchar(max)" />
+    <Property Name="Reserve3" Type="nvarchar(max)" />
+    <Property Name="Reserve4" Type="nvarchar(max)" />
+    <Property Name="Reserve5" Type="nvarchar(max)" />
+    <Property Name="LaunchedFrom" Type="nvarchar" MaxLength="1000" />
+    <Property Name="WindowHierarchy" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WordsSharedWithEnglish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Word" Type="varchar" MaxLength="64" />
+    <Property Name="ENU" Type="bit" Nullable="false" />
+    <Property Name="CHS" Type="bit" Nullable="false" />
+    <Property Name="DEU" Type="bit" Nullable="false" />
+    <Property Name="FRA" Type="bit" Nullable="false" />
+    <Property Name="JPN" Type="bit" Nullable="false" />
+    <Property Name="RUS" Type="bit" Nullable="false" />
+    <Property Name="CHT" Type="bit" Nullable="false" />
+    <Property Name="CSY" Type="bit" Nullable="false" />
+    <Property Name="ESN" Type="bit" Nullable="false" />
+    <Property Name="HUN" Type="bit" Nullable="false" />
+    <Property Name="ITA" Type="bit" Nullable="false" />
+    <Property Name="KOR" Type="bit" Nullable="false" />
+    <Property Name="NLD" Type="bit" Nullable="false" />
+    <Property Name="PLK" Type="bit" Nullable="false" />
+    <Property Name="PTB" Type="bit" Nullable="false" />
+    <Property Name="PTG" Type="bit" Nullable="false" />
+    <Property Name="SVE" Type="bit" Nullable="false" />
+    <Property Name="TRK" Type="bit" Nullable="false" />
+    <Property Name="DAN" Type="bit" Nullable="false" />
+    <Property Name="ELL" Type="bit" Nullable="false" />
+    <Property Name="FIN" Type="bit" Nullable="false" />
+    <Property Name="NOR" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Results_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_BuildInfo">
+    <End Role="BuildInfo" Type="Self.BuildInfo" Multiplicity="1" />
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="UIContents">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SulpHurModelStoreContainer">
+    <EntitySet Name="BuildInfo" EntityType="Self.BuildInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="Self.FilterSpellCheck_exceptionPageTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="Self.FilterSpellCheck_excludeTextDetectPageTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="Self.FilterSpellCheck_nonEnglishButtonName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="Self.FilterSpellCheck_normalPunctuation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="Self.FilterSpellCheck_pageExceptionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_properNoun" EntityType="Self.FilterSpellCheck_properNoun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck_regexString" EntityType="Self.FilterSpellCheck_regexString" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RuleStatus" EntityType="Self.RuleStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UIContents" EntityType="Self.UIContents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WordsSharedWithEnglish" EntityType="Self.WordsSharedWithEnglish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilterSpellCheck" EntityType="Self.FilterSpellCheck" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FilterSpellCheck].[id] AS [id], 
+    [FilterSpellCheck].[regexString] AS [regexString], 
+    [FilterSpellCheck].[properNoun] AS [properNoun], 
+    [FilterSpellCheck].[nonEnglishButtonName] AS [nonEnglishButtonName], 
+    [FilterSpellCheck].[pageExceptionType] AS [pageExceptionType], 
+    [FilterSpellCheck].[exceptionPageTitle] AS [exceptionPageTitle], 
+    [FilterSpellCheck].[excludeTextDetectPageTitle] AS [excludeTextDetectPageTitle], 
+    [FilterSpellCheck].[normalPunctuation] AS [normalPunctuation], 
+    [FilterSpellCheck].[reserve2] AS [reserve2], 
+    [FilterSpellCheck].[reserve3] AS [reserve3], 
+    [FilterSpellCheck].[reserve4] AS [reserve4]
+    FROM [dbo].[FilterSpellCheck] AS [FilterSpellCheck]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Results_Rules" Association="Self.FK_Results_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="Self.FK_Results_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="Self.FK_RuleStatus_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="Self.FK_RuleStatus_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_BuildInfo" Association="Self.FK_UIContents_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfo" />
+      <End Role="UIContents" EntitySet="UIContents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

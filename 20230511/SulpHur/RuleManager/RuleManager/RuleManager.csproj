@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(EnvironmentConfig)" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B05107F8-48B2-4CEB-973E-73D31270C971}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RuleManager</RootNamespace>
+    <AssemblyName>RuleManager</AssemblyName>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="interop.UIAutomationCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\ref\interop.UIAutomationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedControlAgentWin32">
+      <HintPath>..\..\ref\ManagedControlAgentWin32.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedMD">
+      <HintPath>..\..\ref\ManagedMD.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ref\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Microsoft.ConfigurationManagement.ManagementProvider">
+      <HintPath>$(CMMgmtProvLib)\lib\net45\Microsoft.ConfigurationManagement.ManagementProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="AdminUI.Controls">
+      <HintPath>$(AdminUIFrameworkLib)\lib\net45\AdminUI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AdminUI.DialogFoundation">
+      <HintPath>$(AdminUIFrameworkLib)\lib\net45\AdminUI.DialogFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="AdminUI.VSWizardFramework">
+      <HintPath>$(AdminUIFrameworkLib)\lib\net45\AdminUI.VSWizardFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ConfigurationManagement.DialogFramework">
+      <HintPath>$(AdminUIFrameworkLib)\lib\net45\Microsoft.ConfigurationManagement.DialogFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="AdminUI.WizardFramework">
+      <HintPath>$(AdminUIFrameworkLib)\lib\net45\AdminUI.WizardFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.ConsoleFramework">
+      <HintPath>$(AdminUIDependenciesLib)\lib\net45\Microsoft.EnterpriseManagement.UI.ConsoleFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.Foundation">
+      <HintPath>$(PkgConfigMgr_Mita)\lib\net40\Mita.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.Localization">
+      <HintPath>$(PkgConfigMgr_Mita)\lib\net40\Mita.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Mita.ResourceExtractionProvider">
+      <HintPath>$(PkgConfigMgr_Mita)\lib\net40\Mita.ResourceExtractionProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>$(PkgConfigMgr_Test_Other)\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClientCallBackImplements.cs" />
+    <Compile Include="Converts.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBWrapper.cs" />
+    <Compile Include="Highlighter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView.cs" />
+    <Compile Include="Native.cs" />
+    <Compile Include="PageParser.cs" />
+    <Compile Include="SelectRules.xaml.cs">
+      <DependentUpon>SelectRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceManager.xaml.cs">
+      <DependentUpon>ServiceManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceWrapper.cs" />
+    <Compile Include="SulpHurServiceRef.cs" />
+    <Compile Include="WindowDispatcher.cs" />
+    <Page Include="DefaultStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SelectRules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServiceManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemeDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(SRCROOT)\test\Framework\KeyVault\KeyVault.csproj" />
+    <ProjectReference Include="..\..\MS.Internal.SulpHur.CMRules\MS.Internal.SulpHur.CMRules.csproj">
+      <Project>{B8E5204F-0B5E-454C-B97E-118E0B75724A}</Project>
+      <Name>MS.Internal.SulpHur.CMRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MS.Internal.SulpHur.UICompliance\MS.Internal.SulpHur.UICompliance.csproj">
+      <Project>{4E3B1E48-595D-4A15-A4FE-FCB10B27AED2}</Project>
+      <Name>MS.Internal.SulpHur.UICompliance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SulpHurServiceAbstract\SulpHurServiceAbstract.csproj">
+      <Project>{F6F3B31A-B3E6-4CEF-91BD-8C9EF41E4A84}</Project>
+      <Name>SulpHurServiceAbstract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Right_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="onebit_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Defrag-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

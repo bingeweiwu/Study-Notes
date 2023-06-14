@@ -1,0 +1,9 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\bin\Debug\testProject2.exe.config
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\bin\Debug\testProject2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\bin\Debug\ref\testProject2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\bin\Debug\testProject2.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\obj\Debug\testProject2.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\obj\Debug\testProject2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\obj\Debug\ref\testProject2.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\obj\Debug\testProject2.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testProject2\obj\Debug\testProject2.csproj.AssemblyReference.cache

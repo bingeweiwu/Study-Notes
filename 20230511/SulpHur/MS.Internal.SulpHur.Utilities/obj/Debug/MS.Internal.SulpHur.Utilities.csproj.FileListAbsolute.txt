@@ -1,0 +1,8 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\bin\Debug\MS.Internal.SulpHur.Utilities.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\bin\Debug\MS.Internal.SulpHur.Utilities.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\MS.Internal.SulpHur.Utilities.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\Interop.SHDocVw.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\MS.Internal.SulpHur.Utilities.csproj.ResolveComReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\MS.Internal.SulpHur.Utilities.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\MS.Internal.SulpHur.Utilities.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.Utilities\obj\Debug\MS.Internal.SulpHur.Utilities.pdb

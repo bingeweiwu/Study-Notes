@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sulphur" Class="LinqDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AzureSulpHur1;Initial Catalog=Sulphur;User ID=SulphurDebug" SettingsObjectName="MS.Internal.SulpHur.CMRules.Properties.Settings" SettingsPropertyName="SulphurConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SpellFilters" Member="SpellFilters">
+    <Type Name="SpellFilter">
+      <Column Name="SpellFilterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpellFilterWord" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SpellFilterWordInString" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SpellIgnores" Member="SpellIgnores">
+    <Type Name="SpellIgnore">
+      <Column Name="SpellIgnoreID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ENUStr" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CHSStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DEUStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FRAStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JPNStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RUSStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CHTStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CSYStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ESNStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HUNStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ITAStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KORStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NLDStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PLKStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PTBStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PTGStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SVEStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TRKStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DANStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ELLStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FINStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NORStr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

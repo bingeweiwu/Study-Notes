@@ -1,0 +1,17 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\SulpHurServiceImp.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\SulpHurServiceImp.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\MS.Internal.SulpHur.UICompliance.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\SulpHurServiceAbstract.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\Mita.Localization.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\MS.Internal.SulpHur.Utilities.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\ManagedControlAgentWin32.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\Mita.ResourceExtractionProvider.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\Mita.Foundation.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\MS.Internal.SulpHur.UICompliance.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\SulpHurServiceAbstract.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\bin\Debug\MS.Internal.SulpHur.Utilities.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\obj\Debug\SulpHurServiceImp.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\obj\Debug\SulpHurServiceImp.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\obj\Debug\SulpHurServiceImp.csproj.CopyComplete
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\obj\Debug\SulpHurServiceImp.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurDBReader\obj\Debug\SulpHurServiceImp.pdb

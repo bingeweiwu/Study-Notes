@@ -1,0 +1,18 @@
+{
+    "SMS Product": "SCCM",
+    "Source": "Product Test Team",
+    "Issue type": "Code Defect",
+    "Breadth Area": "Accessibility",
+    "How found": "Automated test case",
+    "Doc Impact": "Unreviewed",
+    "SMS Language": "$SMSLan$",
+    "SMS Regression": "Unknown",
+    "Milestone": "Unreviewed",
+    "SMS Feature": "Admin UI",
+    "SMS Component": "Admin UI",
+    "Sprint Team": "International",
+    "Description": "$Description$",
+    "Security Bug Effect": "Not a Security Bug",
+    "Security Bug Cause" : "Not a Security Bug",
+    "Doc Impact": "No",
+}

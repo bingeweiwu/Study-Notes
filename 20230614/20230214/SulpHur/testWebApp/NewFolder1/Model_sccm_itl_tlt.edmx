@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SCCM_ITL_TLTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SH_People">
+          <Key>
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Name="Alias" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="256" />
+          <Property Name="Office" Type="nvarchar" MaxLength="256" />
+          <Property Name="Telephone" Type="varchar" MaxLength="256" />
+          <Property Name="OrgPath" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="ImageLink" Type="varchar" MaxLength="256" />
+          <Property Name="AliasDomain" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ID" Type="uniqueidentifier" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserPrincipalName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TeamsUserID" Type="varchar" MaxLength="255" />
+          <Property Name="TeamsConversationID" Type="varchar" MaxLength="255" />
+          <Property Name="Avatars" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="SCCM_ITL_TLTModelStoreContainer">
+          <EntitySet Name="SH_People" EntityType="Self.SH_People" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SCCM_ITL_TLTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SH_People">
+          <Key>
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Office" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="OrgPath" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageLink" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="AliasDomain" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Guid" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserPrincipalName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TeamsUserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TeamsConversationID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Avatars" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SCCM_ITL_TLTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SH_People" EntityType="Self.SH_People" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SCCM_ITL_TLTModelStoreContainer" CdmEntityContainer="SCCM_ITL_TLTEntities">
+          <EntitySetMapping Name="SH_People">
+            <EntityTypeMapping TypeName="SCCM_ITL_TLTModel.SH_People">
+              <MappingFragment StoreEntitySet="SH_People">
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Office" ColumnName="Office" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="OrgPath" ColumnName="OrgPath" />
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+                <ScalarProperty Name="AliasDomain" ColumnName="AliasDomain" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="UserPrincipalName" ColumnName="UserPrincipalName" />
+                <ScalarProperty Name="TeamsUserID" ColumnName="TeamsUserID" />
+                <ScalarProperty Name="TeamsConversationID" ColumnName="TeamsConversationID" />
+                <ScalarProperty Name="Avatars" ColumnName="Avatars" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

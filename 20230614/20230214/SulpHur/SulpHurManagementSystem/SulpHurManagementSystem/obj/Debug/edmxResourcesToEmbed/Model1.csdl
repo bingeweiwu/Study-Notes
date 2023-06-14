@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SulpHurEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="AssemblyInfoes" EntityType="SulpHurModel.AssemblyInfo" />
+    <EntitySet Name="AssemblyLinks" EntityType="SulpHurModel.AssemblyLink" />
+    <EntitySet Name="BugLinks" EntityType="SulpHurModel.BugLink" />
+    <EntitySet Name="BuildInfoes" EntityType="SulpHurModel.BuildInfo" />
+    <EntitySet Name="BuildTypes" EntityType="SulpHurModel.BuildType" />
+    <EntitySet Name="Clients" EntityType="SulpHurModel.Client" />
+    <EntitySet Name="ProviderDiffResults" EntityType="SulpHurModel.ProviderDiffResult" />
+    <EntitySet Name="Results" EntityType="SulpHurModel.Result" />
+    <EntitySet Name="Rules" EntityType="SulpHurModel.Rule" />
+    <EntitySet Name="RuleStatus" EntityType="SulpHurModel.RuleStatu" />
+    <EntitySet Name="UIContents" EntityType="SulpHurModel.UIContent" />
+    <EntitySet Name="UITraces" EntityType="SulpHurModel.UITrace" />
+    <EntitySet Name="ResultsSummaries" EntityType="SulpHurModel.ResultsSummary" />
+    <EntitySet Name="ViewAssemblySummaries" EntityType="SulpHurModel.ViewAssemblySummary" />
+    <EntitySet Name="ViewTypeBuilds" EntityType="SulpHurModel.ViewTypeBuild" />
+    <AssociationSet Name="FK_AssemblyLink_AssemblyInfo" Association="SulpHurModel.FK_AssemblyLink_AssemblyInfo">
+      <End Role="AssemblyInfo" EntitySet="AssemblyInfoes" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssemblyLink_UIContents" Association="SulpHurModel.FK_AssemblyLink_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BugLink_UIContents" Association="SulpHurModel.FK_BugLink_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="BugLink" EntitySet="BugLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_BuildInfo" Association="SulpHurModel.FK_UIContents_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfoes" />
+      <End Role="UIContent" EntitySet="UIContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_Clients" Association="SulpHurModel.FK_UIContents_Clients">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="UIContent" EntitySet="UIContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_Rules" Association="SulpHurModel.FK_Results_Rules">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="SulpHurModel.FK_Results_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="SulpHurModel.FK_RuleStatus_Rules">
+      <End Role="Rule" EntitySet="Rules" />
+      <End Role="RuleStatu" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="SulpHurModel.FK_RuleStatus_UIContents">
+      <End Role="UIContent" EntitySet="UIContents" />
+      <End Role="RuleStatu" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_UITrace" Association="SulpHurModel.FK_UIContents_UITrace">
+      <End Role="UITrace" EntitySet="UITraces" />
+      <End Role="UIContent" EntitySet="UIContents" />
+    </AssociationSet>
+    <EntitySet Name="ViewCapturedReports" EntityType="SulpHurModel.ViewCapturedReport" />
+    <EntitySet Name="LogExceptions" EntityType="SulpHurModel.LogException" />
+    <AssociationSet Name="FK_LogException_BuildInfo" Association="SulpHurModel.FK_LogException_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfoes" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_Clients" Association="SulpHurModel.FK_LogException_Clients">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <EntitySet Name="bugs" EntityType="SulpHurModel.bug" />
+    <EntitySet Name="surfaces" EntityType="SulpHurModel.surface" />
+    <EntitySet Name="bug_surface" EntityType="SulpHurModel.bug_surface" />
+    <AssociationSet Name="FK_bug_surface_bugs" Association="SulpHurModel.FK_bug_surface_bugs">
+      <End Role="bug" EntitySet="bugs" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bug_surface_surfaces" Association="SulpHurModel.FK_bug_surface_surfaces">
+      <End Role="surface" EntitySet="surfaces" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <EntitySet Name="User" EntityType="SulpHurModel.User" />
+  </EntityContainer>
+  <EntityType Name="AssemblyInfo">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Type="Int32" Name="TypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="AssemblyName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FullTypeName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TypeName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AssemblyLinks" Relationship="SulpHurModel.FK_AssemblyLink_AssemblyInfo" FromRole="AssemblyInfo" ToRole="AssemblyLink" />
+  </EntityType>
+  <EntityType Name="AssemblyLink">
+    <Key>
+      <PropertyRef Name="AssemblyLinkID" />
+    </Key>
+    <Property Type="Int32" Name="AssemblyLinkID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Boolean" Name="IsPageIdentifier" Nullable="false" />
+    <Property Type="Int32" Name="Reserve1" />
+    <Property Type="String" Name="Reserve2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AssemblyInfo" Relationship="SulpHurModel.FK_AssemblyLink_AssemblyInfo" FromRole="AssemblyLink" ToRole="AssemblyInfo" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_AssemblyLink_UIContents" FromRole="AssemblyLink" ToRole="UIContent" />
+  </EntityType>
+  <EntityType Name="BugLink">
+    <Key>
+      <PropertyRef Name="BugLinkID" />
+    </Key>
+    <Property Type="Int32" Name="BugLinkID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="BugID" Nullable="false" />
+    <Property Type="Guid" Name="GUID" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_BugLink_UIContents" FromRole="BugLink" ToRole="UIContent" />
+  </EntityType>
+  <EntityType Name="BuildInfo">
+    <Key>
+      <PropertyRef Name="BuildID" />
+    </Key>
+    <Property Type="Int32" Name="BuildID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UIContents" Relationship="SulpHurModel.FK_UIContents_BuildInfo" FromRole="BuildInfo" ToRole="UIContent" />
+    <NavigationProperty Name="LogExceptions" Relationship="SulpHurModel.FK_LogException_BuildInfo" FromRole="BuildInfo" ToRole="LogException" />
+  </EntityType>
+  <EntityType Name="BuildType">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Type="Int32" Name="RecordID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="AssemblyName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TypeName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mark" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LanuchSteps" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Type="Int32" Name="ClientID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MachineName" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IPAddress" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OSLanguage" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OSType" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MacAddress" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UIContents" Relationship="SulpHurModel.FK_UIContents_Clients" FromRole="Client" ToRole="UIContent" />
+    <NavigationProperty Name="LogExceptions" Relationship="SulpHurModel.FK_LogException_Clients" FromRole="Client" ToRole="LogException" />
+  </EntityType>
+  <EntityType Name="ProviderDiffResult">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Type="Int32" Name="ResultID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DiffType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WmiClassName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WmiClassBody" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SourceFileName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ContentIDPre" />
+    <Property Type="Int32" Name="ContentIDPost" />
+    <Property Type="String" Name="AssemblyName" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="HasImage" />
+    <Property Type="String" Name="PageName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ComparedBuild" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OldClass" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NewClass" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Type="Int32" Name="ResultID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="String" Name="RelatedControls" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RuleID" Nullable="false" />
+    <Property Type="String" Name="ResultType" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="ResultImage" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="ResultLog" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Rule" Relationship="SulpHurModel.FK_Results_Rules" FromRole="Result" ToRole="Rule" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_Results_UIContents" FromRole="Result" ToRole="UIContent" />
+    <Property Type="Int32" Name="ReviewFlag" />
+    <Property Name="ReviewLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Type="Int32" Name="RuleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="RuleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RulePath" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RuleDesc" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsEnabled" Nullable="false" />
+    <Property Type="String" Name="AssemblyInfo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Results" Relationship="SulpHurModel.FK_Results_Rules" FromRole="Rule" ToRole="Result" />
+    <NavigationProperty Name="RuleStatus" Relationship="SulpHurModel.FK_RuleStatus_Rules" FromRole="Rule" ToRole="RuleStatu" />
+    <Property Name="IsObsoluted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RuleStatu">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="RuleID" Nullable="false" />
+    <Property Type="Boolean" Name="RuleStatus" />
+    <Property Type="Boolean" Name="IsChecked" Nullable="false" />
+    <Property Type="DateTime" Name="DateUpdated" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Rule" Relationship="SulpHurModel.FK_RuleStatus_Rules" FromRole="RuleStatu" ToRole="Rule" />
+    <NavigationProperty Name="UIContent" Relationship="SulpHurModel.FK_RuleStatus_UIContents" FromRole="RuleStatu" ToRole="UIContent" />
+  </EntityType>
+  <EntityType Name="UIContent">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Type="Int32" Name="ContentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="GUID" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="String" Name="UIName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UIContent1" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="UIScreenShot" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="Boolean" Name="IsWebUI" Nullable="false" />
+    <Property Type="DateTime" Name="DateUploaded" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="TraceID" />
+    <Property Type="Int32" Name="Reserve1" />
+    <Property Type="String" Name="Reserve2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Reserve3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Reserve4" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Reserve5" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LaunchedFrom" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WindowHierarchy" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AssemblyLinks" Relationship="SulpHurModel.FK_AssemblyLink_UIContents" FromRole="UIContent" ToRole="AssemblyLink" />
+    <NavigationProperty Name="BugLinks" Relationship="SulpHurModel.FK_BugLink_UIContents" FromRole="UIContent" ToRole="BugLink" />
+    <NavigationProperty Name="BuildInfo" Relationship="SulpHurModel.FK_UIContents_BuildInfo" FromRole="UIContent" ToRole="BuildInfo" />
+    <NavigationProperty Name="Client" Relationship="SulpHurModel.FK_UIContents_Clients" FromRole="UIContent" ToRole="Client" />
+    <NavigationProperty Name="Results" Relationship="SulpHurModel.FK_Results_UIContents" FromRole="UIContent" ToRole="Result" />
+    <NavigationProperty Name="RuleStatus" Relationship="SulpHurModel.FK_RuleStatus_UIContents" FromRole="UIContent" ToRole="RuleStatu" />
+    <NavigationProperty Name="UITrace" Relationship="SulpHurModel.FK_UIContents_UITrace" FromRole="UIContent" ToRole="UITrace" />
+  </EntityType>
+  <EntityType Name="UITrace">
+    <Key>
+      <PropertyRef Name="TraceID" />
+    </Key>
+    <Property Type="Int32" Name="TraceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="TraceName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="Reserve1" />
+    <Property Type="String" Name="Reserve2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UIContents" Relationship="SulpHurModel.FK_UIContents_UITrace" FromRole="UITrace" ToRole="UIContent" />
+  </EntityType>
+  <EntityType Name="ResultsSummary">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="ResultID" />
+      <PropertyRef Name="ResultType" />
+      <PropertyRef Name="RuleID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="RuleName" />
+      <PropertyRef Name="IsEnabled" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="Expr3" />
+    </Key>
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ResultID" Nullable="false" />
+    <Property Type="String" Name="ResultType" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="RuleID" Nullable="false" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="String" Name="RuleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsEnabled" Nullable="false" />
+    <Property Type="Int32" Name="Expr2" Nullable="false" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="Int32" Name="Expr3" Nullable="false" />
+    <Property Type="String" Name="OSType" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ViewAssemblySummary">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="AssemblyName" />
+      <PropertyRef Name="FullTypeName" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="AssemblyLinkID" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="Expr4" />
+      <PropertyRef Name="IsPageIdentifier" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="Expr5" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="String" Name="AssemblyName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FullTypeName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="Int32" Name="Expr2" Nullable="false" />
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AssemblyLinkID" Nullable="false" />
+    <Property Type="Int32" Name="Expr3" Nullable="false" />
+    <Property Type="Int32" Name="Expr4" Nullable="false" />
+    <Property Type="Boolean" Name="IsPageIdentifier" Nullable="false" />
+    <Property Type="String" Name="UIName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="Int32" Name="Expr5" Nullable="false" />
+    <Property Type="String" Name="OSType" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ViewTypeBuild">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="BuildNo" />
+    </Key>
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="Int32" Name="Expr2" Nullable="false" />
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UIName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_AssemblyLink_AssemblyInfo">
+    <End Type="SulpHurModel.AssemblyInfo" Role="AssemblyInfo" Multiplicity="1" />
+    <End Type="SulpHurModel.AssemblyLink" Role="AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssemblyInfo">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssemblyLink_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.AssemblyLink" Role="AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BugLink_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.BugLink" Role="BugLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="BugLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_BuildInfo">
+    <End Type="SulpHurModel.BuildInfo" Role="BuildInfo" Multiplicity="1" />
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="UIContent">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_Clients">
+    <End Type="SulpHurModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="UIContent">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_Rules">
+    <End Type="SulpHurModel.Rule" Role="Rule" Multiplicity="1" />
+    <End Type="SulpHurModel.Result" Role="Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.Result" Role="Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Type="SulpHurModel.Rule" Role="Rule" Multiplicity="1" />
+    <End Type="SulpHurModel.RuleStatu" Role="RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatu">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="1" />
+    <End Type="SulpHurModel.RuleStatu" Role="RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContent">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatu">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_UITrace">
+    <End Type="SulpHurModel.UITrace" Role="UITrace" Multiplicity="0..1" />
+    <End Type="SulpHurModel.UIContent" Role="UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UITrace">
+        <PropertyRef Name="TraceID" />
+      </Principal>
+      <Dependent Role="UIContent">
+        <PropertyRef Name="TraceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ViewCapturedReport">
+    <Key>
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="RuleID" />
+      <PropertyRef Name="ResultID" />
+      <PropertyRef Name="RuleName" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="DateUploaded" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="ResultType" />
+      <PropertyRef Name="AssemblyLinkID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="AssemblyName" />
+      <PropertyRef Name="FullTypeName" />
+    </Key>
+    <Property Type="String" Name="BuildNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Language" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="Int32" Name="ContentID" Nullable="false" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="Int32" Name="RuleID" Nullable="false" />
+    <Property Type="Int32" Name="ResultID" Nullable="false" />
+    <Property Type="String" Name="RuleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UIName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OSType" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateUploaded" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="ResultType" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OSLanguage" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AssemblyLinkID" Nullable="false" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+    <Property Type="Int32" Name="Expr2" Nullable="false" />
+    <Property Type="String" Name="AssemblyName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FullTypeName" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ReviewFlag" />
+    <Property Name="ReviewLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LogException">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Type="Int32" Name="LogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ClientID" Nullable="false" />
+    <Property Type="Int32" Name="BuildID" Nullable="false" />
+    <Property Type="String" Name="ExceptionContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InsertTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LastModifyTime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ExceptionCount" Nullable="false" />
+    <Property Type="String" Name="Accessories" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BuildInfo" Relationship="SulpHurModel.FK_LogException_BuildInfo" FromRole="LogException" ToRole="BuildInfo" />
+    <NavigationProperty Name="Client" Relationship="SulpHurModel.FK_LogException_Clients" FromRole="LogException" ToRole="Client" />
+  </EntityType>
+  <Association Name="FK_LogException_BuildInfo">
+    <End Type="SulpHurModel.BuildInfo" Role="BuildInfo" Multiplicity="1" />
+    <End Type="SulpHurModel.LogException" Role="LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_Clients">
+    <End Type="SulpHurModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="SulpHurModel.LogException" Role="LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="bug">
+    <Key>
+      <PropertyRef Name="bug_id" />
+    </Key>
+    <Property Name="bug_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="repro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assigned_to" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="priority" Type="Int16" />
+    <Property Name="severity" Type="Int16" />
+    <Property Name="issue_type" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="bug_surface" Relationship="SulpHurModel.FK_bug_surface_bugs" FromRole="bug" ToRole="bug_surface" />
+  </EntityType>
+  <EntityType Name="surface">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="class_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="assembly_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="bug_surface" Relationship="SulpHurModel.FK_bug_surface_surfaces" FromRole="surface" ToRole="bug_surface" />
+  </EntityType>
+  <EntityType Name="bug_surface">
+    <Key>
+      <PropertyRef Name="sb_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" />
+    <Property Name="bug_id" Type="Int32" />
+    <Property Name="sb_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="bugs" Relationship="SulpHurModel.FK_bug_surface_bugs" FromRole="bug_surface" ToRole="bug" />
+    <NavigationProperty Name="surfaces" Relationship="SulpHurModel.FK_bug_surface_surfaces" FromRole="bug_surface" ToRole="surface" />
+  </EntityType>
+  <Association Name="FK_bug_surface_bugs">
+    <End Type="SulpHurModel.bug" Role="bug" Multiplicity="0..1" />
+    <End Type="SulpHurModel.bug_surface" Role="bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bug">
+        <PropertyRef Name="bug_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="bug_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bug_surface_surfaces">
+    <End Type="SulpHurModel.surface" Role="surface" Multiplicity="0..1" />
+    <End Type="SulpHurModel.bug_surface" Role="bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="surface">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="s_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="FullUserName" />
+    </Key>
+    <Property Name="FullUserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnglistName" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+</Schema>

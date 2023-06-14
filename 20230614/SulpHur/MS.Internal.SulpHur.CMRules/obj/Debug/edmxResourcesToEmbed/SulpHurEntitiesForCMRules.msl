@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SulphurModelStoreContainer" CdmEntityContainer="SulpHurEntitiesForCMRules">
+    <EntitySetMapping Name="AssemblyInfoes">
+      <EntityTypeMapping TypeName="SulphurModel.AssemblyInfo">
+        <MappingFragment StoreEntitySet="AssemblyInfo">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="AssemblyName" ColumnName="AssemblyName" />
+          <ScalarProperty Name="FullTypeName" ColumnName="FullTypeName" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssemblyLinks">
+      <EntityTypeMapping TypeName="SulphurModel.AssemblyLink">
+        <MappingFragment StoreEntitySet="AssemblyLink">
+          <ScalarProperty Name="AssemblyLinkID" ColumnName="AssemblyLinkID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="IsPageIdentifier" ColumnName="IsPageIdentifier" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_surface">
+      <EntityTypeMapping TypeName="SulphurModel.bug_surface">
+        <MappingFragment StoreEntitySet="bug_surface">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="bug_id" ColumnName="bug_id" />
+          <ScalarProperty Name="sb_id" ColumnName="sb_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BugLinks">
+      <EntityTypeMapping TypeName="SulphurModel.BugLink">
+        <MappingFragment StoreEntitySet="BugLink">
+          <ScalarProperty Name="BugLinkID" ColumnName="BugLinkID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="BugID" ColumnName="BugID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bugs">
+      <EntityTypeMapping TypeName="SulphurModel.bug">
+        <MappingFragment StoreEntitySet="bugs">
+          <ScalarProperty Name="bug_id" ColumnName="bug_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="repro" ColumnName="repro" />
+          <ScalarProperty Name="assigned_to" ColumnName="assigned_to" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="issue_type" ColumnName="issue_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuildInfoes">
+      <EntityTypeMapping TypeName="SulphurModel.BuildInfo">
+        <MappingFragment StoreEntitySet="BuildInfo">
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="BuildNo" ColumnName="BuildNo" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuildTypes">
+      <EntityTypeMapping TypeName="SulphurModel.BuildType">
+        <MappingFragment StoreEntitySet="BuildTypes">
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="AssemblyName" ColumnName="AssemblyName" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="BuildNo" ColumnName="BuildNo" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="LanuchSteps" ColumnName="LanuchSteps" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuildVersionMaps">
+      <EntityTypeMapping TypeName="SulphurModel.BuildVersionMap">
+        <MappingFragment StoreEntitySet="BuildVersionMaps">
+          <ScalarProperty Name="BuildVersionMapID" ColumnName="BuildVersionMapID" />
+          <ScalarProperty Name="NewFormatBuildVersion" ColumnName="NewFormatBuildVersion" />
+          <ScalarProperty Name="StandardFormatBuildVersion" ColumnName="StandardFormatBuildVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="SulphurModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="OSLanguage" ColumnName="OSLanguage" />
+          <ScalarProperty Name="OSType" ColumnName="OSType" />
+          <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeletedContents">
+      <EntityTypeMapping TypeName="SulphurModel.DeletedContent">
+        <MappingFragment StoreEntitySet="DeletedContents">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="UIContent" ColumnName="UIContent" />
+          <ScalarProperty Name="UIScreenShot" ColumnName="UIScreenShot" />
+          <ScalarProperty Name="IsWebUI" ColumnName="IsWebUI" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+          <ScalarProperty Name="TraceID" ColumnName="TraceID" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="Reserve3" ColumnName="Reserve3" />
+          <ScalarProperty Name="Reserve4" ColumnName="Reserve4" />
+          <ScalarProperty Name="Reserve5" ColumnName="Reserve5" />
+          <ScalarProperty Name="LaunchedFrom" ColumnName="LaunchedFrom" />
+          <ScalarProperty Name="WindowHierarchy" ColumnName="WindowHierarchy" />
+          <ScalarProperty Name="AssemblyLinkIDs" ColumnName="AssemblyLinkIDs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeletedContentsTemps">
+      <EntityTypeMapping TypeName="SulphurModel.DeletedContentsTemp">
+        <MappingFragment StoreEntitySet="DeletedContentsTemp">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="UIContent" ColumnName="UIContent" />
+          <ScalarProperty Name="UIScreenShot" ColumnName="UIScreenShot" />
+          <ScalarProperty Name="IsWebUI" ColumnName="IsWebUI" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+          <ScalarProperty Name="TraceID" ColumnName="TraceID" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="Reserve3" ColumnName="Reserve3" />
+          <ScalarProperty Name="Reserve4" ColumnName="Reserve4" />
+          <ScalarProperty Name="Reserve5" ColumnName="Reserve5" />
+          <ScalarProperty Name="LaunchedFrom" ColumnName="LaunchedFrom" />
+          <ScalarProperty Name="WindowHierarchy" ColumnName="WindowHierarchy" />
+          <ScalarProperty Name="AssemblyLinkIDs" ColumnName="AssemblyLinkIDs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Assemblies">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Assemblies">
+        <MappingFragment StoreEntitySet="LCX_Assemblies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Assembly" ColumnName="Assembly" />
+          <ScalarProperty Name="Trace" ColumnName="Trace" />
+          <ScalarProperty Name="IsGeneral" ColumnName="IsGeneral" />
+          <ScalarProperty Name="FeatureID" ColumnName="FeatureID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_AssociationAssembly">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_AssociationAssembly">
+        <MappingFragment StoreEntitySet="LCX_AssociationAssembly">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MainAssemblyID" ColumnName="MainAssemblyID" />
+          <ScalarProperty Name="ReferencedAssemblyID" ColumnName="ReferencedAssemblyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Cache">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Cache">
+        <MappingFragment StoreEntitySet="LCX_Cache">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompareBuilds" ColumnName="CompareBuilds" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="DetailGenerateStatus" ColumnName="DetailGenerateStatus" />
+          <ScalarProperty Name="MainReportGenerateStatus" ColumnName="MainReportGenerateStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_CacheLanguage">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_CacheLanguage">
+        <MappingFragment StoreEntitySet="LCX_CacheLanguage">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Details">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Details">
+        <MappingFragment StoreEntitySet="LCX_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LanguageKeyID" ColumnName="LanguageKeyID" />
+          <ScalarProperty Name="AssemblyID" ColumnName="AssemblyID" />
+          <ScalarProperty Name="FileStatus" ColumnName="FileStatus" />
+          <ScalarProperty Name="Resid_Full" ColumnName="Resid_Full" />
+          <ScalarProperty Name="Resid" ColumnName="Resid" />
+          <ScalarProperty Name="EnuBefore" ColumnName="EnuBefore" />
+          <ScalarProperty Name="EnuAfter" ColumnName="EnuAfter" />
+          <ScalarProperty Name="EnuAfterWC" ColumnName="EnuAfterWC" />
+          <ScalarProperty Name="EnuStringIs" ColumnName="EnuStringIs" />
+          <ScalarProperty Name="LocBefore" ColumnName="LocBefore" />
+          <ScalarProperty Name="LocAfter" ColumnName="LocAfter" />
+          <ScalarProperty Name="LocAfterWC" ColumnName="LocAfterWC" />
+          <ScalarProperty Name="LocStringIs" ColumnName="LocStringIs" />
+          <ScalarProperty Name="LocStatusBefore" ColumnName="LocStatusBefore" />
+          <ScalarProperty Name="LocStatusAfter" ColumnName="LocStatusAfter" />
+          <ScalarProperty Name="IsEmptyString" ColumnName="IsEmptyString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Employers">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Employers">
+        <MappingFragment StoreEntitySet="LCX_Employers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployerAlias" ColumnName="EmployerAlias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Features">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Features">
+        <MappingFragment StoreEntitySet="LCX_Features">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FeatureName" ColumnName="FeatureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_FilteredStrs">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_FilteredStrs">
+        <MappingFragment StoreEntitySet="LCX_FilteredStrs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FilePattern" ColumnName="FilePattern" />
+          <ScalarProperty Name="StringPattern" ColumnName="StringPattern" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_MainReport">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_MainReport">
+        <MappingFragment StoreEntitySet="LCX_MainReport">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompareBuildID" ColumnName="CompareBuildID" />
+          <ScalarProperty Name="AssemblyID" ColumnName="AssemblyID" />
+          <ScalarProperty Name="AssemblyFileStatus" ColumnName="AssemblyFileStatus" />
+          <ScalarProperty Name="Resid_Full" ColumnName="Resid_Full" />
+          <ScalarProperty Name="Resid" ColumnName="Resid" />
+          <ScalarProperty Name="Value_Old" ColumnName="Value_Old" />
+          <ScalarProperty Name="Value_New" ColumnName="Value_New" />
+          <ScalarProperty Name="ReferencedOnUI" ColumnName="ReferencedOnUI" />
+          <ScalarProperty Name="CHSValue_Old" ColumnName="CHSValue_Old" />
+          <ScalarProperty Name="CHSValue_New" ColumnName="CHSValue_New" />
+          <ScalarProperty Name="CHS_ResultID" ColumnName="CHS_ResultID" />
+          <ScalarProperty Name="CHS_ManuallyVerified" ColumnName="CHS_ManuallyVerified" />
+          <ScalarProperty Name="CHTValue_Old" ColumnName="CHTValue_Old" />
+          <ScalarProperty Name="CHTValue_New" ColumnName="CHTValue_New" />
+          <ScalarProperty Name="CHT_ResultID" ColumnName="CHT_ResultID" />
+          <ScalarProperty Name="CHT_ManuallyVerified" ColumnName="CHT_ManuallyVerified" />
+          <ScalarProperty Name="CSYValue_Old" ColumnName="CSYValue_Old" />
+          <ScalarProperty Name="CSYValue_New" ColumnName="CSYValue_New" />
+          <ScalarProperty Name="CSY_ResultID" ColumnName="CSY_ResultID" />
+          <ScalarProperty Name="CSY_ManuallyVerified" ColumnName="CSY_ManuallyVerified" />
+          <ScalarProperty Name="DANValue_Old" ColumnName="DANValue_Old" />
+          <ScalarProperty Name="DANValue_New" ColumnName="DANValue_New" />
+          <ScalarProperty Name="DAN_ResultID" ColumnName="DAN_ResultID" />
+          <ScalarProperty Name="DAN_ManuallyVerified" ColumnName="DAN_ManuallyVerified" />
+          <ScalarProperty Name="DEUValue_Old" ColumnName="DEUValue_Old" />
+          <ScalarProperty Name="DEUValue_New" ColumnName="DEUValue_New" />
+          <ScalarProperty Name="DEU_ResultID" ColumnName="DEU_ResultID" />
+          <ScalarProperty Name="DEU_ManuallyVerified" ColumnName="DEU_ManuallyVerified" />
+          <ScalarProperty Name="ELLValue_Old" ColumnName="ELLValue_Old" />
+          <ScalarProperty Name="ELLValue_New" ColumnName="ELLValue_New" />
+          <ScalarProperty Name="ELL_ResultID" ColumnName="ELL_ResultID" />
+          <ScalarProperty Name="ELL_ManuallyVerified" ColumnName="ELL_ManuallyVerified" />
+          <ScalarProperty Name="ENUValue_Old" ColumnName="ENUValue_Old" />
+          <ScalarProperty Name="ENUValue_New" ColumnName="ENUValue_New" />
+          <ScalarProperty Name="ENU_ResultID" ColumnName="ENU_ResultID" />
+          <ScalarProperty Name="ENU_ManuallyVerified" ColumnName="ENU_ManuallyVerified" />
+          <ScalarProperty Name="ESNValue_Old" ColumnName="ESNValue_Old" />
+          <ScalarProperty Name="ESNValue_New" ColumnName="ESNValue_New" />
+          <ScalarProperty Name="ESN_ResultID" ColumnName="ESN_ResultID" />
+          <ScalarProperty Name="ESN_ManuallyVerified" ColumnName="ESN_ManuallyVerified" />
+          <ScalarProperty Name="FINValue_Old" ColumnName="FINValue_Old" />
+          <ScalarProperty Name="FINValue_New" ColumnName="FINValue_New" />
+          <ScalarProperty Name="FIN_ResultID" ColumnName="FIN_ResultID" />
+          <ScalarProperty Name="FIN_ManuallyVerified" ColumnName="FIN_ManuallyVerified" />
+          <ScalarProperty Name="FRAValue_Old" ColumnName="FRAValue_Old" />
+          <ScalarProperty Name="FRAValue_New" ColumnName="FRAValue_New" />
+          <ScalarProperty Name="FRA_ResultID" ColumnName="FRA_ResultID" />
+          <ScalarProperty Name="FRA_ManuallyVerified" ColumnName="FRA_ManuallyVerified" />
+          <ScalarProperty Name="HUNValue_Old" ColumnName="HUNValue_Old" />
+          <ScalarProperty Name="HUNValue_New" ColumnName="HUNValue_New" />
+          <ScalarProperty Name="HUN_ResultID" ColumnName="HUN_ResultID" />
+          <ScalarProperty Name="HUN_ManuallyVerified" ColumnName="HUN_ManuallyVerified" />
+          <ScalarProperty Name="ITAValue_Old" ColumnName="ITAValue_Old" />
+          <ScalarProperty Name="ITAValue_New" ColumnName="ITAValue_New" />
+          <ScalarProperty Name="ITA_ResultID" ColumnName="ITA_ResultID" />
+          <ScalarProperty Name="ITA_ManuallyVerified" ColumnName="ITA_ManuallyVerified" />
+          <ScalarProperty Name="JPNValue_Old" ColumnName="JPNValue_Old" />
+          <ScalarProperty Name="JPNValue_New" ColumnName="JPNValue_New" />
+          <ScalarProperty Name="JPN_ResultID" ColumnName="JPN_ResultID" />
+          <ScalarProperty Name="JPN_ManuallyVerified" ColumnName="JPN_ManuallyVerified" />
+          <ScalarProperty Name="KORValue_Old" ColumnName="KORValue_Old" />
+          <ScalarProperty Name="KORValue_New" ColumnName="KORValue_New" />
+          <ScalarProperty Name="KOR_ResultID" ColumnName="KOR_ResultID" />
+          <ScalarProperty Name="KOR_ManuallyVerified" ColumnName="KOR_ManuallyVerified" />
+          <ScalarProperty Name="NLDValue_Old" ColumnName="NLDValue_Old" />
+          <ScalarProperty Name="NLDValue_New" ColumnName="NLDValue_New" />
+          <ScalarProperty Name="NLD_ResultID" ColumnName="NLD_ResultID" />
+          <ScalarProperty Name="NLD_ManuallyVerified" ColumnName="NLD_ManuallyVerified" />
+          <ScalarProperty Name="NORValue_Old" ColumnName="NORValue_Old" />
+          <ScalarProperty Name="NORValue_New" ColumnName="NORValue_New" />
+          <ScalarProperty Name="NOR_ResultID" ColumnName="NOR_ResultID" />
+          <ScalarProperty Name="NOR_ManuallyVerified" ColumnName="NOR_ManuallyVerified" />
+          <ScalarProperty Name="PLKValue_Old" ColumnName="PLKValue_Old" />
+          <ScalarProperty Name="PLKValue_New" ColumnName="PLKValue_New" />
+          <ScalarProperty Name="PLK_ResultID" ColumnName="PLK_ResultID" />
+          <ScalarProperty Name="PLK_ManuallyVerified" ColumnName="PLK_ManuallyVerified" />
+          <ScalarProperty Name="PTBValue_Old" ColumnName="PTBValue_Old" />
+          <ScalarProperty Name="PTBValue_New" ColumnName="PTBValue_New" />
+          <ScalarProperty Name="PTB_ResultID" ColumnName="PTB_ResultID" />
+          <ScalarProperty Name="PTB_ManuallyVerified" ColumnName="PTB_ManuallyVerified" />
+          <ScalarProperty Name="PTGValue_Old" ColumnName="PTGValue_Old" />
+          <ScalarProperty Name="PTGValue_New" ColumnName="PTGValue_New" />
+          <ScalarProperty Name="PTG_ResultID" ColumnName="PTG_ResultID" />
+          <ScalarProperty Name="PTG_ManuallyVerified" ColumnName="PTG_ManuallyVerified" />
+          <ScalarProperty Name="RUSValue_Old" ColumnName="RUSValue_Old" />
+          <ScalarProperty Name="RUSValue_New" ColumnName="RUSValue_New" />
+          <ScalarProperty Name="RUS_ResultID" ColumnName="RUS_ResultID" />
+          <ScalarProperty Name="RUS_ManuallyVerified" ColumnName="RUS_ManuallyVerified" />
+          <ScalarProperty Name="SVEValue_Old" ColumnName="SVEValue_Old" />
+          <ScalarProperty Name="SVEValue_New" ColumnName="SVEValue_New" />
+          <ScalarProperty Name="SVE_ResultID" ColumnName="SVE_ResultID" />
+          <ScalarProperty Name="SVE_ManuallyVerified" ColumnName="SVE_ManuallyVerified" />
+          <ScalarProperty Name="TRKValue_Old" ColumnName="TRKValue_Old" />
+          <ScalarProperty Name="TRKValue_New" ColumnName="TRKValue_New" />
+          <ScalarProperty Name="TRK_ResultID" ColumnName="TRK_ResultID" />
+          <ScalarProperty Name="TRK_ManuallyVerified" ColumnName="TRK_ManuallyVerified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCX_Status">
+      <EntityTypeMapping TypeName="SulphurModel.LCX_Status">
+        <MappingFragment StoreEntitySet="LCX_Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogExceptions">
+      <EntityTypeMapping TypeName="SulphurModel.LogException">
+        <MappingFragment StoreEntitySet="LogException">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="ExceptionContent" ColumnName="ExceptionContent" />
+          <ScalarProperty Name="InsertTime" ColumnName="InsertTime" />
+          <ScalarProperty Name="LastModifyTime" ColumnName="LastModifyTime" />
+          <ScalarProperty Name="ExceptionCount" ColumnName="ExceptionCount" />
+          <ScalarProperty Name="Accessories" ColumnName="Accessories" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderDiffResults">
+      <EntityTypeMapping TypeName="SulphurModel.ProviderDiffResult">
+        <MappingFragment StoreEntitySet="ProviderDiffResults">
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+          <ScalarProperty Name="DiffType" ColumnName="DiffType" />
+          <ScalarProperty Name="WmiClassName" ColumnName="WmiClassName" />
+          <ScalarProperty Name="WmiClassBody" ColumnName="WmiClassBody" />
+          <ScalarProperty Name="SourceFileName" ColumnName="SourceFileName" />
+          <ScalarProperty Name="ContentIDPre" ColumnName="ContentIDPre" />
+          <ScalarProperty Name="ContentIDPost" ColumnName="ContentIDPost" />
+          <ScalarProperty Name="AssemblyName" ColumnName="AssemblyName" />
+          <ScalarProperty Name="HasImage" ColumnName="HasImage" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="ComparedBuild" ColumnName="ComparedBuild" />
+          <ScalarProperty Name="OldClass" ColumnName="OldClass" />
+          <ScalarProperty Name="NewClass" ColumnName="NewClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="SulphurModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="RelatedControls" ColumnName="RelatedControls" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="ResultType" ColumnName="ResultType" />
+          <ScalarProperty Name="ResultImage" ColumnName="ResultImage" />
+          <ScalarProperty Name="ResultLog" ColumnName="ResultLog" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ReviewFlag" ColumnName="ReviewFlag" />
+          <ScalarProperty Name="ReviewLog" ColumnName="ReviewLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rules">
+      <EntityTypeMapping TypeName="SulphurModel.Rule">
+        <MappingFragment StoreEntitySet="Rules">
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="RulePath" ColumnName="RulePath" />
+          <ScalarProperty Name="RuleDesc" ColumnName="RuleDesc" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="AssemblyInfo" ColumnName="AssemblyInfo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsObsoluted" ColumnName="IsObsoluted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleStatus">
+      <EntityTypeMapping TypeName="SulphurModel.RuleStatu">
+        <MappingFragment StoreEntitySet="RuleStatus">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RuleStatus" ColumnName="RuleStatus" />
+          <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="surfaces">
+      <EntityTypeMapping TypeName="SulphurModel.surface">
+        <MappingFragment StoreEntitySet="surfaces">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="class_name" ColumnName="class_name" />
+          <ScalarProperty Name="assembly_name" ColumnName="assembly_name" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SulphurModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestTables">
+      <EntityTypeMapping TypeName="SulphurModel.TestTable">
+        <MappingFragment StoreEntitySet="TestTable">
+          <ScalarProperty Name="TestID" ColumnName="TestID" />
+          <ScalarProperty Name="TestKey" ColumnName="TestKey" />
+          <ScalarProperty Name="TestValue" ColumnName="TestValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UIContents">
+      <EntityTypeMapping TypeName="SulphurModel.UIContent">
+        <MappingFragment StoreEntitySet="UIContents">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="UIContent1" ColumnName="UIContent" />
+          <ScalarProperty Name="UIScreenShot" ColumnName="UIScreenShot" />
+          <ScalarProperty Name="IsWebUI" ColumnName="IsWebUI" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+          <ScalarProperty Name="TraceID" ColumnName="TraceID" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="Reserve3" ColumnName="Reserve3" />
+          <ScalarProperty Name="Reserve4" ColumnName="Reserve4" />
+          <ScalarProperty Name="Reserve5" ColumnName="Reserve5" />
+          <ScalarProperty Name="LaunchedFrom" ColumnName="LaunchedFrom" />
+          <ScalarProperty Name="WindowHierarchy" ColumnName="WindowHierarchy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UITraces">
+      <EntityTypeMapping TypeName="SulphurModel.UITrace">
+        <MappingFragment StoreEntitySet="UITrace">
+          <ScalarProperty Name="TraceID" ColumnName="TraceID" />
+          <ScalarProperty Name="TraceName" ColumnName="TraceName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SulphurModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="FullUserName" ColumnName="FullUserName" />
+          <ScalarProperty Name="EnglistName" ColumnName="EnglistName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VSOServers">
+      <EntityTypeMapping TypeName="SulphurModel.VSOServer">
+        <MappingFragment StoreEntitySet="VSOServers">
+          <ScalarProperty Name="VSOServerID" ColumnName="VSOServerID" />
+          <ScalarProperty Name="VSOServerName" ColumnName="VSOServerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeletedAssemblyLinks">
+      <EntityTypeMapping TypeName="SulphurModel.DeletedAssemblyLink">
+        <MappingFragment StoreEntitySet="DeletedAssemblyLinks">
+          <ScalarProperty Name="AssemblyLinkID" ColumnName="AssemblyLinkID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="IsPageIdentifier" ColumnName="IsPageIdentifier" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellChecks">
+      <EntityTypeMapping TypeName="SulphurModel.FilterSpellCheck">
+        <MappingFragment StoreEntitySet="FilterSpellCheck">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="regexString" ColumnName="regexString" />
+          <ScalarProperty Name="properNoun" ColumnName="properNoun" />
+          <ScalarProperty Name="nonEnglishButtonName" ColumnName="nonEnglishButtonName" />
+          <ScalarProperty Name="pageExceptionType" ColumnName="pageExceptionType" />
+          <ScalarProperty Name="exceptionPageTitle" ColumnName="exceptionPageTitle" />
+          <ScalarProperty Name="excludeTextDetectPageTitle" ColumnName="excludeTextDetectPageTitle" />
+          <ScalarProperty Name="normalPunctuation" ColumnName="normalPunctuation" />
+          <ScalarProperty Name="reserve2" ColumnName="reserve2" />
+          <ScalarProperty Name="reserve3" ColumnName="reserve3" />
+          <ScalarProperty Name="reserve4" ColumnName="reserve4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonEnglishButtonNames">
+      <EntityTypeMapping TypeName="SulphurModel.NonEnglishButtonName">
+        <MappingFragment StoreEntitySet="NonEnglishButtonName">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+          <ScalarProperty Name="Reserve" ColumnName="Reserve" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultsBacks">
+      <EntityTypeMapping TypeName="SulphurModel.ResultsBack">
+        <MappingFragment StoreEntitySet="ResultsBack">
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="RelatedControls" ColumnName="RelatedControls" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="ResultType" ColumnName="ResultType" />
+          <ScalarProperty Name="ResultImage" ColumnName="ResultImage" />
+          <ScalarProperty Name="ResultLog" ColumnName="ResultLog" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ReviewFlag" ColumnName="ReviewFlag" />
+          <ScalarProperty Name="ReviewLog" ColumnName="ReviewLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_bug_surface">
+      <EntityTypeMapping TypeName="SulphurModel.temp_bug_surface">
+        <MappingFragment StoreEntitySet="temp_bug_surface">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="bug_id" ColumnName="bug_id" />
+          <ScalarProperty Name="sb_id" ColumnName="sb_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_bugs">
+      <EntityTypeMapping TypeName="SulphurModel.temp_bugs">
+        <MappingFragment StoreEntitySet="temp_bugs">
+          <ScalarProperty Name="bug_id" ColumnName="bug_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="repro" ColumnName="repro" />
+          <ScalarProperty Name="assigned_to" ColumnName="assigned_to" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="severity" ColumnName="severity" />
+          <ScalarProperty Name="issue_type" ColumnName="issue_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VerticalSortPageNameLists">
+      <EntityTypeMapping TypeName="SulphurModel.VerticalSortPageNameList">
+        <MappingFragment StoreEntitySet="VerticalSortPageNameList">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

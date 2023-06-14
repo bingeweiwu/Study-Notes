@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F560BCA1-EF96-4501-BDB0-F6FA36E5ABEB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProviderDiff</RootNamespace>
+    <AssemblyName>ProviderDiff</AssemblyName>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxQuery.aspx" />
+    <Content Include="BindingTable.asmx" />
+    <Content Include="CanvasDraw.js" />
+    <Content Include="CMMetro.css" />
+    <Content Include="DefaultStyleSheet.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="HomePageService.asmx" />
+    <Content Include="img\arrow.jpg" />
+    <Content Include="img\arrow1.jpg" />
+    <Content Include="img\bac1.jpg" />
+    <Content Include="img\captured.jpg" />
+    <Content Include="img\captured.png" />
+    <Content Include="img\client.jpg" />
+    <Content Include="img\client.png" />
+    <Content Include="img\close_icon.png" />
+    <Content Include="img\collpase.jpg" />
+    <Content Include="img\diff.jpg" />
+    <Content Include="img\diff.png" />
+    <Content Include="img\edit.png" />
+    <Content Include="img\expand1.png" />
+    <Content Include="img\icons1.jpg" />
+    <Content Include="img\mail.jpg" />
+    <Content Include="img\mail.png" />
+    <Content Include="img\onebit_33.png" />
+    <Content Include="img\Right_Icon.png" />
+    <Content Include="img\tele.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="IndexOld.aspx" />
+    <Content Include="HomeStyle.css" />
+    <Content Include="Image.aspx" />
+    <Content Include="img\1.png" />
+    <Content Include="img\ajax-loader.gif" />
+    <Content Include="img\cancel.png" />
+    <Content Include="img\find_magnify.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\MB_0003_mail2 %282%29.png" />
+    <Content Include="img\MB_0003_mail2.png" />
+    <Content Include="img\MB_0023_home2 %282%29.png" />
+    <Content Include="img\MB_0023_home2.png" />
+    <Content Include="img\save.png" />
+    <Content Include="img\services-swatchbook.png" />
+    <Content Include="img\sulphur.JPG" />
+    <Content Include="img\title-arrow.png" />
+    <Content Include="jquery-1.8.2.js" />
+    <Content Include="JScriptHome.js" />
+    <Content Include="MissPageDetails.aspx" />
+    <Content Include="ProviderDiff.aspx" />
+    <Content Include="jquery.bpopup-0.7.0.min.js" />
+    <Content Include="scripts\common.js" />
+    <Content Include="scripts\jquery-1.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxQuery.aspx.cs">
+      <DependentUpon>AjaxQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxQuery.aspx.designer.cs">
+      <DependentUpon>AjaxQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BindingTable.asmx.cs">
+      <DependentUpon>BindingTable.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DiffModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiffModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageService.asmx.cs">
+      <DependentUpon>HomePageService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image.aspx.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image.aspx.designer.cs">
+      <DependentUpon>Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MissPageDetails.aspx.cs">
+      <DependentUpon>MissPageDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MissPageDetails.aspx.designer.cs">
+      <DependentUpon>MissPageDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderDiff.aspx.cs">
+      <DependentUpon>ProviderDiff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderDiff.aspx.designer.cs">
+      <DependentUpon>ProviderDiff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DiffModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DiffModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="external\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SulpHurDBReader\SulpHurServiceImp.csproj">
+      <Project>{6fff10bc-f368-4226-8b49-51c4cff4a2b5}</Project>
+      <Name>SulpHurServiceImp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SulpHurServiceAbstract\SulpHurServiceAbstract.csproj">
+      <Project>{f6f3b31a-b3e6-4cef-91bd-8c9ef41e4a84}</Project>
+      <Name>SulpHurServiceAbstract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\SulpHurWebSite.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56214</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FilterSpellCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regexString" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="properNoun" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nonEnglishButtonName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="pageExceptionType" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="exceptionPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="excludeTextDetectPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="normalPunctuation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="reserve2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VerticalSortPageNameList">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="SulpHurEntitiesForCMRules" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FilterSpellChecks" EntityType="Self.FilterSpellCheck" />
+    <EntitySet Name="VerticalSortPageNameLists" EntityType="Self.VerticalSortPageNameList" />
+    <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="SulpHurModel.FilterSpellCheck_exceptionPageTitle" />
+    <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle" />
+    <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="SulpHurModel.FilterSpellCheck_nonEnglishButtonName" />
+    <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="SulpHurModel.FilterSpellCheck_normalPunctuation" />
+    <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="SulpHurModel.FilterSpellCheck_pageExceptionType" />
+    <EntitySet Name="FilterSpellCheck_properNoun" EntityType="SulpHurModel.FilterSpellCheck_properNoun" />
+    <EntitySet Name="FilterSpellCheck_regexString" EntityType="SulpHurModel.FilterSpellCheck_regexString" />
+    <EntitySet Name="FilterSpellCheck_abnormalButNoImpact" EntityType="SulpHurModel.FilterSpellCheck_abnormalButNoImpact" />
+    <EntitySet Name="NonEnglishWordsButEnglishLetters" EntityType="SulpHurModel.NonEnglishWordsButEnglishLetter" />
+    <EntitySet Name="NonEnglishButtonNames" EntityType="SulpHurModel.NonEnglishButtonName" />
+    <EntitySet Name="WordsSharedWithEnglishes" EntityType="SulpHurModel.WordsSharedWithEnglish" />
+  </EntityContainer>
+  <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="exceptionPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="excludeTextDetectPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nonEnglishButtonName" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_normalPunctuation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="normalPunctuation" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_pageExceptionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pageExceptionType" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_properNoun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="properNoun" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_regexString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regexString" Type="String" Nullable="false" MaxLength="2047" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck_abnormalButNoImpact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="abnormalButNoImpact" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NonEnglishWordsButEnglishLetter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NonEnglishWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NonEnglishButtonName">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ButtonName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Reserve" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WordsSharedWithEnglish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Word" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ENU" Type="Boolean" Nullable="false" />
+    <Property Name="CHS" Type="Boolean" Nullable="false" />
+    <Property Name="DEU" Type="Boolean" Nullable="false" />
+    <Property Name="FRA" Type="Boolean" Nullable="false" />
+    <Property Name="JPN" Type="Boolean" Nullable="false" />
+    <Property Name="RUS" Type="Boolean" Nullable="false" />
+    <Property Name="CHT" Type="Boolean" Nullable="false" />
+    <Property Name="CSY" Type="Boolean" Nullable="false" />
+    <Property Name="ESN" Type="Boolean" Nullable="false" />
+    <Property Name="HUN" Type="Boolean" Nullable="false" />
+    <Property Name="ITA" Type="Boolean" Nullable="false" />
+    <Property Name="KOR" Type="Boolean" Nullable="false" />
+    <Property Name="NLD" Type="Boolean" Nullable="false" />
+    <Property Name="PLK" Type="Boolean" Nullable="false" />
+    <Property Name="PTB" Type="Boolean" Nullable="false" />
+    <Property Name="PTG" Type="Boolean" Nullable="false" />
+    <Property Name="SVE" Type="Boolean" Nullable="false" />
+    <Property Name="TRK" Type="Boolean" Nullable="false" />
+    <Property Name="DAN" Type="Boolean" Nullable="false" />
+    <Property Name="ELL" Type="Boolean" Nullable="false" />
+    <Property Name="FIN" Type="Boolean" Nullable="false" />
+    <Property Name="NOR" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

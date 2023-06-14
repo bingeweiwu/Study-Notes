@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SulpHurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AssemblyInfo">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssemblyName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="FullTypeName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssemblyLink">
+    <Key>
+      <PropertyRef Name="AssemblyLinkID" />
+    </Key>
+    <Property Name="AssemblyLinkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="IsPageIdentifier" Type="bit" Nullable="false" />
+    <Property Name="Reserve1" Type="int" />
+    <Property Name="Reserve2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="bug_surface">
+    <Key>
+      <PropertyRef Name="sb_id" />
+    </Key>
+    <Property Name="s_id" Type="int" />
+    <Property Name="bug_id" Type="int" />
+    <Property Name="sb_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="BugLink">
+    <Key>
+      <PropertyRef Name="BugLinkID" />
+    </Key>
+    <Property Name="BugLinkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="BugID" Type="int" Nullable="false" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="bugs">
+    <Key>
+      <PropertyRef Name="bug_id" />
+    </Key>
+    <Property Name="bug_id" Type="int" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" />
+    <Property Name="repro" Type="nvarchar(max)" />
+    <Property Name="assigned_to" Type="varchar" MaxLength="256" />
+    <Property Name="priority" Type="smallint" />
+    <Property Name="severity" Type="smallint" />
+    <Property Name="issue_type" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="BuildInfo">
+    <Key>
+      <PropertyRef Name="BuildID" />
+    </Key>
+    <Property Name="BuildID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuildTypes">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssemblyName" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="BuildNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mark" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LanuchSteps" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MachineName" Type="varchar" MaxLength="30" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="30" />
+    <Property Name="OSLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="OSType" Type="varchar" MaxLength="30" />
+    <Property Name="MacAddress" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogException">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="ExceptionContent" Type="varchar(max)" Nullable="false" />
+    <Property Name="InsertTime" Type="datetime" Nullable="false" />
+    <Property Name="LastModifyTime" Type="datetime" Nullable="false" />
+    <Property Name="ExceptionCount" Type="int" Nullable="false" />
+    <Property Name="Accessories" Type="text" />
+  </EntityType>
+  <EntityType Name="ProviderDiffResults">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiffType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WmiClassName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="WmiClassBody" Type="text" Nullable="false" />
+    <Property Name="SourceFileName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ContentIDPre" Type="int" />
+    <Property Name="ContentIDPost" Type="int" />
+    <Property Name="AssemblyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="HasImage" Type="bit" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ComparedBuild" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="OldClass" Type="text" />
+    <Property Name="NewClass" Type="text" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RelatedControls" Type="xml" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="ResultType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ResultImage" Type="image" />
+    <Property Name="ResultLog" Type="ntext" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ReviewFlag" Type="int" />
+    <Property Name="ReviewLog" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Rules">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="RuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RulePath" Type="varchar" MaxLength="50" />
+    <Property Name="RuleDesc" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="AssemblyInfo" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="IsObsoluted" Type="bit" />
+  </EntityType>
+  <EntityType Name="RuleStatus">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="RuleStatus" Type="bit" />
+    <Property Name="IsChecked" Type="bit" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="surfaces">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="class_name" Type="varchar(max)" />
+    <Property Name="assembly_name" Type="varchar(max)" />
+    <Property Name="gid" Type="varchar" MaxLength="36" />
+  </EntityType>
+  <EntityType Name="UIContents">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="UIContent" Type="xml" Nullable="false" />
+    <Property Name="UIScreenShot" Type="image" Nullable="false" />
+    <Property Name="IsWebUI" Type="bit" Nullable="false" />
+    <Property Name="DateUploaded" Type="datetime" Nullable="false" />
+    <Property Name="TraceID" Type="int" />
+    <Property Name="Reserve1" Type="int" />
+    <Property Name="Reserve2" Type="nvarchar(max)" />
+    <Property Name="Reserve3" Type="nvarchar(max)" />
+    <Property Name="Reserve4" Type="nvarchar(max)" />
+    <Property Name="Reserve5" Type="nvarchar(max)" />
+    <Property Name="LaunchedFrom" Type="nvarchar" MaxLength="1000" />
+    <Property Name="WindowHierarchy" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UITrace">
+    <Key>
+      <PropertyRef Name="TraceID" />
+    </Key>
+    <Property Name="TraceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraceName" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Reserve1" Type="int" />
+    <Property Name="Reserve2" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="FullUserName" />
+    </Key>
+    <Property Name="FullUserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnglistName" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.ResultsSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ResultsSummary">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="ResultID" />
+      <PropertyRef Name="ResultType" />
+      <PropertyRef Name="RuleID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="RuleName" />
+      <PropertyRef Name="IsEnabled" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="Expr3" />
+    </Key>
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResultID" Type="int" Nullable="false" />
+    <Property Name="ResultType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="OSType" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.ViewAssemblySummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewAssemblySummary">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="AssemblyName" />
+      <PropertyRef Name="FullTypeName" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="AssemblyLinkID" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="Expr4" />
+      <PropertyRef Name="IsPageIdentifier" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="Expr5" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="AssemblyName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="FullTypeName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssemblyLinkID" Type="int" Nullable="false" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="Expr4" Type="int" Nullable="false" />
+    <Property Name="IsPageIdentifier" Type="bit" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="Expr5" Type="int" Nullable="false" />
+    <Property Name="OSType" Type="varchar" MaxLength="30" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.ViewCapturedReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewCapturedReport">
+    <Key>
+      <PropertyRef Name="BuildNo" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="RuleID" />
+      <PropertyRef Name="ResultID" />
+      <PropertyRef Name="RuleName" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="DateUploaded" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="ResultType" />
+      <PropertyRef Name="AssemblyLinkID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="AssemblyName" />
+      <PropertyRef Name="FullTypeName" />
+    </Key>
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="RuleID" Type="int" Nullable="false" />
+    <Property Name="ResultID" Type="int" Nullable="false" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="OSType" Type="varchar" MaxLength="30" />
+    <Property Name="DateUploaded" Type="datetime" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ResultType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="OSLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="AssemblyLinkID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="AssemblyName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="FullTypeName" Type="varchar" MaxLength="400" Nullable="false" />
+    <Property Name="ReviewFlag" Type="int" />
+    <Property Name="ReviewLog" Type="ntext" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.ViewTypeBuild' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewTypeBuild">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="BuildID" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="BuildNo" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="ContentID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="BuildID" Type="int" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="BuildNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar(max)" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AssemblyLink_AssemblyInfo">
+    <End Role="AssemblyInfo" Type="Self.AssemblyInfo" Multiplicity="1" />
+    <End Role="AssemblyLink" Type="Self.AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssemblyInfo">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssemblyLink_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="AssemblyLink" Type="Self.AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bug_surface_bugs">
+    <End Role="bugs" Type="Self.bugs" Multiplicity="0..1" />
+    <End Role="bug_surface" Type="Self.bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bugs">
+        <PropertyRef Name="bug_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="bug_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bug_surface_surfaces">
+    <End Role="surfaces" Type="Self.surfaces" Multiplicity="0..1" />
+    <End Role="bug_surface" Type="Self.bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="surfaces">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="s_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BugLink_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="BugLink" Type="Self.BugLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="BugLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_BuildInfo">
+    <End Role="BuildInfo" Type="Self.BuildInfo" Multiplicity="1" />
+    <End Role="LogException" Type="Self.LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="LogException" Type="Self.LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_BuildInfo">
+    <End Role="BuildInfo" Type="Self.BuildInfo" Multiplicity="1" />
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="UIContents">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="UIContents" Type="Self.UIContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="UIContents">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="BuildTypesTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BuildNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="CapturedTypesTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BuildNo" Type="char" Mode="In" />
+    <Parameter Name="Language" Type="nchar" Mode="In" />
+    <Parameter Name="CapturedCount" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="SulpHurModelStoreContainer">
+    <EntitySet Name="AssemblyInfo" EntityType="Self.AssemblyInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssemblyLink" EntityType="Self.AssemblyLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bug_surface" EntityType="Self.bug_surface" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BugLink" EntityType="Self.BugLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bugs" EntityType="Self.bugs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuildInfo" EntityType="Self.BuildInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuildTypes" EntityType="Self.BuildTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogException" EntityType="Self.LogException" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderDiffResults" EntityType="Self.ProviderDiffResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RuleStatus" EntityType="Self.RuleStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="surfaces" EntityType="Self.surfaces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UIContents" EntityType="Self.UIContents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UITrace" EntityType="Self.UITrace" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResultsSummary" EntityType="Self.ResultsSummary" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ResultsSummary].[ContentID] AS [ContentID], 
+[ResultsSummary].[BuildID] AS [BuildID], 
+[ResultsSummary].[BuildNo] AS [BuildNo], 
+[ResultsSummary].[Language] AS [Language], 
+[ResultsSummary].[ResultID] AS [ResultID], 
+[ResultsSummary].[ResultType] AS [ResultType], 
+[ResultsSummary].[RuleID] AS [RuleID], 
+[ResultsSummary].[Expr1] AS [Expr1], 
+[ResultsSummary].[RuleName] AS [RuleName], 
+[ResultsSummary].[IsEnabled] AS [IsEnabled], 
+[ResultsSummary].[Expr2] AS [Expr2], 
+[ResultsSummary].[ClientID] AS [ClientID], 
+[ResultsSummary].[Expr3] AS [Expr3], 
+[ResultsSummary].[OSType] AS [OSType]
+FROM [dbo].[ResultsSummary] AS [ResultsSummary]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewAssemblySummary" EntityType="Self.ViewAssemblySummary" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewAssemblySummary].[TypeID] AS [TypeID], 
+[ViewAssemblySummary].[AssemblyName] AS [AssemblyName], 
+[ViewAssemblySummary].[FullTypeName] AS [FullTypeName], 
+[ViewAssemblySummary].[ContentID] AS [ContentID], 
+[ViewAssemblySummary].[BuildID] AS [BuildID], 
+[ViewAssemblySummary].[Expr2] AS [Expr2], 
+[ViewAssemblySummary].[BuildNo] AS [BuildNo], 
+[ViewAssemblySummary].[Language] AS [Language], 
+[ViewAssemblySummary].[AssemblyLinkID] AS [AssemblyLinkID], 
+[ViewAssemblySummary].[Expr3] AS [Expr3], 
+[ViewAssemblySummary].[Expr4] AS [Expr4], 
+[ViewAssemblySummary].[IsPageIdentifier] AS [IsPageIdentifier], 
+[ViewAssemblySummary].[UIName] AS [UIName], 
+[ViewAssemblySummary].[ClientID] AS [ClientID], 
+[ViewAssemblySummary].[Expr5] AS [Expr5], 
+[ViewAssemblySummary].[OSType] AS [OSType], 
+[ViewAssemblySummary].[UserName] AS [UserName]
+FROM [dbo].[ViewAssemblySummary] AS [ViewAssemblySummary]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewCapturedReport" EntityType="Self.ViewCapturedReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewCapturedReport].[BuildNo] AS [BuildNo], 
+[ViewCapturedReport].[Language] AS [Language], 
+[ViewCapturedReport].[BuildID] AS [BuildID], 
+[ViewCapturedReport].[ContentID] AS [ContentID], 
+[ViewCapturedReport].[ClientID] AS [ClientID], 
+[ViewCapturedReport].[RuleID] AS [RuleID], 
+[ViewCapturedReport].[ResultID] AS [ResultID], 
+[ViewCapturedReport].[RuleName] AS [RuleName], 
+[ViewCapturedReport].[UIName] AS [UIName], 
+[ViewCapturedReport].[UserName] AS [UserName], 
+[ViewCapturedReport].[OSType] AS [OSType], 
+[ViewCapturedReport].[DateUploaded] AS [DateUploaded], 
+[ViewCapturedReport].[CreateDate] AS [CreateDate], 
+[ViewCapturedReport].[ResultType] AS [ResultType], 
+[ViewCapturedReport].[OSLanguage] AS [OSLanguage], 
+[ViewCapturedReport].[AssemblyLinkID] AS [AssemblyLinkID], 
+[ViewCapturedReport].[Expr1] AS [Expr1], 
+[ViewCapturedReport].[TypeID] AS [TypeID], 
+[ViewCapturedReport].[Expr2] AS [Expr2], 
+[ViewCapturedReport].[AssemblyName] AS [AssemblyName], 
+[ViewCapturedReport].[FullTypeName] AS [FullTypeName], 
+[ViewCapturedReport].[ReviewFlag] AS [ReviewFlag], 
+[ViewCapturedReport].[ReviewLog] AS [ReviewLog]
+FROM [dbo].[ViewCapturedReport] AS [ViewCapturedReport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewTypeBuild" EntityType="Self.ViewTypeBuild" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewTypeBuild].[TypeID] AS [TypeID], 
+[ViewTypeBuild].[ContentID] AS [ContentID], 
+[ViewTypeBuild].[Expr1] AS [Expr1], 
+[ViewTypeBuild].[BuildID] AS [BuildID], 
+[ViewTypeBuild].[Expr2] AS [Expr2], 
+[ViewTypeBuild].[BuildNo] AS [BuildNo], 
+[ViewTypeBuild].[UIName] AS [UIName], 
+[ViewTypeBuild].[Language] AS [Language]
+FROM [dbo].[ViewTypeBuild] AS [ViewTypeBuild]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AssemblyLink_AssemblyInfo" Association="Self.FK_AssemblyLink_AssemblyInfo">
+      <End Role="AssemblyInfo" EntitySet="AssemblyInfo" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssemblyLink_UIContents" Association="Self.FK_AssemblyLink_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bug_surface_bugs" Association="Self.FK_bug_surface_bugs">
+      <End Role="bugs" EntitySet="bugs" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bug_surface_surfaces" Association="Self.FK_bug_surface_surfaces">
+      <End Role="surfaces" EntitySet="surfaces" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BugLink_UIContents" Association="Self.FK_BugLink_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="BugLink" EntitySet="BugLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_BuildInfo" Association="Self.FK_LogException_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfo" />
+      <End Role="LogException" EntitySet="LogException" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_Clients" Association="Self.FK_LogException_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="LogException" EntitySet="LogException" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_Rules" Association="Self.FK_Results_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="Self.FK_Results_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="Self.FK_RuleStatus_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="Self.FK_RuleStatus_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_BuildInfo" Association="Self.FK_UIContents_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfo" />
+      <End Role="UIContents" EntitySet="UIContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_Clients" Association="Self.FK_UIContents_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="UIContents" EntitySet="UIContents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

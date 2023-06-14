@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SulpHurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.FilterSpellCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="FilterSpellCheck">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="regexString" Type="varchar" MaxLength="1024" />
+          <Property Name="properNoun" Type="varchar" MaxLength="255" />
+          <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="255" />
+          <Property Name="pageExceptionType" Type="varchar" MaxLength="512" />
+          <Property Name="exceptionPageTitle" Type="varchar" MaxLength="255" />
+          <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="255" />
+          <Property Name="normalPunctuation" Type="nvarchar" MaxLength="255" />
+          <Property Name="reserve2" Type="varchar" MaxLength="255" />
+          <Property Name="reserve3" Type="varchar" MaxLength="255" />
+          <Property Name="reserve4" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_abnormalButNoImpact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="abnormalButNoImpact" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exceptionPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="excludeTextDetectPageTitle" Type="varchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nonEnglishButtonName" Type="varchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_normalPunctuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="normalPunctuation" Type="nvarchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_pageExceptionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pageExceptionType" Type="varchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_properNoun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="properNoun" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_regexString">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="regexString" Type="varchar" MaxLength="2047" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NonEnglishWordsButEnglishLetters">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NonEnglishWord" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SulpHur.dbo.VerticalSortPageNameList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VerticalSortPageNameList">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WordsSharedWithEnglish">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Word" Type="varchar" MaxLength="64" />
+          <Property Name="ENU" Type="bit" Nullable="false" />
+          <Property Name="CHS" Type="bit" Nullable="false" />
+          <Property Name="DEU" Type="bit" Nullable="false" />
+          <Property Name="FRA" Type="bit" Nullable="false" />
+          <Property Name="JPN" Type="bit" Nullable="false" />
+          <Property Name="RUS" Type="bit" Nullable="false" />
+          <Property Name="CHT" Type="bit" Nullable="false" />
+          <Property Name="CSY" Type="bit" Nullable="false" />
+          <Property Name="ESN" Type="bit" Nullable="false" />
+          <Property Name="HUN" Type="bit" Nullable="false" />
+          <Property Name="ITA" Type="bit" Nullable="false" />
+          <Property Name="KOR" Type="bit" Nullable="false" />
+          <Property Name="NLD" Type="bit" Nullable="false" />
+          <Property Name="PLK" Type="bit" Nullable="false" />
+          <Property Name="PTB" Type="bit" Nullable="false" />
+          <Property Name="PTG" Type="bit" Nullable="false" />
+          <Property Name="SVE" Type="bit" Nullable="false" />
+          <Property Name="TRK" Type="bit" Nullable="false" />
+          <Property Name="DAN" Type="bit" Nullable="false" />
+          <Property Name="ELL" Type="bit" Nullable="false" />
+          <Property Name="FIN" Type="bit" Nullable="false" />
+          <Property Name="NOR" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SulpHurModelStoreContainer">
+          <EntitySet Name="FilterSpellCheck_abnormalButNoImpact" EntityType="Self.FilterSpellCheck_abnormalButNoImpact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="Self.FilterSpellCheck_exceptionPageTitle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="Self.FilterSpellCheck_excludeTextDetectPageTitle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="Self.FilterSpellCheck_nonEnglishButtonName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="Self.FilterSpellCheck_normalPunctuation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="Self.FilterSpellCheck_pageExceptionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_properNoun" EntityType="Self.FilterSpellCheck_properNoun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck_regexString" EntityType="Self.FilterSpellCheck_regexString" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NonEnglishWordsButEnglishLetters" EntityType="Self.NonEnglishWordsButEnglishLetters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WordsSharedWithEnglish" EntityType="Self.WordsSharedWithEnglish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilterSpellCheck" EntityType="Self.FilterSpellCheck" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FilterSpellCheck].[id] AS [id], 
+    [FilterSpellCheck].[regexString] AS [regexString], 
+    [FilterSpellCheck].[properNoun] AS [properNoun], 
+    [FilterSpellCheck].[nonEnglishButtonName] AS [nonEnglishButtonName], 
+    [FilterSpellCheck].[pageExceptionType] AS [pageExceptionType], 
+    [FilterSpellCheck].[exceptionPageTitle] AS [exceptionPageTitle], 
+    [FilterSpellCheck].[excludeTextDetectPageTitle] AS [excludeTextDetectPageTitle], 
+    [FilterSpellCheck].[normalPunctuation] AS [normalPunctuation], 
+    [FilterSpellCheck].[reserve2] AS [reserve2], 
+    [FilterSpellCheck].[reserve3] AS [reserve3], 
+    [FilterSpellCheck].[reserve4] AS [reserve4]
+    FROM [dbo].[FilterSpellCheck] AS [FilterSpellCheck]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VerticalSortPageNameList" EntityType="Self.VerticalSortPageNameList" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VerticalSortPageNameList].[name] AS [name], 
+    [VerticalSortPageNameList].[ID] AS [ID]
+    FROM [dbo].[VerticalSortPageNameList] AS [VerticalSortPageNameList]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SulpHurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FilterSpellCheck">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="regexString" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="properNoun" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nonEnglishButtonName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pageExceptionType" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="exceptionPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="excludeTextDetectPageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="normalPunctuation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="reserve2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="reserve3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="reserve4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VerticalSortPageNameList">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="SulpHurEntitiesForCMRules" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FilterSpellChecks" EntityType="Self.FilterSpellCheck" />
+          <EntitySet Name="VerticalSortPageNameLists" EntityType="Self.VerticalSortPageNameList" />
+          <EntitySet Name="FilterSpellCheck_exceptionPageTitle" EntityType="SulpHurModel.FilterSpellCheck_exceptionPageTitle" />
+          <EntitySet Name="FilterSpellCheck_excludeTextDetectPageTitle" EntityType="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle" />
+          <EntitySet Name="FilterSpellCheck_nonEnglishButtonName" EntityType="SulpHurModel.FilterSpellCheck_nonEnglishButtonName" />
+          <EntitySet Name="FilterSpellCheck_normalPunctuation" EntityType="SulpHurModel.FilterSpellCheck_normalPunctuation" />
+          <EntitySet Name="FilterSpellCheck_pageExceptionType" EntityType="SulpHurModel.FilterSpellCheck_pageExceptionType" />
+          <EntitySet Name="FilterSpellCheck_properNoun" EntityType="SulpHurModel.FilterSpellCheck_properNoun" />
+          <EntitySet Name="FilterSpellCheck_regexString" EntityType="SulpHurModel.FilterSpellCheck_regexString" />
+          <EntitySet Name="FilterSpellCheck_abnormalButNoImpact" EntityType="SulpHurModel.FilterSpellCheck_abnormalButNoImpact" />
+          <EntitySet Name="NonEnglishWordsButEnglishLetters" EntityType="SulpHurModel.NonEnglishWordsButEnglishLetter" />
+          <EntitySet Name="WordsSharedWithEnglishes" EntityType="SulpHurModel.WordsSharedWithEnglish" />
+        </EntityContainer>
+        <EntityType Name="FilterSpellCheck_exceptionPageTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exceptionPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_excludeTextDetectPageTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="excludeTextDetectPageTitle" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_nonEnglishButtonName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nonEnglishButtonName" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_normalPunctuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="normalPunctuation" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_pageExceptionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pageExceptionType" Type="String" Nullable="false" MaxLength="511" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_properNoun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="properNoun" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_regexString">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="regexString" Type="String" Nullable="false" MaxLength="2047" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FilterSpellCheck_abnormalButNoImpact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="abnormalButNoImpact" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NonEnglishWordsButEnglishLetter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NonEnglishWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WordsSharedWithEnglish">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Word" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="ENU" Type="Boolean" Nullable="false" />
+          <Property Name="CHS" Type="Boolean" Nullable="false" />
+          <Property Name="DEU" Type="Boolean" Nullable="false" />
+          <Property Name="FRA" Type="Boolean" Nullable="false" />
+          <Property Name="JPN" Type="Boolean" Nullable="false" />
+          <Property Name="RUS" Type="Boolean" Nullable="false" />
+          <Property Name="CHT" Type="Boolean" Nullable="false" />
+          <Property Name="CSY" Type="Boolean" Nullable="false" />
+          <Property Name="ESN" Type="Boolean" Nullable="false" />
+          <Property Name="HUN" Type="Boolean" Nullable="false" />
+          <Property Name="ITA" Type="Boolean" Nullable="false" />
+          <Property Name="KOR" Type="Boolean" Nullable="false" />
+          <Property Name="NLD" Type="Boolean" Nullable="false" />
+          <Property Name="PLK" Type="Boolean" Nullable="false" />
+          <Property Name="PTB" Type="Boolean" Nullable="false" />
+          <Property Name="PTG" Type="Boolean" Nullable="false" />
+          <Property Name="SVE" Type="Boolean" Nullable="false" />
+          <Property Name="TRK" Type="Boolean" Nullable="false" />
+          <Property Name="DAN" Type="Boolean" Nullable="false" />
+          <Property Name="ELL" Type="Boolean" Nullable="false" />
+          <Property Name="FIN" Type="Boolean" Nullable="false" />
+          <Property Name="NOR" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SulpHurModelStoreContainer" CdmEntityContainer="SulpHurEntitiesForCMRules">
+          <EntitySetMapping Name="FilterSpellChecks">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck">
+              <MappingFragment StoreEntitySet="FilterSpellCheck">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="regexString" ColumnName="regexString" />
+                <ScalarProperty Name="properNoun" ColumnName="properNoun" />
+                <ScalarProperty Name="nonEnglishButtonName" ColumnName="nonEnglishButtonName" />
+                <ScalarProperty Name="pageExceptionType" ColumnName="pageExceptionType" />
+                <ScalarProperty Name="exceptionPageTitle" ColumnName="exceptionPageTitle" />
+                <ScalarProperty Name="excludeTextDetectPageTitle" ColumnName="excludeTextDetectPageTitle" />
+                <ScalarProperty Name="normalPunctuation" ColumnName="normalPunctuation" />
+                <ScalarProperty Name="reserve2" ColumnName="reserve2" />
+                <ScalarProperty Name="reserve3" ColumnName="reserve3" />
+                <ScalarProperty Name="reserve4" ColumnName="reserve4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VerticalSortPageNameLists">
+            <EntityTypeMapping TypeName="SulpHurModel.VerticalSortPageNameList">
+              <MappingFragment StoreEntitySet="VerticalSortPageNameList">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_exceptionPageTitle">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_exceptionPageTitle">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_exceptionPageTitle">
+                <ScalarProperty Name="exceptionPageTitle" ColumnName="exceptionPageTitle" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_excludeTextDetectPageTitle">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_excludeTextDetectPageTitle">
+                <ScalarProperty Name="excludeTextDetectPageTitle" ColumnName="excludeTextDetectPageTitle" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_nonEnglishButtonName">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_nonEnglishButtonName">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_nonEnglishButtonName">
+                <ScalarProperty Name="nonEnglishButtonName" ColumnName="nonEnglishButtonName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_normalPunctuation">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_normalPunctuation">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_normalPunctuation">
+                <ScalarProperty Name="normalPunctuation" ColumnName="normalPunctuation" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_pageExceptionType">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_pageExceptionType">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_pageExceptionType">
+                <ScalarProperty Name="pageExceptionType" ColumnName="pageExceptionType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_properNoun">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_properNoun">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_properNoun">
+                <ScalarProperty Name="properNoun" ColumnName="properNoun" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_regexString">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_regexString">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_regexString">
+                <ScalarProperty Name="regexString" ColumnName="regexString" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilterSpellCheck_abnormalButNoImpact">
+            <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_abnormalButNoImpact">
+              <MappingFragment StoreEntitySet="FilterSpellCheck_abnormalButNoImpact">
+                <ScalarProperty Name="abnormalButNoImpact" ColumnName="abnormalButNoImpact" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NonEnglishWordsButEnglishLetters">
+            <EntityTypeMapping TypeName="SulpHurModel.NonEnglishWordsButEnglishLetter">
+              <MappingFragment StoreEntitySet="NonEnglishWordsButEnglishLetters">
+                <ScalarProperty Name="NonEnglishWord" ColumnName="NonEnglishWord" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WordsSharedWithEnglishes">
+            <EntityTypeMapping TypeName="SulpHurModel.WordsSharedWithEnglish">
+              <MappingFragment StoreEntitySet="WordsSharedWithEnglish">
+                <ScalarProperty Name="NOR" ColumnName="NOR" />
+                <ScalarProperty Name="FIN" ColumnName="FIN" />
+                <ScalarProperty Name="ELL" ColumnName="ELL" />
+                <ScalarProperty Name="DAN" ColumnName="DAN" />
+                <ScalarProperty Name="TRK" ColumnName="TRK" />
+                <ScalarProperty Name="SVE" ColumnName="SVE" />
+                <ScalarProperty Name="PTG" ColumnName="PTG" />
+                <ScalarProperty Name="PTB" ColumnName="PTB" />
+                <ScalarProperty Name="PLK" ColumnName="PLK" />
+                <ScalarProperty Name="NLD" ColumnName="NLD" />
+                <ScalarProperty Name="KOR" ColumnName="KOR" />
+                <ScalarProperty Name="ITA" ColumnName="ITA" />
+                <ScalarProperty Name="HUN" ColumnName="HUN" />
+                <ScalarProperty Name="ESN" ColumnName="ESN" />
+                <ScalarProperty Name="CSY" ColumnName="CSY" />
+                <ScalarProperty Name="CHT" ColumnName="CHT" />
+                <ScalarProperty Name="RUS" ColumnName="RUS" />
+                <ScalarProperty Name="JPN" ColumnName="JPN" />
+                <ScalarProperty Name="FRA" ColumnName="FRA" />
+                <ScalarProperty Name="DEU" ColumnName="DEU" />
+                <ScalarProperty Name="CHS" ColumnName="CHS" />
+                <ScalarProperty Name="ENU" ColumnName="ENU" />
+                <ScalarProperty Name="Word" ColumnName="Word" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

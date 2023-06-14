@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="model8" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AssemblyInfo">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssemblyName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullTypeName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AssemblyLinks" Relationship="Self.FK_AssemblyLink_AssemblyInfo" FromRole="AssemblyInfo" ToRole="AssemblyLink" />
+  </EntityType>
+  <EntityType Name="AssemblyLink">
+    <Key>
+      <PropertyRef Name="AssemblyLinkID" />
+    </Key>
+    <Property Name="AssemblyLinkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="IsPageIdentifier" Type="Boolean" Nullable="false" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AssemblyInfo" Relationship="Self.FK_AssemblyLink_AssemblyInfo" FromRole="AssemblyLink" ToRole="AssemblyInfo" />
+    <NavigationProperty Name="UIContent" Relationship="Self.FK_AssemblyLink_UIContents" FromRole="AssemblyLink" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="bug_surface">
+    <Key>
+      <PropertyRef Name="sb_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" />
+    <Property Name="bug_id" Type="Int32" />
+    <Property Name="sb_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bug" Relationship="Self.FK_bug_surface_bugs" FromRole="bug_surface" ToRole="bugs" />
+    <NavigationProperty Name="surface" Relationship="Self.FK_bug_surface_surfaces" FromRole="bug_surface" ToRole="surfaces" />
+  </EntityType>
+  <EntityType Name="BugLink">
+    <Key>
+      <PropertyRef Name="BugLinkID" />
+    </Key>
+    <Property Name="BugLinkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="BugID" Type="Int32" Nullable="false" />
+    <Property Name="GUID" Type="Guid" />
+    <NavigationProperty Name="UIContent" Relationship="Self.FK_BugLink_UIContents" FromRole="BugLink" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="bug">
+    <Key>
+      <PropertyRef Name="bug_id" />
+    </Key>
+    <Property Name="bug_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="repro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assigned_to" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="priority" Type="Int16" />
+    <Property Name="severity" Type="Int16" />
+    <Property Name="issue_type" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="bug_surface" Relationship="Self.FK_bug_surface_bugs" FromRole="bugs" ToRole="bug_surface" />
+  </EntityType>
+  <EntityType Name="BuildInfo">
+    <Key>
+      <PropertyRef Name="BuildID" />
+    </Key>
+    <Property Name="BuildID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuildNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LogExceptions" Relationship="Self.FK_LogException_BuildInfo" FromRole="BuildInfo" ToRole="LogException" />
+    <NavigationProperty Name="UIContents" Relationship="Self.FK_UIContents_BuildInfo" FromRole="BuildInfo" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="BuildType">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssemblyName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BuildNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LanuchSteps" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BuildVersionMap">
+    <Key>
+      <PropertyRef Name="BuildVersionMapID" />
+    </Key>
+    <Property Name="BuildVersionMapID" Type="Int32" Nullable="false" />
+    <Property Name="NewFormatBuildVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StandardFormatBuildVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MachineName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OSLanguage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OSType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MacAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LogExceptions" Relationship="Self.FK_LogException_Clients" FromRole="Clients" ToRole="LogException" />
+    <NavigationProperty Name="UIContents" Relationship="Self.FK_UIContents_Clients" FromRole="Clients" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="DeletedContent">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="GUID" Type="Guid" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="BuildID" Type="Int32" />
+    <Property Name="UIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIScreenShot" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsWebUI" Type="Boolean" />
+    <Property Name="DateUploaded" Type="DateTime" Precision="3" />
+    <Property Name="TraceID" Type="Int32" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchedFrom" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="WindowHierarchy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssemblyLinkIDs" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DeletedContentsTemp">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="GUID" Type="Guid" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="BuildID" Type="Int32" />
+    <Property Name="UIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIScreenShot" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsWebUI" Type="Boolean" />
+    <Property Name="DateUploaded" Type="DateTime" Precision="3" />
+    <Property Name="TraceID" Type="Int32" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchedFrom" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="WindowHierarchy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssemblyLinkIDs" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LCX_Assemblies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Assembly" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Trace" Type="Boolean" Nullable="false" />
+    <Property Name="FeatureID" Type="Int32" />
+    <Property Name="OwnerID" Type="Int32" />
+    <Property Name="IsGeneral" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LCX_Employers" Relationship="Self.FK_LCX_Assemblies_LCX_Employers" FromRole="LCX_Assemblies" ToRole="LCX_Employers" />
+    <NavigationProperty Name="LCX_Features" Relationship="Self.FK_LCX_Assemblies_LCX_Features" FromRole="LCX_Assemblies" ToRole="LCX_Features" />
+    <NavigationProperty Name="LCX_AssociationAssembly" Relationship="Self.FK_LCX_AssociationAssembly_LCX_Assemblies" FromRole="LCX_Assemblies" ToRole="LCX_AssociationAssembly" />
+    <NavigationProperty Name="LCX_AssociationAssembly1" Relationship="Self.FK_LCX_AssociationAssembly_LCX_Assemblies1" FromRole="LCX_Assemblies" ToRole="LCX_AssociationAssembly" />
+    <NavigationProperty Name="LCX_Details" Relationship="Self.FK_LCX_Details_LCX_Assemblies" FromRole="LCX_Assemblies" ToRole="LCX_Details" />
+    <NavigationProperty Name="LCX_MainReport" Relationship="Self.FK_LCX_MainReport_LCX_Assemblies" FromRole="LCX_Assemblies" ToRole="LCX_MainReport" />
+  </EntityType>
+  <EntityType Name="LCX_AssociationAssembly">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainAssemblyID" Type="Int32" Nullable="false" />
+    <Property Name="ReferencedAssemblyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LCX_Assemblies" Relationship="Self.FK_LCX_AssociationAssembly_LCX_Assemblies" FromRole="LCX_AssociationAssembly" ToRole="LCX_Assemblies" />
+    <NavigationProperty Name="LCX_Assemblies1" Relationship="Self.FK_LCX_AssociationAssembly_LCX_Assemblies1" FromRole="LCX_AssociationAssembly" ToRole="LCX_Assemblies" />
+  </EntityType>
+  <EntityType Name="LCX_Cache">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CompareBuilds" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DetailGenerateStatus" Type="Boolean" Nullable="false" />
+    <Property Name="MainReportGenerateStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LCX_MainReport" Relationship="Self.FK_LCX_MainReport_LCX_Cache" FromRole="LCX_Cache" ToRole="LCX_MainReport" />
+  </EntityType>
+  <EntityType Name="LCX_CacheLanguage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="LanguageKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LCX_Details" Relationship="Self.FK_LCX_Details_LCX_LanguageCache" FromRole="LCX_CacheLanguage" ToRole="LCX_Details" />
+  </EntityType>
+  <EntityType Name="LCX_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="AssemblyID" Type="Int32" Nullable="false" />
+    <Property Name="FileStatus" Type="Int32" Nullable="false" />
+    <Property Name="Resid" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BeforeLocale" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AfterLocale" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EnuBefore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnuAfter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnuAfterWC" Type="Int32" Nullable="false" />
+    <Property Name="EnuStringIs" Type="Int32" Nullable="false" />
+    <Property Name="LocBefore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LocAfter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LocAfterWC" Type="Int32" Nullable="false" />
+    <Property Name="LocStringIs" Type="Int32" Nullable="false" />
+    <Property Name="LocStatusBefore" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LocStatusAfter" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LanguageKeyID" Type="Int32" Nullable="false" />
+    <Property Name="IsEmptyString" Type="Boolean" Nullable="false" />
+    <Property Name="DateUpdatedAfter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateUpdatedBefore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Resid_Full" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="LCX_Assemblies" Relationship="Self.FK_LCX_Details_LCX_Assemblies" FromRole="LCX_Details" ToRole="LCX_Assemblies" />
+    <NavigationProperty Name="LCX_CacheLanguage" Relationship="Self.FK_LCX_Details_LCX_LanguageCache" FromRole="LCX_Details" ToRole="LCX_CacheLanguage" />
+  </EntityType>
+  <EntityType Name="LCX_Employers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployerAlias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="LCX_Assemblies" Relationship="Self.FK_LCX_Assemblies_LCX_Employers" FromRole="LCX_Employers" ToRole="LCX_Assemblies" />
+  </EntityType>
+  <EntityType Name="LCX_Features">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeatureName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="LCX_Assemblies" Relationship="Self.FK_LCX_Assemblies_LCX_Features" FromRole="LCX_Features" ToRole="LCX_Assemblies" />
+  </EntityType>
+  <EntityType Name="LCX_FilteredStrs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="StringPattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilePattern" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LCX_MainReport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="AssemblyID" Type="Int32" Nullable="false" />
+    <Property Name="AssemblyFileStatus" Type="Int32" Nullable="false" />
+    <Property Name="Resid_Full" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Resid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ENUValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENUValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENU_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CHSValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CHSValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CHS_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CHTValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CHTValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CHT_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CSYValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CSYValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CSY_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DANValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DANValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DAN_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEUValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEUValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEU_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ELLValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ELLValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ELL_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESNValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESNValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESN_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FINValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FINValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FIN_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FRAValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FRAValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FRA_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HUNValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HUNValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HUN_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITAValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITAValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITA_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JPNValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JPNValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JPN_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KORValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KORValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KOR_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NLDValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NLDValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NLD_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NORValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NORValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NOR_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PLKValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLKValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLK_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PTBValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PTBValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PTB_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PTGValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PTGValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PTG_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RUSValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RUSValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RUS_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SVEValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SVEValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SVE_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRKValue_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRKValue_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRK_ResultID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompareBuildID" Type="Int32" Nullable="false" />
+    <Property Name="Value_Old" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value_New" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReferencedOnUI" Type="Boolean" Nullable="false" />
+    <Property Name="ManuallyVerified" Type="Boolean" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="LCX_Assemblies" Relationship="Self.FK_LCX_MainReport_LCX_Assemblies" FromRole="LCX_MainReport" ToRole="LCX_Assemblies" />
+    <NavigationProperty Name="LCX_Cache" Relationship="Self.FK_LCX_MainReport_LCX_Cache" FromRole="LCX_MainReport" ToRole="LCX_Cache" />
+  </EntityType>
+  <EntityType Name="LCX_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogException">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="BuildID" Type="Int32" Nullable="false" />
+    <Property Name="ExceptionContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InsertTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifyTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExceptionCount" Type="Int32" Nullable="false" />
+    <Property Name="Accessories" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BuildInfo" Relationship="Self.FK_LogException_BuildInfo" FromRole="LogException" ToRole="BuildInfo" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_LogException_Clients" FromRole="LogException" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ProviderDiffResult">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DiffType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WmiClassName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WmiClassBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SourceFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContentIDPre" Type="Int32" />
+    <Property Name="ContentIDPost" Type="Int32" />
+    <Property Name="AssemblyName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HasImage" Type="Boolean" />
+    <Property Name="PageName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ComparedBuild" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OldClass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NewClass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="RelatedControls" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RuleID" Type="Int32" Nullable="false" />
+    <Property Name="ResultType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ResultImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ResultLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReviewFlag" Type="Int32" />
+    <Property Name="ReviewLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Rule" Relationship="Self.FK_Results_Rules" FromRole="Results" ToRole="Rules" />
+    <NavigationProperty Name="UIContent" Relationship="Self.FK_Results_UIContents" FromRole="Results" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="RuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RulePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RuleDesc" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AssemblyInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsObsoluted" Type="Boolean" />
+    <NavigationProperty Name="Results" Relationship="Self.FK_Results_Rules" FromRole="Rules" ToRole="Results" />
+    <NavigationProperty Name="RuleStatus" Relationship="Self.FK_RuleStatus_Rules" FromRole="Rules" ToRole="RuleStatus" />
+  </EntityType>
+  <EntityType Name="RuleStatu">
+    <Key>
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="RuleID" Type="Int32" Nullable="false" />
+    <Property Name="RuleStatus" Type="Boolean" />
+    <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+    <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Rule" Relationship="Self.FK_RuleStatus_Rules" FromRole="RuleStatus" ToRole="Rules" />
+    <NavigationProperty Name="UIContent" Relationship="Self.FK_RuleStatus_UIContents" FromRole="RuleStatus" ToRole="UIContents" />
+  </EntityType>
+  <EntityType Name="SpellFilter">
+    <Key>
+      <PropertyRef Name="SpellFilterID" />
+    </Key>
+    <Property Name="SpellFilterID" Type="Int32" Nullable="false" />
+    <Property Name="SpellFilterWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SpellFilterWordInString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SpellIgnore">
+    <Key>
+      <PropertyRef Name="SpellIgnoreID" />
+    </Key>
+    <Property Name="SpellIgnoreID" Type="Int32" Nullable="false" />
+    <Property Name="ENUStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CHSStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEUStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FRAStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JPNStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RUSStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHTStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CSYStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ESNStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HUNStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ITAStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KORStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NLDStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PLKStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PTBStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PTGStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SVEStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRKStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DANStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ELLStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FINStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NORStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="surface">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" Nullable="false" />
+    <Property Name="class_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="assembly_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="bug_surface" Relationship="Self.FK_bug_surface_surfaces" FromRole="surfaces" ToRole="bug_surface" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UIContent">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUID" Type="Guid" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="BuildID" Type="Int32" Nullable="false" />
+    <Property Name="UIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UIContent1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UIScreenShot" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="IsWebUI" Type="Boolean" Nullable="false" />
+    <Property Name="DateUploaded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TraceID" Type="Int32" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LaunchedFrom" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="WindowHierarchy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AssemblyLinks" Relationship="Self.FK_AssemblyLink_UIContents" FromRole="UIContents" ToRole="AssemblyLink" />
+    <NavigationProperty Name="BugLinks" Relationship="Self.FK_BugLink_UIContents" FromRole="UIContents" ToRole="BugLink" />
+    <NavigationProperty Name="BuildInfo" Relationship="Self.FK_UIContents_BuildInfo" FromRole="UIContents" ToRole="BuildInfo" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_UIContents_Clients" FromRole="UIContents" ToRole="Clients" />
+    <NavigationProperty Name="Results" Relationship="Self.FK_Results_UIContents" FromRole="UIContents" ToRole="Results" />
+    <NavigationProperty Name="RuleStatus" Relationship="Self.FK_RuleStatus_UIContents" FromRole="UIContents" ToRole="RuleStatus" />
+  </EntityType>
+  <EntityType Name="UITrace">
+    <Key>
+      <PropertyRef Name="TraceID" />
+    </Key>
+    <Property Name="TraceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TraceName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="FullUserName" />
+    </Key>
+    <Property Name="FullUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnglistName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VSOServer">
+    <Key>
+      <PropertyRef Name="VSOServerID" />
+    </Key>
+    <Property Name="VSOServerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VSOServerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeletedAssemblyLink">
+    <Key>
+      <PropertyRef Name="AssemblyLinkID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="IsPageIdentifier" />
+    </Key>
+    <Property Name="AssemblyLinkID" Type="Int32" Nullable="false" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="IsPageIdentifier" Type="Boolean" Nullable="false" />
+    <Property Name="Reserve1" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FilterSpellCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regexString" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reserve3" Type="Int32" />
+    <Property Name="reserve4" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FilterSpellingCheck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StartsWith" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EndsWith" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="stringToCheck" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ResultsBack">
+    <Key>
+      <PropertyRef Name="ResultID" />
+      <PropertyRef Name="ContentID" />
+      <PropertyRef Name="RuleID" />
+      <PropertyRef Name="ResultType" />
+      <PropertyRef Name="ResultLog" />
+      <PropertyRef Name="CreateDate" />
+    </Key>
+    <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="RelatedControls" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RuleID" Type="Int32" Nullable="false" />
+    <Property Name="ResultType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ResultImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ResultLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReviewFlag" Type="Int32" />
+    <Property Name="ReviewLog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="temp_bug_surface">
+    <Key>
+      <PropertyRef Name="sb_id" />
+    </Key>
+    <Property Name="s_id" Type="Int32" />
+    <Property Name="bug_id" Type="Int32" />
+    <Property Name="sb_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="temp_bugs">
+    <Key>
+      <PropertyRef Name="bug_id" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="bug_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="repro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assigned_to" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="priority" Type="Int16" />
+    <Property Name="severity" Type="Int16" />
+    <Property Name="issue_type" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VerticalSortPageNameList">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK_AssemblyLink_AssemblyInfo">
+    <End Role="AssemblyInfo" Type="Self.AssemblyInfo" Multiplicity="1" />
+    <End Role="AssemblyLink" Type="Self.AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssemblyInfo">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssemblyLink_UIContents">
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="1" />
+    <End Role="AssemblyLink" Type="Self.AssemblyLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="AssemblyLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bug_surface_bugs">
+    <End Role="bugs" Type="Self.bug" Multiplicity="0..1" />
+    <End Role="bug_surface" Type="Self.bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bugs">
+        <PropertyRef Name="bug_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="bug_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bug_surface_surfaces">
+    <End Role="surfaces" Type="Self.surface" Multiplicity="0..1" />
+    <End Role="bug_surface" Type="Self.bug_surface" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="surfaces">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="bug_surface">
+        <PropertyRef Name="s_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BugLink_UIContents">
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="1" />
+    <End Role="BugLink" Type="Self.BugLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="BugLink">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_BuildInfo">
+    <End Role="BuildInfo" Type="Self.BuildInfo" Multiplicity="1" />
+    <End Role="LogException" Type="Self.LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_BuildInfo">
+    <End Role="BuildInfo" Type="Self.BuildInfo" Multiplicity="1" />
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuildInfo">
+        <PropertyRef Name="BuildID" />
+      </Principal>
+      <Dependent Role="UIContents">
+        <PropertyRef Name="BuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogException_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="LogException" Type="Self.LogException" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="LogException">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UIContents_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="UIContents">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_Assemblies_LCX_Employers">
+    <End Role="LCX_Employers" Type="Self.LCX_Employers" Multiplicity="0..1" />
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Employers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_Assemblies">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_Assemblies_LCX_Features">
+    <End Role="LCX_Features" Type="Self.LCX_Features" Multiplicity="0..1" />
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Features">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_Assemblies">
+        <PropertyRef Name="FeatureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_AssociationAssembly_LCX_Assemblies">
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="1" />
+    <End Role="LCX_AssociationAssembly" Type="Self.LCX_AssociationAssembly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Assemblies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_AssociationAssembly">
+        <PropertyRef Name="MainAssemblyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_AssociationAssembly_LCX_Assemblies1">
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="1" />
+    <End Role="LCX_AssociationAssembly" Type="Self.LCX_AssociationAssembly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Assemblies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_AssociationAssembly">
+        <PropertyRef Name="MainAssemblyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_Details_LCX_Assemblies">
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="1" />
+    <End Role="LCX_Details" Type="Self.LCX_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Assemblies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_Details">
+        <PropertyRef Name="AssemblyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_MainReport_LCX_Assemblies">
+    <End Role="LCX_Assemblies" Type="Self.LCX_Assemblies" Multiplicity="1" />
+    <End Role="LCX_MainReport" Type="Self.LCX_MainReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Assemblies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_MainReport">
+        <PropertyRef Name="AssemblyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_MainReport_LCX_Cache">
+    <End Role="LCX_Cache" Type="Self.LCX_Cache" Multiplicity="1" />
+    <End Role="LCX_MainReport" Type="Self.LCX_MainReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_Cache">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_MainReport">
+        <PropertyRef Name="CompareBuildID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LCX_Details_LCX_LanguageCache">
+    <End Role="LCX_CacheLanguage" Type="Self.LCX_CacheLanguage" Multiplicity="1" />
+    <End Role="LCX_Details" Type="Self.LCX_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCX_CacheLanguage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LCX_Details">
+        <PropertyRef Name="LanguageKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_Rules">
+    <End Role="Rules" Type="Self.Rule" Multiplicity="1" />
+    <End Role="Results" Type="Self.Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Results_UIContents">
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="1" />
+    <End Role="Results" Type="Self.Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_Rules">
+    <End Role="Rules" Type="Self.Rule" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="RuleID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="RuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleStatus_UIContents">
+    <End Role="UIContents" Type="Self.UIContent" Multiplicity="1" />
+    <End Role="RuleStatus" Type="Self.RuleStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIContents">
+        <PropertyRef Name="ContentID" />
+      </Principal>
+      <Dependent Role="RuleStatus">
+        <PropertyRef Name="ContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SulphurEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AssemblyInfoes" EntityType="Self.AssemblyInfo" />
+    <EntitySet Name="AssemblyLinks" EntityType="Self.AssemblyLink" />
+    <EntitySet Name="bug_surface" EntityType="Self.bug_surface" />
+    <EntitySet Name="BugLinks" EntityType="Self.BugLink" />
+    <EntitySet Name="bugs" EntityType="Self.bug" />
+    <EntitySet Name="BuildInfoes" EntityType="Self.BuildInfo" />
+    <EntitySet Name="BuildTypes" EntityType="Self.BuildType" />
+    <EntitySet Name="BuildVersionMaps" EntityType="Self.BuildVersionMap" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="DeletedContents" EntityType="Self.DeletedContent" />
+    <EntitySet Name="DeletedContentsTemps" EntityType="Self.DeletedContentsTemp" />
+    <EntitySet Name="LCX_Assemblies" EntityType="Self.LCX_Assemblies" />
+    <EntitySet Name="LCX_AssociationAssembly" EntityType="Self.LCX_AssociationAssembly" />
+    <EntitySet Name="LCX_Cache" EntityType="Self.LCX_Cache" />
+    <EntitySet Name="LCX_CacheLanguage" EntityType="Self.LCX_CacheLanguage" />
+    <EntitySet Name="LCX_Details" EntityType="Self.LCX_Details" />
+    <EntitySet Name="LCX_Employers" EntityType="Self.LCX_Employers" />
+    <EntitySet Name="LCX_Features" EntityType="Self.LCX_Features" />
+    <EntitySet Name="LCX_FilteredStrs" EntityType="Self.LCX_FilteredStrs" />
+    <EntitySet Name="LCX_MainReport" EntityType="Self.LCX_MainReport" />
+    <EntitySet Name="LCX_Status" EntityType="Self.LCX_Status" />
+    <EntitySet Name="LogExceptions" EntityType="Self.LogException" />
+    <EntitySet Name="ProviderDiffResults" EntityType="Self.ProviderDiffResult" />
+    <EntitySet Name="Results" EntityType="Self.Result" />
+    <EntitySet Name="Rules" EntityType="Self.Rule" />
+    <EntitySet Name="RuleStatus" EntityType="Self.RuleStatu" />
+    <EntitySet Name="SpellFilters" EntityType="Self.SpellFilter" />
+    <EntitySet Name="SpellIgnores" EntityType="Self.SpellIgnore" />
+    <EntitySet Name="surfaces" EntityType="Self.surface" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UIContents" EntityType="Self.UIContent" />
+    <EntitySet Name="UITraces" EntityType="Self.UITrace" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="VSOServers" EntityType="Self.VSOServer" />
+    <EntitySet Name="DeletedAssemblyLinks" EntityType="Self.DeletedAssemblyLink" />
+    <EntitySet Name="FilterSpellChecks" EntityType="Self.FilterSpellCheck" />
+    <EntitySet Name="FilterSpellingChecks" EntityType="Self.FilterSpellingCheck" />
+    <EntitySet Name="ResultsBacks" EntityType="Self.ResultsBack" />
+    <EntitySet Name="temp_bug_surface" EntityType="Self.temp_bug_surface" />
+    <EntitySet Name="temp_bugs" EntityType="Self.temp_bugs" />
+    <EntitySet Name="VerticalSortPageNameLists" EntityType="Self.VerticalSortPageNameList" />
+    <AssociationSet Name="FK_AssemblyLink_AssemblyInfo" Association="Self.FK_AssemblyLink_AssemblyInfo">
+      <End Role="AssemblyInfo" EntitySet="AssemblyInfoes" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssemblyLink_UIContents" Association="Self.FK_AssemblyLink_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="AssemblyLink" EntitySet="AssemblyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bug_surface_bugs" Association="Self.FK_bug_surface_bugs">
+      <End Role="bugs" EntitySet="bugs" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bug_surface_surfaces" Association="Self.FK_bug_surface_surfaces">
+      <End Role="surfaces" EntitySet="surfaces" />
+      <End Role="bug_surface" EntitySet="bug_surface" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BugLink_UIContents" Association="Self.FK_BugLink_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="BugLink" EntitySet="BugLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_BuildInfo" Association="Self.FK_LogException_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfoes" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_BuildInfo" Association="Self.FK_UIContents_BuildInfo">
+      <End Role="BuildInfo" EntitySet="BuildInfoes" />
+      <End Role="UIContents" EntitySet="UIContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogException_Clients" Association="Self.FK_LogException_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="LogException" EntitySet="LogExceptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UIContents_Clients" Association="Self.FK_UIContents_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="UIContents" EntitySet="UIContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_Assemblies_LCX_Employers" Association="Self.FK_LCX_Assemblies_LCX_Employers">
+      <End Role="LCX_Employers" EntitySet="LCX_Employers" />
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_Assemblies_LCX_Features" Association="Self.FK_LCX_Assemblies_LCX_Features">
+      <End Role="LCX_Features" EntitySet="LCX_Features" />
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_AssociationAssembly_LCX_Assemblies" Association="Self.FK_LCX_AssociationAssembly_LCX_Assemblies">
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+      <End Role="LCX_AssociationAssembly" EntitySet="LCX_AssociationAssembly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_AssociationAssembly_LCX_Assemblies1" Association="Self.FK_LCX_AssociationAssembly_LCX_Assemblies1">
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+      <End Role="LCX_AssociationAssembly" EntitySet="LCX_AssociationAssembly" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_Details_LCX_Assemblies" Association="Self.FK_LCX_Details_LCX_Assemblies">
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+      <End Role="LCX_Details" EntitySet="LCX_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_MainReport_LCX_Assemblies" Association="Self.FK_LCX_MainReport_LCX_Assemblies">
+      <End Role="LCX_Assemblies" EntitySet="LCX_Assemblies" />
+      <End Role="LCX_MainReport" EntitySet="LCX_MainReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_MainReport_LCX_Cache" Association="Self.FK_LCX_MainReport_LCX_Cache">
+      <End Role="LCX_Cache" EntitySet="LCX_Cache" />
+      <End Role="LCX_MainReport" EntitySet="LCX_MainReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LCX_Details_LCX_LanguageCache" Association="Self.FK_LCX_Details_LCX_LanguageCache">
+      <End Role="LCX_CacheLanguage" EntitySet="LCX_CacheLanguage" />
+      <End Role="LCX_Details" EntitySet="LCX_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_Rules" Association="Self.FK_Results_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Results_UIContents" Association="Self.FK_Results_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_Rules" Association="Self.FK_RuleStatus_Rules">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleStatus_UIContents" Association="Self.FK_RuleStatus_UIContents">
+      <End Role="UIContents" EntitySet="UIContents" />
+      <End Role="RuleStatus" EntitySet="RuleStatus" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

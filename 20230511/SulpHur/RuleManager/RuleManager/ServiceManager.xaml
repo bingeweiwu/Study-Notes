@@ -1,0 +1,420 @@
+﻿<Window x:Class="RuleManager.ServiceManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RuleManager"
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell"
+        Title="SulpHurService Management"
+        Height="600" Width="930" Icon="/RuleManager;component/Defrag-icon.png" WindowStyle="None" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
+    <Window.Resources>
+ 
+    </Window.Resources>
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="0" CornerRadius="0" GlassFrameThickness="1" ResizeBorderThickness="5"/>
+    </shell:WindowChrome.WindowChrome>
+    <Grid Background="#E6FFF5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="PART_TitleBar" Height="30" Background="{StaticResource ThemeColor1Brush}" MouseLeftButtonDown="PART_TitleBar_MouseLeftButtonDown">
+            <TextBlock FontFamily="Segoe UI Light, Lucida Sans Unicode, Verdana" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Text="">SulpHurService Management</TextBlock>
+        </Grid>
+        <StackPanel  x:Name="PART_WindowCommands" Height="20" Margin="0,5,5,0" Orientation="Horizontal"
+                                Panel.ZIndex="10"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Right" >
+            <Button x:Name="PART_Min"
+                            Margin="2,0,0,0"
+                            Width="20"
+                            Height="20"
+                            Style="{DynamicResource ChromelessButtonStyle}"
+                            Padding="0"
+                            ToolTip="Minimize"
+                            FontFamily="Marlett"
+                            Opacity="0.8" Content="0"
+                            Click="PART_Min_Click"
+                    />
+
+            <Button x:Name="PART_Max"
+                            Margin="2,0,0,0"
+                            Width="20"
+                            Height="20"
+                            Style="{DynamicResource ChromelessButtonStyle}"
+                            Padding="0"
+                            ToolTip="Maximize"
+                            Click="PART_Max_Click"
+                            Opacity="0.8" FontFamily="Marlett"
+                            Content="1" />
+
+            <Button x:Name="PART_Close"
+                            Margin="2,0,0,0"
+                            Width="20"
+                            Height="20"
+                            Click="PART_Close_Click"
+                            Style="{DynamicResource ChromelessButtonStyle}"
+                            ToolTip="Close"
+                            Opacity="0.8" FontFamily="Marlett"
+                            Content="r" />
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <TabControl>
+                <TabItem Header="Status" Width="100" x:Name="RuleStatusTab">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" >Log Switch Level:</TextBlock>
+
+                        <ComboBox Grid.Row="0" Grid.Column="1" Width="170" Margin="10,0,0,0" x:Name="LogSwitch" SelectedValuePath="Tag" HorizontalAlignment="Left" SelectionChanged="LogSwitch_SelectionChanged">
+                            <ComboBoxItem Content="Off" Tag="0"></ComboBoxItem>
+                            <ComboBoxItem Content="Error" Tag="1"></ComboBoxItem>
+                            <ComboBoxItem Content="Warning" Tag="2"></ComboBoxItem>
+                            <ComboBoxItem Content="Info" IsSelected="True" Tag="3"></ComboBoxItem>
+                            <ComboBoxItem Content="Verbose" Tag="4"></ComboBoxItem>
+                        </ComboBox>
+                        <Border  Margin="0,10,0,20" BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                            <ScrollViewer>
+                                <ListView x:Name="RuleList" ItemsSource="{Binding Path=RuleList}" Margin="0" BorderBrush="{x:Null}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical" Margin="0,3,0,0">
+                                                <Grid>
+                                                    <CheckBox Margin="5,3,0,0" IsChecked="{Binding Path=IsEnable}"></CheckBox>
+                                                    <TextBlock FontSize="14" Margin="20,0,0,0" Text="{Binding Path=Name}" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                                </Grid>
+                                                <TextBlock Margin="10,0,0,0" Text="{Binding Path=Description}" FontStyle="Italic" VerticalAlignment="Top"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Rescan" Width="120" x:Name="ScanTab">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <ComboBox Grid.Row="0" Grid.Column="3" Width="170" Margin="10,0,0,0" HorizontalAlignment="Left" ItemsSource="{Binding Path=RuleList1}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox Margin="0" IsChecked="{Binding Path=IsSelected}"></CheckBox>
+                                        <TextBlock FontSize="14" Margin="0,0,0,0" Text="{Binding Path=Name}" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right">Select Rules:</TextBlock>
+                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Build Number:</TextBlock>
+                        <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" x:Name="cbAvailableBuild" Width="170" ItemsSource="{Binding Path=AvailableBuildNo}" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Build Language:</TextBlock>
+                        <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" x:Name="cbAvailableLanguage" Width="170" Margin="10,0,0,0" ItemsSource="{Binding Path=AvailableLanguage}"></ComboBox>
+                        <CheckBox Content="Result ID:" Grid.Row="1" Grid.Column="2" Name="checkBoxResultID"  HorizontalAlignment="Right" Unchecked="checkBoxResultID_Unchecked" Checked="checkBoxResultID_Checked" />
+                        <CheckBox Content="Content ID:" Grid.Row="1" Grid.Column="4" Name="checkBoxContentID"  HorizontalAlignment="Right" Checked="checkBoxContentID_Checked" />
+                        <TextBox x:Name="tbContentID" Grid.Row="1" Grid.Column="5" Margin="10,0,0,0" Width="170" HorizontalAlignment="Left" IsEnabled="{Binding ElementName=checkBoxContentID, Path=IsChecked}"></TextBox>
+                        <TextBox x:Name="tbResultID" Grid.Row="1" Grid.Column="3" Margin="10,0,0,0" Width="170" HorizontalAlignment="Left" IsEnabled="{Binding ElementName=checkBoxResultID, Path=IsChecked}"></TextBox>
+                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">OS Type:</TextBlock>
+                        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cbAvailableOSType" HorizontalAlignment="Left" Width="170" Margin="10,0,0,0" ItemsSource="{Binding Path=AvailableOSType}" VerticalAlignment="Top"></ComboBox>
+                        <Button x:Name="QueryButton" Grid.Row="2" Grid.Column="2" HorizontalContentAlignment="Center" Height="22" Style="{DynamicResource CommandButton}" Content="QUERY" HorizontalAlignment="Right"  Width="60" Click="QueryButton_Click" Margin="0,5,0,0"></Button>
+                        <Button x:Name="btnRescan" Grid.Row="2" Grid.Column="3" Margin="10,5,0,0" HorizontalContentAlignment="Center" Height="22"  Style="{DynamicResource CommandButton}" Content="RESCAN"  HorizontalAlignment="Left" Width="60" Click="btnRescan_Click" ></Button>
+                        <CheckBox Content="Check/UnCheck All" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,6,0,0" Name="checkBoxAll" Checked="checkBoxAll_Checked" Unchecked="checkBoxAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121" />
+                        <Button x:Name="btnShowENU" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Style="{DynamicResource CommandButton}" Content="SHOW ENU" Width="70" HorizontalContentAlignment="Center" Click="btnShowENU_Click"></Button>
+                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Margin="5,5,0,0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                            <ListView x:Name="ContentList" ItemsSource="{Binding Path=ContentList}" Margin="0" BorderBrush="{x:Null}" SelectionChanged="ContentList_SelectionChanged">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical" Margin="0,3,0,0">
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox Margin="5,3,0,0" IsChecked="{Binding Path=IsChecked}"></CheckBox>
+                                                <TextBlock FontSize="14" Margin="0,0,0,0" Text="{Binding Path=ContentID}" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                                <TextBlock FontSize="14" Margin="10,0,0,0" Text="{Binding Path=UIName}" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                            </StackPanel>
+                                            <TextBlock Margin="10,0,0,0" Text="{Binding Path=UserName}" FontStyle="Italic" VerticalAlignment="Top"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                        <ScrollViewer Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="5" Margin="5,5,5,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Image Name="imageContent" Source="{Binding ElementName=ContentList,Path=SelectedItem.BitmapImage}" Stretch="None" HorizontalAlignment="Left" />
+                        </ScrollViewer>
+                        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4"  Height="23" HorizontalAlignment="Left" Margin="5,0,0,0" Name="textBlockMessage" Text="{Binding Path=ScanPageMessage}" VerticalAlignment="Top" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Page Types" Width="160" x:Name="PageTypesTab">
+                    <Grid>
+                        <TextBlock Text="AdminConsole Folder:" Height="23" HorizontalAlignment="Left" Margin="15,15,0,0" Name="textBox1" VerticalAlignment="Top" Width="168" />
+                        <TextBox Height="23" Margin="149,15,0,0" Name="tbxConsole" VerticalAlignment="Top" Width="538" HorizontalAlignment="Left" />
+                        <Button Style="{DynamicResource CommandButton}" Content="Run" Margin="703,15,0,0" Name="btnShowMissUI" HorizontalContentAlignment="Center" Click="btnShowMissUI_Click" HorizontalAlignment="Left" Width="75" Height="23" VerticalAlignment="Top" />
+                        <DataGrid AutoGenerateColumns="False" Margin="15,77,22,66" Name="missedUIGrid" ItemsSource="{Binding Path=MissUI}" CanUserAddRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=FileName}" Header="Assembly Name" MinWidth="30"></DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Path=PageName}" Header="FullType Name" MinWidth="30"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="Is Captured">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Image Width="18" Height="18" Source="/RuleManager;component/Right_Icon.png" Visibility="{Binding Path=IsInDB,Converter={StaticResource BooleanToVisibilityConverter}}"></Image>
+                                                <Image Width="18" Height="18" Source="/RuleManager;component/onebit_33.png" Visibility="{Binding Path=IsInDB, Converter={StaticResource InverseBooleanConverter}}"></Image>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBlock Text="{Binding ElementName=missedUIGrid,Path=Items.Count,StringFormat=Records:\{0\}}"  Margin="15,0,0,45" Width="131" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                        <TextBlock HorizontalAlignment="Left" Margin="177,0,0,46" Name="textBlock5" Text="{Binding Path=PageCountsInDB}"  VerticalAlignment="Bottom" Width="153" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="15,46,0,0" Name="textBlock1" Text="Inherit Mark and Steps From Build:" VerticalAlignment="Top" />
+                        <ComboBox x:Name="cbAvailableBuild1" Height="23" HorizontalAlignment="Left" ItemsSource="{Binding Path=AvailableBuildNo1}" Margin="210,46,0,0" VerticalAlignment="Top" Width="120" />
+                        <!--<Button Visibility="Collapsed" Style="{DynamicResource CommandButton}" HorizontalContentAlignment="Center" Content="Backup" Height="23" HorizontalAlignment="Left" Margin="287,44,0,0" Name="btnBackup" VerticalAlignment="Top" Width="75" Click="btnBackup_Click" />-->
+                        <Button Visibility="Collapsed" Style="{DynamicResource CommandButton}" HorizontalContentAlignment="Center" Content="ConfirmDialog" Height="23" HorizontalAlignment="Left" Margin="287,44,0,0" Name="btnAnaConfirm" VerticalAlignment="Top" Width="100" Click="btnAnaConfirm_Click" />
+
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Service Status" Name="ServiceStatusTab">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="Refresh" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" Height="22" Style="{DynamicResource CommandButton}" Content="Refresh" HorizontalAlignment="Right"  Width="60" Margin="0,5,0,0" Click="Refresh_Click"></Button>
+                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">Not Scaned UI:</TextBlock>
+                        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=InScanCount}"></TextBlock>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Build Clean and Recover">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Clean Build:</TextBlock>
+                        <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" x:Name="cbBuildClean" Width="170" ItemsSource="{Binding Path=AvailableBuildNo}" />
+                        <Button x:Name="CleanButton" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" Height="22" Style="{DynamicResource CommandButton}" Content="Clean" HorizontalAlignment="Right"  Width="60" Margin="0,0,0,0" Click="CleanButton_Click"></Button>
+                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,5,0,0">Recover Build:</TextBlock>
+                        <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,0" x:Name="cbBuildRecover" Width="170" ItemsSource="{Binding}" />
+                        <Button x:Name="RecoverButton" Grid.Row="1" Grid.Column="2" HorizontalContentAlignment="Center" Height="22" Style="{DynamicResource CommandButton}" Content="Recover" HorizontalAlignment="Right"  Width="60" Margin="0,5,0,0" Click="RecoverButton_Click"></Button>
+                    </Grid>
+                </TabItem>
+                <!--<TabItem Header="Service Status" Width="200" x:Name="StatusTab">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Button Content="Button" Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="46,41,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+                        <Button Content="Button" Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="47,109,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+                    </Grid>
+                </TabItem>-->
+                <!--<TabItem Header="Scan" Width="100" x:Name="ScanTab">
+
+                    <Grid Margin="0,0,0,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <TextBlock Margin="10,0,0,0">Get Available UI By:</TextBlock>
+                            <ComboBox Width="150" Margin="10,0,0,10" x:Name="GetUIOption" SelectionChanged="GetUIOption_SelectionChanged">
+                                <ComboBoxItem Content="Capture Attached Dialog"></ComboBoxItem>
+                                <ComboBoxItem x:Name="QueryDBItem" IsSelected="True" Content="Query From DataBase"></ComboBoxItem>
+                            </ComboBox>
+
+                            <TextBlock Margin="20,0,0,0">Load Rules From:</TextBlock>
+                            <ComboBox Width="150" Margin="10,0,0,10" x:Name="LoadRulesOption" SelectionChanged="LoadRulesOption_SelectionChanged">
+                                <ComboBoxItem Content="Local"></ComboBoxItem>
+                                <ComboBoxItem Content="SulpHur Service"></ComboBoxItem>
+                            </ComboBox>
+
+                            <TextBlock Margin="20,0,0,0">Select Rules:</TextBlock>
+                            <ComboBox Width="150" Margin="10,0,0,10" ItemsSource="{Binding Path=RuleList1}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox Margin="0" IsChecked="{Binding Path=IsSelected}"></CheckBox>
+                                            <TextBlock FontSize="14" Margin="0,0,0,0" Text="{Binding Path=Name}" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Visibility="{Binding ElementName=QueryDBItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Margin="10,0,0,0">Query UI By:</TextBlock>
+                            <ComboBox Width="150" Margin="10,0,0,10" x:Name="QueryOption">
+                                <ComboBoxItem x:Name="BuildNumberItem" IsSelected="True">Build Number</ComboBoxItem>
+                                <ComboBoxItem x:Name="ContentIDItem" >Content ID</ComboBoxItem>
+                                <ComboBoxItem x:Name="ResultIDItem" >Result ID</ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:Name="cbAvailableBuild" Width="150" Margin="10,0,0,10" ItemsSource="{Binding Path=AvailableBuildNo}" Visibility="{Binding ElementName=BuildNumberItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}">
+                            </ComboBox>
+                            <StackPanel Margin="10,0,0,0" Orientation="Horizontal" Visibility="{Binding ElementName=ContentIDItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <TextBlock>Between</TextBlock>
+                                <TextBox Width="70" Height="20" Margin="10,0,0,10" x:Name="ContentStartIndex"></TextBox>
+                                <TextBlock Margin="10,0,0,0">And</TextBlock>
+                                <TextBox Width="70" Height="20" Margin="10,0,0,10" x:Name="ContentEndIndex"></TextBox>
+                            </StackPanel>
+                            <TextBox Width="70" Height="20" Margin="10,0,0,10" x:Name="ResultIDTextBox"  Visibility="{Binding ElementName=ResultIDItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"></TextBox>
+                            <Button x:Name="QueryButton" Margin="10,0,0,0" HorizontalContentAlignment="Center" Height="22" Style="{DynamicResource CommandButton}" Content="QUERY" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="60" Click="QueryButton_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Visibility="{Binding ElementName=BuildNumberItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Margin="10,0,0,0">Build Language:</TextBlock>
+                            <ComboBox x:Name="cbAvailableLanguage" Width="150" Margin="10,0,0,10" ItemsSource="{Binding Path=AvailableLanguage}"></ComboBox>
+                            <TextBlock Margin="10,0,0,0">OS Type:</TextBlock>
+                            <ComboBox x:Name="cbAvailableOSType" Width="150" Margin="10,0,0,10" ItemsSource="{Binding Path=AvailableOSType}"></ComboBox>
+                        </StackPanel>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <GridSplitter Grid.Row="0" Grid.Column="0" Background="#E6FFF5F5"/>
+                            <Border Grid.Row="0" Grid.Column="0"  Margin="0,0,10,30" BorderThickness="1" BorderBrush="Black">
+                                
+                                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Margin="0,30,0,0">
+                                    <ListView x:Name="ContentList" ItemsSource="{Binding Path=ContentList}" Margin="0" BorderBrush="{x:Null}" SelectionChanged="ContentList_SelectionChanged">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Vertical" Margin="0,3,0,0">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox Margin="5,3,0,0" IsChecked="{Binding Path=IsChecked}"></CheckBox>
+                                                        <TextBlock FontSize="14" Margin="0,0,0,0" Text="{Binding Path=ContentID}" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                                        <TextBlock FontSize="14" Margin="10,0,0,0" Text="{Binding Path=UIName}" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Top"></TextBlock>
+                                                    </StackPanel>
+                                                    <TextBlock Margin="10,0,0,0" Text="{Binding Path=UserName}" FontStyle="Italic" VerticalAlignment="Top"></TextBlock>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ScrollViewer>
+                            </Border>
+                            <Border  Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="Black">
+                                <ScrollViewer Margin="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                    <Image Name="imageContent" Source="{Binding ElementName=ContentList,Path=SelectedItem.BitmapImage}" Stretch="None" HorizontalAlignment="Left" />
+                                </ScrollViewer>
+                            </Border>
+                            <Grid VerticalAlignment="Bottom">
+                                <Button x:Name="btnScan" Margin="0,0,10,0" HorizontalContentAlignment="Center" Height="25" Style="{DynamicResource CommandButton}" Content="SCAN" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Click="btnScan_Click"></Button>
+                                <Button x:Name="btnRescan" Visibility="{Binding ElementName=QueryDBItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,90,0" HorizontalContentAlignment="Center" Height="25"  Style="{DynamicResource CommandButton}" Content="RESCAN" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="60" Click="btnRescan_Click"></Button>
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock3" Text="{Binding Path=ScanPageMessage}" VerticalAlignment="Top" />
+                            </Grid>
+                            <CheckBox Content="Check/UnCheck All" Margin="10,6,0,0" Name="checkBoxAll" Checked="checkBoxAll_Checked" Unchecked="checkBoxAll_Unchecked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Results" Width="120" x:Name="ResultTab">
+                    <Grid>
+                        <Grid Margin="249,0,0,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" Margin="0,10,0,20">
+                                <ScrollViewer>
+                                    <Image Name="image1" Source="{Binding ElementName=listBoxResult,Path=SelectedItem.BitmapImage}" Stretch="None" HorizontalAlignment="Left" />
+                                </ScrollViewer>
+                            </Border>
+                            <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black"  Margin="0">
+                                    <TextBlock Name="textBlock2" TextWrapping="Wrap"  Text="{Binding ElementName=listBoxResult,Path=SelectedItem.Message}" VerticalAlignment="Top" />
+                            </Border>
+                        </Grid>
+
+                        <ListBox Margin="0,0,0,40" Name="listBoxResult" HorizontalAlignment="Left" Width="233" ItemsSource="{Binding Path=ComplianceResults}" SelectionChanged="listBoxResult_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource LinkButton}" Content="{Binding Path=UIID}" Margin="0" x:Name="idlinkButton" Click="idlinkButton_Click">
+                                        </Button>
+                                        <TextBlock Text="{Binding Path=RuleName}" Margin="10,0,0,0"></TextBlock>
+                                        <TextBlock Margin="10,0,0,0" Name="textBlock1" Text="{Binding Path=Type}" />
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+
+                        </ListBox>
+                        <Label Content="{Binding Path=ResultMessage}" HorizontalAlignment="Left" Margin="6,0,0,6" Name="resultLabel" Height="28" VerticalAlignment="Bottom" />
+                        <Button  HorizontalContentAlignment="Center" Content="Stop" Style="{DynamicResource CommandButton}" HorizontalAlignment="Left" Margin="118,0,0,11" Name="btnStop" Width="75" Click="btnStop_Click" Height="23" VerticalAlignment="Bottom" />
+                    </Grid>
+                </TabItem>
+                
+                <TabItem Header="Property Reader" x:Name="PropertyReaderTab">
+                    <Grid>
+                        <TextBox Height="23" Margin="86,9,0,0" Name="textBoxHandle" VerticalAlignment="Top" HorizontalAlignment="Left" Width="307" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlockHandle" Text="Handle(HEX):" VerticalAlignment="Top" />
+                        <Button Style="{DynamicResource CommandButton}" HorizontalContentAlignment="Center" Content="Get" Height="23" HorizontalAlignment="Left" Margin="408,8,0,0" Name="btnGet" VerticalAlignment="Top" Width="75" Click="btnGet_Click" />
+                        <TextBox Height="23" Margin="101,45,0,0" Name="tbPropertyName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="170" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,48,0,0" Name="textBlockPropretyName" Text="Property Name:" VerticalAlignment="Top" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="101,75,0,0" Name="textBlockPropertyValue" Text="{Binding Path=PropertyValue}" VerticalAlignment="Top" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,75,0,0" Name="textBlock4" Text="Property Value:" VerticalAlignment="Top" />
+                        <Button Style="{DynamicResource CommandButton}" HorizontalContentAlignment="Center" Content="HighlightInner" Height="23" HorizontalAlignment="Left" Margin="521,9,0,0" Name="btnHighlightInner" VerticalAlignment="Top" Width="106" Click="btnHighlightInner_Click" />
+                    </Grid>
+                </TabItem>-->
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

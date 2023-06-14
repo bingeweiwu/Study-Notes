@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SulpHurModelStoreContainer" CdmEntityContainer="SulpHurEntitiesForCMRules">
+    <EntitySetMapping Name="FilterSpellChecks">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck">
+        <MappingFragment StoreEntitySet="FilterSpellCheck">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="regexString" ColumnName="regexString" />
+          <ScalarProperty Name="properNoun" ColumnName="properNoun" />
+          <ScalarProperty Name="nonEnglishButtonName" ColumnName="nonEnglishButtonName" />
+          <ScalarProperty Name="pageExceptionType" ColumnName="pageExceptionType" />
+          <ScalarProperty Name="exceptionPageTitle" ColumnName="exceptionPageTitle" />
+          <ScalarProperty Name="excludeTextDetectPageTitle" ColumnName="excludeTextDetectPageTitle" />
+          <ScalarProperty Name="normalPunctuation" ColumnName="normalPunctuation" />
+          <ScalarProperty Name="reserve2" ColumnName="reserve2" />
+          <ScalarProperty Name="reserve3" ColumnName="reserve3" />
+          <ScalarProperty Name="reserve4" ColumnName="reserve4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VerticalSortPageNameLists">
+      <EntityTypeMapping TypeName="SulpHurModel.VerticalSortPageNameList">
+        <MappingFragment StoreEntitySet="VerticalSortPageNameList">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_exceptionPageTitle">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_exceptionPageTitle">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_exceptionPageTitle">
+          <ScalarProperty Name="exceptionPageTitle" ColumnName="exceptionPageTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_excludeTextDetectPageTitle">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_excludeTextDetectPageTitle">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_excludeTextDetectPageTitle">
+          <ScalarProperty Name="excludeTextDetectPageTitle" ColumnName="excludeTextDetectPageTitle" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_nonEnglishButtonName">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_nonEnglishButtonName">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_nonEnglishButtonName">
+          <ScalarProperty Name="nonEnglishButtonName" ColumnName="nonEnglishButtonName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_normalPunctuation">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_normalPunctuation">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_normalPunctuation">
+          <ScalarProperty Name="normalPunctuation" ColumnName="normalPunctuation" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_pageExceptionType">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_pageExceptionType">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_pageExceptionType">
+          <ScalarProperty Name="pageExceptionType" ColumnName="pageExceptionType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_properNoun">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_properNoun">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_properNoun">
+          <ScalarProperty Name="properNoun" ColumnName="properNoun" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_regexString">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_regexString">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_regexString">
+          <ScalarProperty Name="regexString" ColumnName="regexString" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilterSpellCheck_abnormalButNoImpact">
+      <EntityTypeMapping TypeName="SulpHurModel.FilterSpellCheck_abnormalButNoImpact">
+        <MappingFragment StoreEntitySet="FilterSpellCheck_abnormalButNoImpact">
+          <ScalarProperty Name="abnormalButNoImpact" ColumnName="abnormalButNoImpact" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonEnglishWordsButEnglishLetters">
+      <EntityTypeMapping TypeName="SulpHurModel.NonEnglishWordsButEnglishLetter">
+        <MappingFragment StoreEntitySet="NonEnglishWordsButEnglishLetters">
+          <ScalarProperty Name="NonEnglishWord" ColumnName="NonEnglishWord" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonEnglishButtonNames">
+      <EntityTypeMapping TypeName="SulpHurModel.NonEnglishButtonName">
+        <MappingFragment StoreEntitySet="NonEnglishButtonName">
+          <ScalarProperty Name="Reserve" ColumnName="Reserve" />
+          <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WordsSharedWithEnglishes">
+      <EntityTypeMapping TypeName="SulpHurModel.WordsSharedWithEnglish">
+        <MappingFragment StoreEntitySet="WordsSharedWithEnglish">
+          <ScalarProperty Name="NOR" ColumnName="NOR" />
+          <ScalarProperty Name="FIN" ColumnName="FIN" />
+          <ScalarProperty Name="ELL" ColumnName="ELL" />
+          <ScalarProperty Name="DAN" ColumnName="DAN" />
+          <ScalarProperty Name="TRK" ColumnName="TRK" />
+          <ScalarProperty Name="SVE" ColumnName="SVE" />
+          <ScalarProperty Name="PTG" ColumnName="PTG" />
+          <ScalarProperty Name="PTB" ColumnName="PTB" />
+          <ScalarProperty Name="PLK" ColumnName="PLK" />
+          <ScalarProperty Name="NLD" ColumnName="NLD" />
+          <ScalarProperty Name="KOR" ColumnName="KOR" />
+          <ScalarProperty Name="ITA" ColumnName="ITA" />
+          <ScalarProperty Name="HUN" ColumnName="HUN" />
+          <ScalarProperty Name="ESN" ColumnName="ESN" />
+          <ScalarProperty Name="CSY" ColumnName="CSY" />
+          <ScalarProperty Name="CHT" ColumnName="CHT" />
+          <ScalarProperty Name="RUS" ColumnName="RUS" />
+          <ScalarProperty Name="JPN" ColumnName="JPN" />
+          <ScalarProperty Name="FRA" ColumnName="FRA" />
+          <ScalarProperty Name="DEU" ColumnName="DEU" />
+          <ScalarProperty Name="CHS" ColumnName="CHS" />
+          <ScalarProperty Name="ENU" ColumnName="ENU" />
+          <ScalarProperty Name="Word" ColumnName="Word" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

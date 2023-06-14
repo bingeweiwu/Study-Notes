@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8E5204F-0B5E-454C-B97E-118E0B75724A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MS.Internal.SulpHur.CMRules</RootNamespace>
+    <AssemblyName>MS.Internal.SulpHur.CMRules</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CMAccessKeyDupExceptRule.cs" />
+    <Compile Include="CMAccessKeyDuplicateRule.cs" />
+    <Compile Include="CMAccessKeyRule.cs" />
+    <Compile Include="CMAlignmentRule.cs" />
+    <Compile Include="CMAutomationIdMissRule.cs" />
+    <Compile Include="CMButtonRule.cs" />
+    <Compile Include="CMControlTruncationRule.cs" />
+    <Compile Include="CMDBoperator.cs" />
+    <Compile Include="CMEmptyStringResourceRule.cs" />
+    <Compile Include="CMLabelAlignment.cs" />
+    <Compile Include="CMLabelAlignment_5.cs" />
+    <Compile Include="CMLeftEdgeRule.cs" />
+    <Compile Include="CMOverlapRule.cs" />
+    <Compile Include="CMPunctuationRule.cs" />
+    <Compile Include="CMQueryAllUIRule.cs" />
+    <Compile Include="CMRulesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMRulesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMRulesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMRulesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMRulesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CMTabOrderRule.cs" />
+    <Compile Include="CMTruncation30Rule.cs" />
+    <Compile Include="CMTruncationRule.cs" />
+    <Compile Include="CMUATextRule.cs" />
+    <Compile Include="CMWindowSizeRule.cs" />
+    <Compile Include="CommonRuleUtility.cs" />
+    <Compile Include="ControlTruncationRuleChildAndParentFilter.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CriticalAccessKeyRule.cs" />
+    <Compile Include="DataAccess\LinqDataClasses.cs">
+      <DependentUpon>LinqDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LinqDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LinqDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_abnormalButNoImpact.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_exceptionPageTitle.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_excludeTextDetectPageTitle.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_nonEnglishButtonName.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_normalPunctuation.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_pageExceptionType.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_properNoun.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterSpellCheck_regexString.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpTopicRule.cs" />
+    <Compile Include="HyperLinkRule.cs" />
+    <Compile Include="KeyboardAccessible.cs" />
+    <Compile Include="NonEnglishButtonName.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NonEnglishWordsButEnglishLetter.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OverlapRuleChildAndParentFilter.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OverlapRuleFilter.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SpellingRule.cs" />
+    <Compile Include="TextTruncationRuleFilter.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnlocalizationRule.cs" />
+    <Compile Include="VerticalSortPageNameList.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WordsSharedWithEnglish.cs">
+      <DependentUpon>CMRulesModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MS.Internal.SulpHur.UICompliance\MS.Internal.SulpHur.UICompliance.csproj">
+      <Project>{4E3B1E48-595D-4A15-A4FE-FCB10B27AED2}</Project>
+      <Name>MS.Internal.SulpHur.UICompliance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.Utilities\MS.Internal.SulpHur.Utilities.csproj">
+      <Project>{EB628863-56AB-4BC4-9EE5-87E893073742}</Project>
+      <Name>MS.Internal.SulpHur.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="CMRulesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CMRulesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CMRulesModel.edmx.diagram">
+      <DependentUpon>CMRulesModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataAccess\LinqDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LinqDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccess\LinqDataClasses.dbml.layout">
+      <DependentUpon>LinqDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CMRulesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMRulesModel.edmx</DependentUpon>
+      <LastGenOutput>CMRulesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CMRulesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMRulesModel.edmx</DependentUpon>
+      <LastGenOutput>CMRulesModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

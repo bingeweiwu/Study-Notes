@@ -1,0 +1,6 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\bin\Debug\InjectorWrapper.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\bin\Debug\InjectorWrapper.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\obj\Debug\ManagedInjectorWrapper.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\obj\Debug\ManagedInjectorWrapper.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\obj\Debug\InjectorWrapper.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ManagedInjectorWrapper\obj\Debug\InjectorWrapper.pdb

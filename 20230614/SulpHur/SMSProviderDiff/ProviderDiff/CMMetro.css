@@ -1,0 +1,192 @@
+﻿body
+{
+background-color:#FF9900; 
+}
+#topdiv
+{
+width:100%;
+height:30px;
+position:fixed;
+top:0px;
+left:0px;
+background-color:Black; 
+}
+#selectcontainer div
+{
+     float:left;
+    }
+#selectcontainer label
+{
+     float:left;
+    }
+    #selectcontainer select
+    {
+        float:left;
+        width:180px; 
+        margin-left:5px;
+        }
+#MissPagesSummary
+{
+    display:none;
+    width:100%;
+    position:fixed;
+    top:150px;
+}
+#selectcontainer
+{
+    color:White;
+     margin-left:20px;
+        margin-top:30px; 
+    }
+#charContainer
+{
+    margin-top:20px; 
+    }
+    
+    #uponbottomdiv
+    {
+     width:100%;
+height:40px;
+position:fixed;
+bottom:180px;
+left:0px;
+margin-right:100px;
+        }
+            #uponbottomdiv input
+            {
+width: auto;
+text-align:center;
+ float:right;
+ margin-right:20px;
+height:28px;
+background: #617798;
+border: 0;
+font-size:11px;
+color: #FFFFFF;
+                }
+                
+ #uponbottomdiv input:hover
+            {
+       background: #008B17;        
+                }
+#bottomdiv
+{
+width:100%;
+height:30px;
+position:fixed;
+bottom:0px;
+left:0px;
+background-color:Black; 
+}
+#logotext
+{
+margin-left:60px;
+margin-top:20px;
+width:240px;
+height:80px;
+} 
+#logo
+{
+position:fixed;
+left:0px;
+top:150px;
+height:120px;
+width:100%;
+background-color:White;
+}
+#mainlink
+{
+position:fixed;
+left:170px;
+
+top:300px;
+width:100%;
+}
+
+.metro-roxo { background:#5234AC;}
+.metro-verde {background:#008B17;}
+.metro-azul { background:#2573EB;}
+.metro-vermelho {background:#B21A41;}
+.metro-laranja { background:#D64D29;}
+.metro-info {background:#FFCC66;}
+
+.metro-1 { background:#FF6666;}
+.metro-2 { background:#99CC00;}
+
+.metro {
+position:relative;
+height:128px;
+margin-left:20px;
+margin-top:10px;
+cursor:pointer;
+float:left;
+color:White;
+font-family: "Segoe UI Light","Segoe UI",Verdana, Tahoma, Arial;
+}
+
+.metrobig
+{
+   position:relative;
+margin-left:20px;
+margin-top:10px;
+cursor:pointer;
+width:400px;
+float:left;
+color:White;
+font-family: "Segoe UI Light","Segoe UI",Verdana, Tahoma, Arial; 
+    }
+.metro:hover {
+filter: alpha(opacity=80);
+opacity: 0.8;
+}
+
+.metrosingle {
+width:170px;
+}
+
+.metro .imgsimple {
+height:64px;
+width:64px;
+padding:20px 53px 10px 53px;
+border:0px;
+text-align:center;
+float:left;
+position:relative;
+   
+}
+
+.metrobig .chartsimple
+{
+   height:400px;
+border:0px;
+text-align:center;
+float:left;
+position:relative; 
+    }
+    
+.metrobig span {
+position:relative;
+height:40px;
+text-decoration:none;
+color:White;
+font-size:30px;
+float:left;
+text-align:left;
+clear:both;
+width:100%;
+bottom:0px;
+}
+
+.metro span {
+position:relative;
+height:20px;
+text-decoration:none;
+color:rgba(255, 255, 255, 1.0);
+float:left;
+text-align:center;
+clear:both;
+width:100%;
+bottom:0px;
+}
+
+

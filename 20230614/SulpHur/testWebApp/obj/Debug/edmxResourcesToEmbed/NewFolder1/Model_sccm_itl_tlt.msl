@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SCCM_ITL_TLTModelStoreContainer" CdmEntityContainer="SCCM_ITL_TLTEntities">
+    <EntitySetMapping Name="SH_People">
+      <EntityTypeMapping TypeName="SCCM_ITL_TLTModel.SH_People">
+        <MappingFragment StoreEntitySet="SH_People">
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Office" ColumnName="Office" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="OrgPath" ColumnName="OrgPath" />
+          <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+          <ScalarProperty Name="AliasDomain" ColumnName="AliasDomain" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="UserPrincipalName" ColumnName="UserPrincipalName" />
+          <ScalarProperty Name="TeamsUserID" ColumnName="TeamsUserID" />
+          <ScalarProperty Name="TeamsConversationID" ColumnName="TeamsConversationID" />
+          <ScalarProperty Name="Avatars" ColumnName="Avatars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

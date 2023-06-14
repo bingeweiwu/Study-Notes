@@ -1,0 +1,13 @@
+execute INSERT INTO ResultsInfoByAlias (ResultID, buildNo, Language, RuleName, ResultType, UIName, UserName, OSType, DateUploaded, CreateDate, ReviewFlag, alias)
+SELECT ResultID, buildNo, Language, RuleName, ResultType, UIName, UserName, OSType, DateUploaded, CreateDate, ReviewFlag,'v-mogenzhang' as alias  FROM (
+ SELECT ROW_NUMBER() OVER (ORDER BY [BuildNo] DESC, [ResultID] DESC) AS rowNum, * FROM (
+ SELECT distinct [Results].[ResultID], [BuildInfo].[BuildNo], [BuildInfo].[Language], [Rules].[RuleName], [Results].[ResultType], 
+ [UIContents].[UIName], [Clients].[UserName], [BuildInfo].[BuildID], [Clients].[OSType], [UIContents].[DateUploaded], [Results].[CreateDate], 
+ [Results].[ReviewFlag] FROM [dbo].[Results] 
+ INNER JOIN [UIContents] ON [Results].[ContentID] = [UIContents].[ContentID]
+ INNER JOIN [BuildInfo] ON [UIContents].[BuildID] = [BuildInfo].[BuildID]
+ INNER JOIN [Rules] ON [Results].[RuleID] = [Rules].[RuleID]
+ INNER JOIN [Clients] ON [UIContents].[ClientID] = [Clients].[ClientID] 
+ LEFT OUTER JOIN [AssemblyLink] ON [AssemblyLink].[ContentID]=[UIContents].[ContentID]
+ LEFT OUTER JOIN [AssemblyInfo] ON [AssemblyInfo].[TypeID]=[AssemblyLink].[TypeID]
+ WHERE 1=1  AND [BuildInfo].[Language] IN ('ENU') AND [Results].[RuleID] IN (48) AND [CreateDate]>'1/23/2023 12:25:03 AM' AND [CreateDate]<'5/23/2023 3:25:03 PM' AND [Results].[ResultType] IN ('Fail') AND [Results].[ReviewFlag]=0) AS newT) AS t  ORDER BY rowNum

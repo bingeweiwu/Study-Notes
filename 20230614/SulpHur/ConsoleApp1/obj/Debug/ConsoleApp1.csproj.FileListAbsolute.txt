@@ -1,0 +1,9 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\bin\Debug\ref\ConsoleApp1.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\obj\Debug\ref\ConsoleApp1.exe
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

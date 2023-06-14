@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9ADE210-7B29-4C4F-84E5-21DB075F9CD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTest</RootNamespace>
+    <AssemblyName>UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Appium.Net, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(PkgAppium_WebDriver)\lib\net45\Appium.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>$(PkgCastle_Core_4_3_1_0)\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="interop.UIAutomationCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\MS.Internal.SulpHur.SulpHurClient\bin\Debug\interop.UIAutomationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>$(PkgNewtonsoft_Json)\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(PkgDotNetSeleniumExtras_PageObjects)\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(PkgSelenium_WebDriver)\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(PkgSelenium_Support)\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SulphurClient\GenerateXMLTest.cs" />
+    <Compile Include="SulphurClient\UiComplianceTest.cs" />
+    <Compile Include="SulphurService\BugSyncTest.cs" />
+    <Compile Include="SulphurService\RuleTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MS.Internal.SulpHur.CMRules\MS.Internal.SulpHur.CMRules.csproj">
+      <Project>{b8e5204f-0b5e-454c-b97e-118e0b75724a}</Project>
+      <Name>MS.Internal.SulpHur.CMRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.SulpHurClient\MS.Internal.SulpHur.SulpHurClient.csproj">
+      <Project>{9d2ea4d9-dd81-4b9c-87f4-05c6f10d3e30}</Project>
+      <Name>MS.Internal.SulpHur.SulpHurClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.SulpHurService\MS.Internal.SulpHur.SulpHurService.csproj">
+      <Project>{b44f8f69-527d-47a1-aefa-15da31e8a8ce}</Project>
+      <Name>MS.Internal.SulpHur.SulpHurService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.UICompliance\MS.Internal.SulpHur.UICompliance.csproj">
+      <Project>{4E3B1E48-595D-4A15-A4FE-FCB10B27AED2}</Project>
+      <Name>MS.Internal.SulpHur.UICompliance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MS.Internal.SulpHur.Utilities\MS.Internal.SulpHur.Utilities.csproj">
+      <Project>{eb628863-56ab-4bc4-9ee5-87e893073742}</Project>
+      <Name>MS.Internal.SulpHur.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="UIAutomationClient1">
+      <Guid>{944DE083-8FB8-45CF-BCB7-C477ACB2F897}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

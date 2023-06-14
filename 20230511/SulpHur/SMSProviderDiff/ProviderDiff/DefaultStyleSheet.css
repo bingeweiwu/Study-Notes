@@ -1,0 +1,224 @@
+﻿body 
+{
+background-color:#f2f2e6;
+margin:0px;
+}
+
+input:focus , textarea:focus
+{
+    border:1px solid #f00;
+    background:#fcc;    
+}
+
+.disnone
+{
+   content:'N/A';
+    }
+   
+
+/*
+.HiddenColumn{display:none;}
+*/
+#detailImageBtn
+{
+width:20px;
+height:20px;
+}
+
+img{ border-style:none;}
+#gridContainer
+{
+margin-left:50px;   
+margin-top:20px;
+margin-right:50px;
+}
+
+#gridContainer1
+{
+  margin-left:20px;   
+margin-top:20px;
+margin-right:50px;  
+    }
+
+#ToolBar
+{
+width:500px;    
+height:110px;
+background-color:#ebf4fb;
+float:left;
+display:none;
+}
+
+#ToolBar label
+{
+display:block;
+font-weight:bold;
+text-align:right;
+}
+
+#ToolBar input[type=text]{
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:120px;
+}
+
+select { border:0;
+font-size:20px; font-weight:bold; 
+}
+.smallfont
+{
+    font-size:small; 
+    }
+    
+    #firstlabel
+    {
+         margin-left:0px;
+        }
+ 
+.prebackground
+{
+         background-color:#CCFF99;
+    }
+    
+.postbackground
+{
+         background-color:#FFFF66;
+    }
+.styled-select 
+{
+margin-top:20px;
+margin-bottom:20px;
+padding:5px;
+width: 100%;
+}
+
+.styled-select select
+{
+float:left;
+margin-left:20px;
+margin-top:3px;
+}
+
+.styled-select label
+{
+float:left;
+margin-left:20px;
+}
+
+#ddDiffType
+{
+   margin-left:0px; 
+    }
+
+.styled-select input
+{
+float:left;
+margin-left:20px;
+height:22px;
+width:60px;
+}
+
+#MainGrid
+{
+
+margin:0px;
+}
+
+
+
+#loading
+{
+position:fixed;
+top:100px;
+display:none;
+left:100px;
+z-index:100; 
+}
+
+.toolbarTable
+{
+border-width:0px;
+margin-left:20px;
+margin-top:10px; 
+}
+
+.Tr_Click
+{
+background-color: #1C5E55;
+color: #333333;
+}
+  #DetailViewContainer
+{
+background:white;
+padding:10px;
+display:none;
+overflow :auto;
+}
+.ecButton
+{
+background-color:#1C5E55;
+color:White;
+width:30px;
+height:110px;
+text-align:center; 
+border-style:none;
+writing-mode: tb-rl;
+}
+  
+.ecButton1
+{
+border:solid 2px #b7ddf2;
+background-color:#336600;
+color:White;
+width:110px;
+height:30px;
+text-align:center; 
+border-style:none;
+}
+#ExpandButtonContainer
+{
+position:relative;
+float:left;
+}
+
+#DetailExpandBtnContainer
+{
+width:100%;
+text-align:center;
+}
+
+#ToolBarContainer
+{
+position:fixed;
+top:70px;
+left:0px;
+z-index:10;
+height:110px;
+vertical-align:middle;
+border:solid 2px #b7ddf2;
+}
+
+
+input[type=checkbox]
+{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+
+.submit input {
+width: auto;
+text-align:center;
+width:100px;
+height:28px;
+background: #617798;
+border: 0;
+font-size:11px;
+color: #FFFFFF;
+}
+
+#form1
+{
+margin:0px;
+    
+}

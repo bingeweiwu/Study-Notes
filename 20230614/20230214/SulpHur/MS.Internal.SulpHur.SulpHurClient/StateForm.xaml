@@ -1,0 +1,8 @@
+﻿<Window x:Class="MS.Internal.SulpHur.SulpHurClient.StateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StateForm" Height="24" Width="24" AllowsTransparency="True" WindowStyle="None"  Background="Transparent" Topmost="True" ShowInTaskbar="False" MouseRightButtonUp="Window_MouseRightButtonUp">
+    <Grid>
+        <Image Width="24" Height="24" Name="StateImage"/>
+    </Grid>
+</Window>

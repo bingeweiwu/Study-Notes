@@ -1,0 +1,57 @@
+﻿.PopupWindow {
+    padding: 0 10px 0 10px;
+    background-color: White;
+    border: 1px solid gray;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    display: none;
+    width: 340px;
+    height: 125px;
+    border-radius: 3px;
+}
+
+.Modern-Button {
+    text-align: center;
+    width: 100px;
+    height: 28px;
+    background: #4888F0;
+    border: 0;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+    .Modern-Button:hover {
+        background:#327cf4;
+        cursor: pointer;
+    }
+
+
+
+.PopupWindow > div {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+}
+
+.PopupWindow > .ButtonPanel {
+    text-align: center;
+    width: 100%;
+}
+
+.PopupWindow * {
+    font-size: 12px;
+}
+
+#ScreenLocker {
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    background: #000000;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.8;
+}

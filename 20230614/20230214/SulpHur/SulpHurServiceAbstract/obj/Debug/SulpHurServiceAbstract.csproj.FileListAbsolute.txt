@@ -1,0 +1,6 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\bin\Debug\SulpHurServiceAbstract.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\bin\Debug\SulpHurServiceAbstract.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\obj\Debug\SulpHurServiceAbstract.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\obj\Debug\SulpHurServiceAbstract.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\obj\Debug\SulpHurServiceAbstract.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\SulpHurServiceAbstract\obj\Debug\SulpHurServiceAbstract.pdb

@@ -1,0 +1,184 @@
+﻿/**
+
+.loadingImg 
+{
+width:20px;
+height:20px;
+margin-bottom: 0px;
+}
+
+.cBuild
+{
+width: 100px;
+}
+.multiselect
+{
+width:240px;
+}
+        
+.multiselect div
+{
+float:left;
+}
+.multiselectLeft{ width:100px;}
+.multiselectCenter{ width:40px;}
+.multiselectCenter input{ width:40px; height:20px;}
+.multiselectRight{ width:100px;}
+.multiselectCenter div
+{
+}
+    
+.bigText{ font-size:x-large; font-family:Segoe UI; color:White;}
+.samllText{ font-size:medium;}
+            
+**/
+body
+{ font-size:10pt;
+  font-family:Verdana, Arial, sans-serif ;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+    }
+        .Message
+        {
+            text-align: center;
+            border: 1px solid #EA7509;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #4888F0;
+            padding: 10px;
+        }
+        #header
+{
+    
+    }
+.selectedC
+{
+color: Red;
+}
+.markvalue
+{
+cursor: pointer;
+margin-right: 8px;
+display: block;
+float: left;
+ font-family:Verdana, Arial, sans-serif ;
+}
+.markvalue:hover
+{
+text-decoration: underline;
+}
+#page-border
+{
+padding-top: 10px;
+padding-left: 40px;
+padding-right: 40px;
+}
+        
+.modern
+{
+width: auto;
+text-align: center;
+width: 100px;
+height: 28px;
+background: #4888F0;
+border: 0;
+font-size: 11px;
+color: #FFFFFF;
+}
+
+.modern:hover
+{
+   background: #FF9900; 
+    }
+                 
+#btnInput
+{
+padding-top: 5px;
+background-color: #F2F2F2;
+padding-left: 5px;
+padding-bottom: 5px;
+}
+        
+.modern:hover
+{
+cursor: pointer;
+}
+.ec_icon
+{
+width: 34px;
+height: 34px;
+overflow: hidden;
+float: left;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: Gray;
+}
+#SearchTitle
+{
+height: 34px;
+border-width: 1px;
+border-color: Gray;
+border-style: solid;
+}
+#SearchTitle a
+{
+     float:right;
+     display:block;
+     margin-right:10px;
+     margin-top:6px;
+}
+hr
+{
+     width:100%;
+     
+    }
+#SearchTitle p
+{
+display:block;
+float:left;
+margin-top:6px;
+}
+#SearchTitle span
+{
+height: 34px;
+display: table-cell;
+vertical-align: middle;
+}
+        
+#SearchBody
+{
+position: relative;
+margin-top: 10px;
+clear: both;
+border-top: 4px solid #4888F0;
+border-bottom: 1px solid gray;
+border-left: 1px solid gray;
+border-right: 1px solid gray;
+}
+.showmore div
+{
+float: left;
+width: 15px;
+height: 15px;
+overflow: hidden;
+}
+.showmore
+{
+color: #808080;
+cursor: pointer;
+font-family: tahoma,arial;
+font-size: 13px;
+}
+.showmore img
+{
+width: 13px;
+height: 13px;
+float: left;
+}
+.showmore span
+{
+display: block;
+float: left;
+}

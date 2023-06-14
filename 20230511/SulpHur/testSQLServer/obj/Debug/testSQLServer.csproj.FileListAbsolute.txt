@@ -1,0 +1,2 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testSQLServer\obj\Debug\testSQLServer.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\testSQLServer\obj\Debug\testSQLServer.csproj.CoreCompileInputs.cache

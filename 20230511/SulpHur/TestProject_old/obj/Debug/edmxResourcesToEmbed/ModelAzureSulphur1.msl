@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SulpHurModelStoreContainer" CdmEntityContainer="SulpHurEntitiesAzureSulphur">
+    <EntitySetMapping Name="Rules">
+      <EntityTypeMapping TypeName="SulpHurModel.Rule">
+        <MappingFragment StoreEntitySet="Rules">
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="RulePath" ColumnName="RulePath" />
+          <ScalarProperty Name="RuleDesc" ColumnName="RuleDesc" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="AssemblyInfo" ColumnName="AssemblyInfo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsObsoluted" ColumnName="IsObsoluted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleStatus">
+      <EntityTypeMapping TypeName="SulpHurModel.RuleStatu">
+        <MappingFragment StoreEntitySet="RuleStatus">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RuleStatus" ColumnName="RuleStatus" />
+          <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UIContents">
+      <EntityTypeMapping TypeName="SulpHurModel.UIContent">
+        <MappingFragment StoreEntitySet="UIContents">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="UIContent1" ColumnName="UIContent" />
+          <ScalarProperty Name="UIScreenShot" ColumnName="UIScreenShot" />
+          <ScalarProperty Name="IsWebUI" ColumnName="IsWebUI" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+          <ScalarProperty Name="TraceID" ColumnName="TraceID" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="Reserve3" ColumnName="Reserve3" />
+          <ScalarProperty Name="Reserve4" ColumnName="Reserve4" />
+          <ScalarProperty Name="Reserve5" ColumnName="Reserve5" />
+          <ScalarProperty Name="LaunchedFrom" ColumnName="LaunchedFrom" />
+          <ScalarProperty Name="WindowHierarchy" ColumnName="WindowHierarchy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="SulpHurModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="ReviewLog" ColumnName="ReviewLog" />
+          <ScalarProperty Name="ReviewFlag" ColumnName="ReviewFlag" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ResultLog" ColumnName="ResultLog" />
+          <ScalarProperty Name="ResultImage" ColumnName="ResultImage" />
+          <ScalarProperty Name="ResultType" ColumnName="ResultType" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RelatedControls" ColumnName="RelatedControls" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

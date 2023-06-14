@@ -1,0 +1,14 @@
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\MS.Internal.SulpHur.UICompliance.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\MS.Internal.SulpHur.UICompliance.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\interop.UIAutomationCore.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\ManagedControlAgentWin32.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\Mita.Foundation.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\Mita.Localization.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\Mita.ResourceExtractionProvider.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\MS.Internal.SulpHur.Utilities.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\bin\Debug\MS.Internal.SulpHur.Utilities.pdb
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\obj\Debug\MS.Internal.SulpHur.UICompliance.csproj.AssemblyReference.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\obj\Debug\MS.Internal.SulpHur.UICompliance.csproj.CoreCompileInputs.cache
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\obj\Debug\MS.Internal.SulpHur.UICompliance.csproj.CopyComplete
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\obj\Debug\MS.Internal.SulpHur.UICompliance.dll
+F:\SD\ConfigMgr-Test\src\Tools\SulpHur20\SulpHur\MS.Internal.SulpHur.UICompliance\obj\Debug\MS.Internal.SulpHur.UICompliance.pdb
